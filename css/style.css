@@ -617,4 +617,205 @@ html {
 
 /*Gallery section*/
 /*Tickets section*/
+.Tickets__container {
+  padding-top: 75px;
+}
+
+.Tickets__title {
+  color: var(--font-gold);
+  position: relative;
+  padding-bottom: 103px;
+}
+
+.Tickets__title::before {
+  position: absolute;
+  content: '';
+  top: 114px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--dark-red);
+}
+
+.Tickets__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Tickets__ticket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Tickets__type {
+  padding-left: 60px;
+}
+
+.Tickets__type h4 {
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-bottom: 50px;
+}
+
+.Tickets__amount h4 {
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: right;
+  padding-bottom: 25px;
+}
+
+.Tickets__buy-btn {
+  width: 175px;
+  height: 50px;
+  background: black;
+}
+
+.Tickets__buy-btn p {
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 53px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+}
+
+.Tickets__total {
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 1.65px;
+  text-align: left;
+  display: block-inline;
+  width: 150px;
+  margin-left: auto;
+  padding: 40px 0 60px 0;
+}
+
+.radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0em;
+  margin-bottom: 25px;
+}
+
+.radio__circle {
+  width: 17px;
+  height: 17px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-right: 23.5px;
+  padding: 2px;
+}
+
+.radio__circle::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: black;
+  border-radius: 50px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.15s;
+  transition: -webkit-transform 0.15s;
+  transition: transform 0.15s;
+  transition: transform 0.15s, -webkit-transform 0.15s;
+}
+
+.radio__input {
+  display: none;
+}
+
+.radio__input:checked + .radio__circle::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.form h6 {
+  display: block-inline;
+  width: 150px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0em;
+  padding-bottom: 14px;
+  margin-left: auto;
+}
+
+.form__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 150px;
+  height: 50px;
+  border: 3px solid #000;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  width: 90px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: center;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+.form__input::-webkit-outer-spin-button, .form__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+.form__button {
+  font-size: 36px;
+  background: none;
+}
+
+.form__button_decrement {
+  position: relative;
+  bottom: 19px;
+}
+
 /*Tickets section*/

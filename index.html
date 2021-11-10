@@ -254,8 +254,70 @@
 			</div>
 		</section>
 		<section class="Tickets">
-			<div class="container "></div>
+			<div class="container Tickets__container">
+				<div class="title Tickets__title">
+					Buy tickets
+				</div>
+				<div class="Tickets__body">
+					<div class="Tickets__wallpaper">
+						<img src="/assets/img/tickets/Rectangle.jpg" alt="">
+					</div>
+					<div class="Tickets__ticket">
+						<div class="Tickets__type">
+							<h4>Ticket Type</h4>
+							<label for="Permanent-exhibition" class="radio">
+								<input checked type="radio" name="ticket-type" value="Permanent-exhibition" id="Permanent-exhibition"
+									class="radio__input">
+								<div class="radio__circle"></div>
+								Permanent exhibition
+							</label>
+							<label for="Temporary-exhibition" class="radio">
+								<input type="radio" name="ticket-type" value="Temporary-exhibition" id="Temporary-exhibition"
+									class="radio__input">
+								<div class="radio__circle"></div>
+								Temporary exhibition
+							</label>
+							<label for="Combined-Admission" class="radio">
+								<input type="radio" name="ticket-type" value="Combined-Admission" id="Combined-Admission"
+									class="radio__input">
+								<div class="radio__circle"></div>
+								Combined Admission
+							</label>
+						</div>
+						<div class="Tickets__amount">
+							<h4>Amount</h4>
+							<div class="form form__basic">
+								<h6>Basic 18+</h6>
+								<div class="form__container">
+									<button class="form__button form__button_decrement" id="basic-decrement" onclick="basicStepper(this)">
+										_ </button>
+									<input type="number" min="0" max="20" step="1" value="1" class="form__input" id="basic-input">
+									<button class="form__button form__button_increment" id="basic-increment" onclick="basicStepper(this)">
+										+ </button>
+								</div>
+							</div>
+							<div class="form form__senior">
+								<h6>Senior 65+</h6>
+								<div class="form__container">
+									<button class="form__button form__button_decrement" id="senior-decrement"
+										onclick="seniorStepper(this)"> _ </button>
+									<input type="number" min="0" max="20" step="1" value="1" class="form__input" id="senior-input">
+									<button class="form__button form__button_increment" id="senior-increment"
+										onclick="seniorStepper(this)"> + </button>
+								</div>
+							</div>
+							<p class="Tickets__total">Total €220</p>
+							<div class="Tickets__buy-btn">
+								<p>Buy Now</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
+		<div class="parallax">
+			
+		</div>
 		<section class="Contacts">
 			<div class="container "></div>
 		</section>
@@ -263,6 +325,7 @@
 	<footer class="footer">
 		<div class="container "></div>
 	</footer>
+	<script src="js/script.js"></script>
 </body>
 
 </html>

@@ -489,4 +489,198 @@ html {
 
 /*Tickets section*/
 
+.Tickets {
+
+	&__container {
+		padding-top: 75px;
+	}
+
+	&__title {
+		color: var(--font-gold);
+		position: relative;
+		padding-bottom: 103px;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 114px;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: var(--dark-red);
+		}
+	}
+
+	&__body {
+		display: flex;
+	}
+
+	&__wallpaper {}
+
+	&__ticket {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	&__type {
+		padding-left: 60px;
+
+		h4 {
+			font-family: Roboto;
+			font-size: 28px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 33px;
+			letter-spacing: 0em;
+			text-align: left;
+			padding-bottom: 50px;
+		}
+	}
+
+	&__amount {
+
+		h4 {
+			font-family: Roboto;
+			font-size: 28px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 33px;
+			letter-spacing: 0em;
+			text-align: right;
+			padding-bottom: 25px;
+		}
+	}
+
+	&__buy-btn {
+		width: 175px;
+		height: 50px;
+		background: black;
+
+		p {
+			font-family: Roboto;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 53px;
+			letter-spacing: 2px;
+			text-align: center;
+			color: white;
+		}
+
+	}
+
+	&__total {
+		font-family: Roboto;
+		font-size: 28px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 33px;
+		letter-spacing: 1.65px;
+		text-align: left;
+		display: block-inline;
+		width: 150px;
+		margin-left: auto;
+		padding: 40px 0 60px 0;
+	}
+}
+
+.radio {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	cursor: pointer;
+	font-family: Roboto;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 26px;
+	letter-spacing: 0em;
+	margin-bottom: 25px;
+
+	&__circle {
+		width: 17px;
+		height: 17px;
+		border: 2px solid black;
+		border-radius: 50%;
+		margin-right: 23.5px;
+		padding: 2px;
+
+		&::before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			display: block;
+			background: black;
+			border-radius: 50px;
+			transform: scale(0);
+			transition: transform 0.15s;
+		}
+	}
+
+	&__input {
+		display: none;
+
+		&:checked+.radio__circle::before {
+			transform: scale(1);
+		}
+	}
+}
+
+.form {
+
+	h6 {
+		display: block-inline;
+		width: 150px;
+		font-family: Roboto;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 26px;
+		letter-spacing: 0em;
+		padding-bottom: 14px;
+		margin-left: auto;
+	}
+
+	&__container {
+		display: flex;
+		width: 150px;
+		height: 50px;
+		border: 3px solid #000;
+		justify-content: center;
+		margin-left: auto;
+		margin-bottom: 10px;
+	}
+
+	&__input {
+		width: 90px;
+		font-family: Roboto;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 26px;
+		letter-spacing: 0em;
+		text-align: center;
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+			margin: 0;
+		}
+	}
+
+	&__button {
+		font-size: 36px;
+		background: none;
+
+		&_decrement {
+			position: relative;
+			bottom: 19px;
+		}
+
+		&_increment {}
+	}
+}
+
 /*Tickets section*/
