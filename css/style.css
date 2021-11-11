@@ -618,7 +618,7 @@ html {
 /*Gallery section*/
 /*Tickets section*/
 .Tickets__container {
-  padding-top: 75px;
+  padding: 75px 0 75px 0;
 }
 
 .Tickets__title {
@@ -657,7 +657,7 @@ html {
   padding-left: 60px;
 }
 
-.Tickets__type h4 {
+.Tickets__type h5 {
   font-family: Roboto;
   font-size: 28px;
   font-style: normal;
@@ -668,7 +668,7 @@ html {
   padding-bottom: 50px;
 }
 
-.Tickets__amount h4 {
+.Tickets__amount h5 {
   font-family: Roboto;
   font-size: 28px;
   font-style: normal;
@@ -819,3 +819,202 @@ html {
 }
 
 /*Tickets section*/
+/*Parallax section*/
+.parallax {
+  background: url("../assets/img/parallax.jpg") 0 0/100% no-repeat;
+  background-attachment: fixed;
+  height: 400px;
+  width: 100%;
+}
+
+/*Parallax section*/
+/*Contacts section*/
+.Contacts__container {
+  padding: 75px 0 71px 0;
+}
+
+.Contacts__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Contacts__title {
+  color: var(--font-gold);
+  position: relative;
+  padding-bottom: 103px;
+}
+
+.Contacts__title::before {
+  position: absolute;
+  content: '';
+  top: 114px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--dark-red);
+}
+
+.Contacts__contact {
+  padding-right: 200px;
+}
+
+.Contacts__contact h5 {
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-bottom: 50px;
+}
+
+.Contacts__contact p {
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-bottom: 25px;
+}
+
+.Contacts__location {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.Contacts__location img {
+  width: 100%;
+}
+
+/*Contacts section*/
+/*Footer*/
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__menu {
+  height: 268px;
+  padding-top: 87px;
+  border-bottom: 3px solid white;
+}
+
+.footer__logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 23.6%;
+          flex: 0 0 23.6%;
+  padding-right: 30px;
+}
+
+.footer__logo h6 {
+  font-family: Forum;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  background: url("../assets/svg/logo.svg") 0 0 no-repeat;
+  padding-left: 75px;
+}
+
+.footer__nav {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 36.8%;
+          flex: 0 0 36.8%;
+}
+
+.footer__links {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 39.6%;
+          flex: 0 0 39.6%;
+  position: relative;
+  height: 123px;
+}
+
+.footer__links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 340px;
+}
+
+.footer__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 13.5px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.footer__body {
+  height: 124px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__body p {
+  display: inline-block;
+}
+
+.footer-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 170px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer-nav__item {
+  display: inline-block;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 26px;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 26px;
+}
+
+/*Footer*/
