@@ -125,6 +125,10 @@ html {
   text-transform: uppercase;
 }
 
+a:active {
+  color: var(--font-gold);
+}
+
 /*Header*/
 .header {
   height: 150px;
@@ -879,6 +883,10 @@ html {
   letter-spacing: 0em;
   text-align: left;
   padding-bottom: 25px;
+}
+
+.Contacts__contact p a {
+  color: black;
 }
 
 .Contacts__location {

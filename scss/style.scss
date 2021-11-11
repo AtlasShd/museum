@@ -36,6 +36,10 @@ html {
 	text-transform: uppercase;
 }
 
+a:active {
+	color: var(--font-gold);
+}
+
 /*Header*/
 .header {
 	height: 150px;
@@ -745,6 +749,10 @@ html {
 			letter-spacing: 0em;
 			text-align: left;
 			padding-bottom: 25px;
+
+			a {
+				color: black;
+			}
 		}
 	}
 
