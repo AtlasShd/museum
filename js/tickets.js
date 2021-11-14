@@ -1,25 +1,3 @@
-// const upperInput = document.querySelector('#basic-input');
-// const downInput = document.querySelector('#senior-input');
-
-// const basicDecr = document.querySelector('#basic-decrement'),
-// basicIncr = document.querySelector('#basic-increment'),
-// seniorDecr = document.querySelector('#senior-decrement'),
-// seniorIncr = document.querySelector('#senior-increment');
-
-// basicDecr.addEventListener('click', stepper(upperInput));
-// basicIncr.addEventListener('click', stepper(upperInput));
-// seniorDecr.addEventListener('click', stepper(downInput));
-// seniorIncr.addEventListener('click', stepper(downInput));
-
-// function stepper(b) {
-// 	let id = b.getAttribute('id');
-// 	let min = b.getAttribute('min');
-// 	let max = b.getAttribute('max');
-// 	let step = b.getAttribute('step');
-// 	let value = b.getAttribute('value');
-// 	console.log(id, min, max, step, value);
-// }
-
 const basicInput = document.querySelector('#basic-input');
 const seniorInput = document.querySelector('#senior-input');
 
@@ -55,3 +33,22 @@ function seniorStepper(b) {
 		seniorInput.setAttribute('value', newValue);
 	}
 }
+
+// riple effect
+const rippleBtn = document.querySelector('.Tickets__buy-btn');
+
+function rippler (e) {
+	let x = e.offsetX;
+	let y = e.offsetY;
+
+	let ripples = document.createElement('span');
+	ripples.style.left = `${x}px`;
+	ripples.style.top = `${y}px`;
+	this.appendChild(ripples);
+console.log(e.clientX, e.clientY, e.offsetX, e.offsetY);
+	setTimeout(() => {
+		ripples.remove();
+	}, 750)
+}
+
+ rippleBtn.addEventListener('click', rippler);

@@ -34,15 +34,20 @@
 		<section class="Welcome dark-section">
 			<div class="container Welcome__container">
 				<div class="Welcome__body">
-					<h2 class="title Welcome__title">
-						Welcome <br> to the Louvre
-					</h2>
-					<p class="Welcome__text">
-						From the castle to the museum
-					</p>
-					<a href="" class="Welcome__button">
-						Discover the Louvre
-					</a>
+					<div class="Welcome__column">
+						<h2 class="title Welcome__title">
+							Welcome <br> to the Louvre
+						</h2>
+						<p class="Welcome__text">
+							From the castle to the museum
+						</p>
+						<a href="tours/tour0.html" target="_blank" class="Welcome__button">
+							<button>Discover the Louvre</button>
+						</a>
+					</div>
+					<div class="Welcome__wallpaper">
+						<img src="/assets/img/welcome-slider/1.jpg" alt="" class="Welcome__img">
+					</div>
 					<div class=" Welcome__swiper swiper">
 						<div class="swiper__container">
 							<div class="swiper__count">
@@ -56,18 +61,20 @@
 								<div class="swiper__dot"></div>
 							</div>
 							<div class="swiper__arrows">
-								<svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg"
-									class="swiper__arrows_left">
-									<path
-										d="M5.72254 8C3.90173 6.31339 1.99422 5.08262 0 4.30769V3.69231C1.99422 2.89459 3.90173 1.66382 5.72254 0H7.23988C6.37283 1.4359 5.53468 2.52991 4.72543 3.28205H30V4.71795H4.72543C5.53468 5.47009 6.37283 6.5641 7.23988 8H5.72254Z"
-										fill="white" />
-								</svg>
-								<svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg"
-									class="swiper__arrows_right">
-									<path
-										d="M24.2775 1.97284e-06C26.0983 1.68661 28.0058 2.91738 30 3.69231L30 4.30769C28.0058 5.10541 26.0983 6.33618 24.2775 8L22.7601 8C23.6272 6.5641 24.4653 5.47009 25.2746 4.71795L3.48964e-07 4.71795L5.01636e-07 3.28205L25.2746 3.28205C24.4653 2.52992 23.6272 1.4359 22.7601 1.86378e-06L24.2775 1.97284e-06Z"
-										fill="white" />
-								</svg>
+								<button class="swiper__btn-left">
+									<svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M5.72254 8C3.90173 6.31339 1.99422 5.08262 0 4.30769V3.69231C1.99422 2.89459 3.90173 1.66382 5.72254 0H7.23988C6.37283 1.4359 5.53468 2.52991 4.72543 3.28205H30V4.71795H4.72543C5.53468 5.47009 6.37283 6.5641 7.23988 8H5.72254Z"
+											fill="white" />
+									</svg>
+								</button>
+								<button class="swiper__btn-right">
+									<svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M24.2775 1.97284e-06C26.0983 1.68661 28.0058 2.91738 30 3.69231L30 4.30769C28.0058 5.10541 26.0983 6.33618 24.2775 8L22.7601 8C23.6272 6.5641 24.4653 5.47009 25.2746 4.71795L3.48964e-07 4.71795L5.01636e-07 3.28205L25.2746 3.28205C24.4653 2.52992 23.6272 1.4359 22.7601 1.86378e-06L24.2775 1.97284e-06Z"
+											fill="white" />
+									</svg>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -199,7 +206,7 @@
 				<div class="Video__body">
 					<div class="Video__core">
 						<video src="assets/video/video0.mp4" poster="assets/video/poster0.jpg" class="Video__video"></video>
-						<div class="controls__big-play">
+						<button class="controls__big-play">
 							<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<g clip-path="url(#clip0_1_1905)">
 									<path
@@ -214,17 +221,18 @@
 									</clipPath>
 								</defs>
 							</svg>
-						</div>
+						</button>
 						<div class="Video__controls controls">
-							<div class="controls__play"><svg width="23" height="31" viewBox="0 0 23 31" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
+							<button class="controls__play">
+								<svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M23 15.5053L0 0C0 23.3683 0 11.8996 0 31L23 15.5053Z" fill="#B3B3B3" />
-								</svg></div>
+								</svg>
+							</button>
 							<div class="controls__progress">
-								<input type="range" value="54" name="progress" id="progress">
+								<input type="range" value="54" name="progress" id="progress" oninput="leftColor(); setVideoProgress ()">
 							</div>
-							<div class="controls__volume"><svg width="36" height="30" viewBox="0 0 36 30" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
+							<button class="controls__volume">
+								<svg width="36" height="30" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M18.3326 0C17.8816 0 17.4905 0.156374 17.1604 0.469123L8.48928 8.68426H1.66737C1.21531 8.68426 0.825273 8.84064 0.495164 9.15339C0.165055 9.46614 0 9.83665 0 10.2639V19.7361C0 20.1633 0.165055 20.5339 0.495164 20.8466C0.825273 21.1594 1.21636 21.3157 1.66737 21.3157H8.48928L17.1604 29.5309C17.4905 29.8436 17.8806 30 18.3326 30C18.7847 30 19.1747 29.8436 19.5048 29.5309C19.8349 29.2181 20 28.8486 20 28.4203V1.57968C20 1.15239 19.8349 0.781873 19.5059 0.469123C19.1768 0.156374 18.7857 0 18.3337 0H18.3326Z"
 										fill="#B3B3B3" />
@@ -234,39 +242,48 @@
 									<path
 										d="M33.8744 22.1208C35.2915 19.9463 36 17.5714 36 14.999C36 12.4276 35.2915 10.0547 33.8744 7.87713C32.4574 5.70262 30.5822 4.11727 28.2497 3.12618C28.0337 3.04274 27.8167 3 27.5997 3C27.1667 3 26.7913 3.15976 26.4744 3.47927C26.1574 3.79878 26 4.17629 26 4.61384C26 5.26914 26.325 5.76469 26.975 6.1015C27.9075 6.58891 28.5414 6.95828 28.8744 7.21063C30.1078 8.11829 31.0707 9.25592 31.762 10.6255C32.4534 11.9952 32.7996 13.4523 32.7996 15C32.7996 16.5457 32.4534 18.0038 31.762 19.3745C31.0707 20.7441 30.1078 21.8817 28.8744 22.7894C28.5414 23.0417 27.9075 23.4111 26.975 23.8985C26.325 24.2353 26 24.7298 26 25.3862C26 25.8227 26.1585 26.2012 26.4744 26.5207C26.7903 26.8402 27.1738 27 27.6239 27C27.8238 27 28.0327 26.9573 28.2487 26.8738C30.5811 25.8817 32.4574 24.2984 33.8734 22.1219L33.8744 22.1208Z"
 										fill="#B3B3B3" />
-								</svg></div>
+								</svg>
+							</button>
 							<div class="controls__volume-progress">
-								<input type="range" value="45" min="0" max="100" name="volume-progress" id="volume-progress">
+								<input type="range" value="45" min="0" max="100" name="volume-progress" id="volume-progress"
+									oninput="leftVolumeColor(); changeVolume()">
 							</div>
-							<div class="controls__fullscreen"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
+							<button class="controls__fullscreen">
+								<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M31.744 31.7534H23.2432V35.9999H35.9995V23.2402H31.744V31.7534Z" fill="#B3B3B3" />
 									<path d="M4.25546 23.2402H0V35.9999H12.7563V31.7534H4.25546V23.2402Z" fill="#B3B3B3" />
 									<path d="M0 12.7597H4.25546V4.25656H12.7563V0H0V12.7597Z" fill="#B3B3B3" />
 									<path d="M23.2432 0V4.25656H31.744V12.7597H35.9995V0H23.2432Z" fill="#B3B3B3" />
-								</svg></div>
+								</svg>
+							</button>
 						</div>
 					</div>
 					<div class="Video__switch switch">
 						<div class="switch__videos">
 							<div class="switch__video">
-								<video src="assets/video/video3.mp4" poster="assets/video/poster3.jpg" controls></video>
+								<iframe src="https://www.youtube.com/embed/aWmJ5DgyWPI" title="YouTube video player" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
 							</div>
 							<div class="switch__video">
-								<video src="assets/video/video1.mp4" poster="assets/video/poster1.jpg" controls></video>
+								<iframe src="https://www.youtube.com/embed/Vi5D6FKhRmo" title="YouTube video player" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
 							</div>
 							<div class="switch__video">
-								<video src="assets/video/video2.mp4" poster="assets/video/poster2.jpg" controls></video>
+								<iframe src="https://www.youtube.com/embed/NOhDysLnTvY" title="YouTube video player" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
 							</div>
 						</div>
 						<div class="switch__swiper">
 							<div class="switch__arrows">
-								<div class="switch__arrows_left">
+								<button class="switch__arrows_left">
 									«
-								</div>
-								<div class="switch__arrows_right">
+								</button>
+								<button class="switch__arrows_right">
 									»
-								</div>
+								</button>
 							</div>
 							<div class="switch__dots">
 								<div class="switch__dot switch__dot_active"></div>
@@ -285,25 +302,25 @@
 				<h2 class="title Gallery__title">Art Gallery</h2>
 				<div class="Gallery__content">
 					<div class="Gallery__column Gallery__column_left">
-						<div class="Gallery__art"><img src="assets/img/galery/galery1.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery2.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery3.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery4.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery5.jpg" alt=""></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery1.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery2.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery3.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery4.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery5.jpg" alt="" class="Gallery__img"></div>
 					</div>
 					<div class="Gallery__column Gallery__column_center">
-						<div class="Gallery__art"><img src="assets/img/galery/galery6.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery7.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery8.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery9.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery10.jpg" alt=""></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery6.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery7.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery8.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery9.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery10.jpg" alt="" class="Gallery__img"></div>
 					</div>
 					<div class="Gallery__column Gallery__column_right">
-						<div class="Gallery__art"><img src="assets/img/galery/galery11.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery12.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery13.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery14.jpg" alt=""></div>
-						<div class="Gallery__art"><img src="assets/img/galery/galery15.jpg" alt=""></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery11.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery12.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery13.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery14.jpg" alt="" class="Gallery__img"></div>
+						<div class="Gallery__art"><img src="assets/img/galery/galery15.jpg" alt="" class="Gallery__img"></div>
 					</div>
 				</div>
 			</div>
@@ -362,9 +379,9 @@
 								</div>
 							</div>
 							<p class="Tickets__total">Total €220</p>
-							<div class="Tickets__buy-btn">
+							<button class="Tickets__buy-btn">
 								<p>Buy Now</p>
-							</div>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -453,7 +470,8 @@
 			<p><a href="https://github.com/AtlasShd">AtlasShd</a></p>
 		</div>
 	</footer>
-	<script src="js/script.js"></script>
+	<script src="js/tickets.js"></script>
+	<script src="js/gallery.js"></script>
 	<script src="js/player.js"></script>
 </body>
 
