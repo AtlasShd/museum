@@ -35,7 +35,7 @@ function seniorStepper(b) {
 }
 
 // riple effect
-const rippleBtn = document.querySelector('.Tickets__buy-btn');
+const ticketsBtn = document.querySelector('.Tickets__buy-btn');
 
 function rippler (e) {
 	let x = e.offsetX;
@@ -45,10 +45,30 @@ function rippler (e) {
 	ripples.style.left = `${x}px`;
 	ripples.style.top = `${y}px`;
 	this.appendChild(ripples);
-console.log(e.clientX, e.clientY, e.offsetX, e.offsetY);
 	setTimeout(() => {
 		ripples.remove();
 	}, 750)
 }
 
- rippleBtn.addEventListener('click', rippler);
+ ticketsBtn.addEventListener('click', rippler);
+
+ //form of tickets
+ const shadowBg = document.querySelector('.shadow-bg'),
+ ticketsForm = document.querySelector('.tickets-form');
+
+ ticketsBtn.addEventListener('click', showForm);
+ shadowBg.addEventListener('click', hideForm);
+
+ function showForm() {
+	shadowBg.style.left = 0;
+	shadowBg.style.background = 'rgba(0, 0, 0, 0.5)';
+	ticketsForm.style.left = 0;
+ }
+
+ function hideForm() {
+	shadowBg.style.background = 'rgba(0, 0, 0, 0)';
+	ticketsForm.style.left = '100%';
+	setTimeout(() => {
+		shadowBg.style.left = '100%';
+	}, 500);
+ }
