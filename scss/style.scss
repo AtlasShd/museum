@@ -963,7 +963,7 @@ a:active {
 	&__container {
 		max-width: 1440px;
 		width: 100%;
-		max-height: 844px;
+		max-height: 845px;
 		height: 100%;
 		background: white;
 		padding: 91px 235px 91px 235px;
@@ -1103,7 +1103,7 @@ a:active {
 		&::before {
 			position: absolute;
 			content: '';
-			top: 23px;
+			top: 24px;
 			left: 0;
 			width: 100%;
 			height: 3px;
@@ -1140,7 +1140,7 @@ a:active {
 		border: 1px solid #000;
 		justify-content: center;
 		margin-left: auto;
-		margin-bottom: 10px;
+		margin-bottom: 13.3px;
 
 		&_basic {}
 
@@ -1148,7 +1148,7 @@ a:active {
 	}
 
 	&__button {
-		flex: 1 1 40%;
+		flex: 1 1 33.333%;
 		background: black;
 		width: 100%;
 		color: white;
@@ -1159,7 +1159,8 @@ a:active {
 	}
 
 	&__input {
-		flex: 1 1 20%;
+		flex: 1 1 33.333%;
+		width: 33.333%;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 21px;
@@ -1196,23 +1197,42 @@ a:active {
 	&__subtitle {
 		font-size: 22px;
 		font-weight: 500;
-		line-height: 26px;
+		line-height: 30px;
 		letter-spacing: 0em;
 		text-align: left;
 		color: var(--dark-red);
+		margin-bottom: 5px;
 	}
 
 	&__timetable {
-		margin-bottom: 50px;
+		margin-bottom: 15px;
+
+		p {
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 27px;
+			padding-left: 30px;
+		}
+	}
+
+	&__card-container {
+		position: relative;
 	}
 
 	&__button {}
 }
 
 .full-price {
+	margin-bottom: 10px;
 
 	&__body {
+		padding-bottom: 8px;
+		margin-bottom: 11px;
 		border-bottom: 2px solid var(--dark-red);
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 31px;
+
 	}
 
 	&__buy {
@@ -1226,6 +1246,7 @@ a:active {
 	}
 
 	&__price {
+		padding-left: 42px;
 
 		&_basic {}
 
@@ -1243,16 +1264,43 @@ a:active {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		font-size: 32px;
+		line-height: 38px;
+
 	}
 
-	&__text {}
+	&__text {
+		font-weight: 400;
+	}
 
-	&__big-price {}
+	&__big-price {
+		font-weight: 500;
+	}
 }
 
 .form-card {
+	position: relative;
+	z-index: 7;
+	width: 360px;
+	height: 211px;
 	background: var(--bg-gray);
 	padding: 15px 20px;
+	border-radius: 3px;
+
+	p {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 14px;
+		margin-bottom: 3.5px;
+	}
+
+	input,
+	select {
+		margin-bottom: 11px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 14px;
+	}
 
 	&__body {
 		display: flex;
@@ -1261,28 +1309,91 @@ a:active {
 	&__content {}
 
 	&__imgs {
-		display: flex;
-		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		padding-top: 19px;
+
+		img {
+			float: right;
+			margin-bottom: 15px;
+		}
 	}
 
-	&__card-number {}
+	&__card-number {
 
-	&__data-time {}
+		input {
+			width: 215px;
+			height: 35px;
+		}
+	}
 
-	&__cardholder-name {}
+	&__data-time {
+
+		select {
+			width: 100px;
+			height: 35px;
+		}
+	}
+
+	&__selects {
+		display: flex;
+		column-gap: 15px;
+	}
+
+	&__cardholder-name {
+		input {
+			width: 320px;
+			height: 35px;
+		}
+	}
 }
 
 .form-card2 {
+	position: absolute;
+	z-index: 6;
 	background: var(--bg-dark-gray);
 	padding: 15px 0;
+	top: 30px;
+	right: 0;
+	border-radius: 3px;
+	width: 360px;
+	height: 211px;
 
 	&__black-line {
+		margin-top: 10px;
 		width: 100%;
 		height: 45px;
 		background: var(--bg-dark);
 	}
 
-	&__cvc-cvv {}
+	&__container {
+		display: flex;
+		justify-content: right;
+		padding: 15px 20px;
+	}
+
+	&__cvc-cvv {
+		width: 75px;
+		font-weight: 400;
+		line-height: 12px;
+
+		h6 {
+			font-size: 12px;
+			padding: 0 0 8px 9px;
+		}
+
+		input {
+			width: 75px;
+			height: 35px;
+			padding: 0 0 8px 9px;
+		}
+
+		p {
+			display: block;
+			font-size: 10px;
+			padding: 6px 0 0 9px;
+		}
+	}
 }
 
 

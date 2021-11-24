@@ -466,7 +466,7 @@
 								<div class="full-price__body">
 									<div class="full-price__buy full-price__buy_basic">
 										<div class="full-price__price full-price__price_basic">
-											Basic 18+ (20 €)
+											Basic (20 €)
 										</div>
 										<div class="full-price__count full-price__count_basic">
 											40 €
@@ -474,7 +474,7 @@
 									</div>
 									<div class="full-price__buy full-price__buy_senior">
 										<div class="full-price__price full-price__price_senior">
-											Senior 65+ (10 €)
+											Senior (10 €)
 										</div>
 										<div class="full-price__count full-price__count_senior">
 											20 €
@@ -490,63 +490,69 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-card">
-								<div class="form-card__body">
-									<div class="form-card__content">
-										<div class="form-card__card-number">
-											<p>Card number</p>
-											<input type="text" name="Card number" id="card-number">
+							<div class="right-form__card-container">
+								<div class="form-card">
+									<div class="form-card__body">
+										<div class="form-card__content">
+											<div class="form-card__card-number">
+												<p>Card number</p>
+												<input type="text" name="Card number" id="card-number">
+											</div>
+											<div class="form-card__data-time">
+												<p>Expiration date</p>
+												<div class="form-card__selects">
+													<select name="month" id="month">
+														<option value="1">01</option>
+														<option value="2">02</option>
+														<option selected value="3">03</option>
+														<option value="4">04</option>
+														<option value="5">05</option>
+														<option value="6">06</option>
+														<option value="7">07</option>
+														<option value="8">08</option>
+														<option value="9">09</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+													<select name="year" id="year">
+														<option value="2021">2021</option>
+														<option value="2022">2022</option>
+														<option value="2023">2023</option>
+														<option selected value="2024">2024</option>
+														<option value="2025">2025</option>
+														<option value="2026">2026</option>
+														<option value="2027">2027</option>
+														<option value="2028">2028</option>
+														<option value="2029">2029</option>
+													</select>
+												</div>
+											</div>
 										</div>
-										<div class="form-card__data-time">
-											<p>Expiration date</p>
-											<select name="month" id="month">
-												<option value="1">01</option>
-												<option value="2">02</option>
-												<option selected value="3">03</option>
-												<option value="4">04</option>
-												<option value="5">05</option>
-												<option value="6">06</option>
-												<option value="7">07</option>
-												<option value="8">08</option>
-												<option value="9">09</option>
-												<option value="10">10</option>
-												<option value="11">11</option>
-												<option value="12">12</option>
-											</select>
-											<select name="year" id="year">
-												<option value="2021">2021</option>
-												<option value="2022">2022</option>
-												<option selected value="2023">2023</option>
-												<option value="2024">2024</option>
-												<option value="2025">2025</option>
-												<option value="2026">2026</option>
-												<option value="2027">2027</option>
-												<option value="2028">2028</option>
-												<option value="2029">2029</option>
-											</select>
+										<div class="form-card__imgs">
+											<img src="/assets/img/tickets/Visa.png" alt="">
+											<img src="/assets/img/tickets/Mastercard.png" alt="">
 										</div>
 									</div>
-									<div class="form-card__imgs">
-										<img src="/assets/img/tickets/Visa.png" alt="">
-										<img src="/assets/img/tickets/Mastercard.png" alt="">
+									<div class="form-card__cardholder-name">
+										<p>Cardholder name</p>
+										<input type="text" name="Cardholder name" id="cardholder-name">
 									</div>
 								</div>
-								<div class="form-card__cardholder-name">
-									<p>Cardholder name</p>
-									<input type="text" name="Cardholder name" id="cardholder-name">
-								</div>
-							</div>
-							<div class="form-card2">
-								<div class="form-card2__black-line"></div>
-								<div class="form-card2__cvc-cvv">
-									<h6>CVC/CVV</h6>
-									<input type="text" name="cvc cvv" id="cvc-cvv">
-									<p>
-										The last
-										3 or 4 digits
-										on back
-										of the card
-									</p>
+								<div class="form-card2">
+									<div class="form-card2__black-line"></div>
+									<div class="form-card2__container">
+										<div class="form-card2__cvc-cvv">
+											<h6>CVC/CVV</h6>
+											<input type="text" name="cvc cvv" id="cvc-cvv">
+											<p>
+												The last </br>
+												3 or 4 digits</br>
+												on back</br>
+												of the card</br>
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 							<button class="right-form__button">

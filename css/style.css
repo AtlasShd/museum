@@ -1145,7 +1145,7 @@ a:active {
 .tickets-form__container {
   max-width: 1440px;
   width: 100%;
-  max-height: 844px;
+  max-height: 845px;
   height: 100%;
   background: white;
   padding: 91px 235px 91px 235px;
@@ -1305,7 +1305,7 @@ a:active {
 .entry-ticket__title::before {
   position: absolute;
   content: '';
-  top: 23px;
+  top: 24px;
   left: 0;
   width: 100%;
   height: 3px;
@@ -1338,13 +1338,13 @@ a:active {
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: auto;
-  margin-bottom: 10px;
+  margin-bottom: 13.3px;
 }
 
 .entry-ticket__button {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 40%;
-          flex: 1 1 40%;
+      -ms-flex: 1 1 33.333%;
+          flex: 1 1 33.333%;
   background: black;
   width: 100%;
   color: white;
@@ -1352,8 +1352,9 @@ a:active {
 
 .entry-ticket__input {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 20%;
-          flex: 1 1 20%;
+      -ms-flex: 1 1 33.333%;
+          flex: 1 1 33.333%;
+  width: 33.333%;
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;
@@ -1391,18 +1392,39 @@ a:active {
 .right-form__subtitle {
   font-size: 22px;
   font-weight: 500;
-  line-height: 26px;
+  line-height: 30px;
   letter-spacing: 0em;
   text-align: left;
   color: var(--dark-red);
+  margin-bottom: 5px;
 }
 
 .right-form__timetable {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
+}
+
+.right-form__timetable p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  padding-left: 30px;
+}
+
+.right-form__card-container {
+  position: relative;
+}
+
+.full-price {
+  margin-bottom: 10px;
 }
 
 .full-price__body {
+  padding-bottom: 8px;
+  margin-bottom: 11px;
   border-bottom: 2px solid var(--dark-red);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 31px;
 }
 
 .full-price__buy {
@@ -1415,6 +1437,10 @@ a:active {
           justify-content: space-between;
 }
 
+.full-price__price {
+  padding-left: 42px;
+}
+
 .full-price__total {
   width: 100%;
   display: -webkit-box;
@@ -1423,11 +1449,41 @@ a:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.full-price__text {
+  font-weight: 400;
+}
+
+.full-price__big-price {
+  font-weight: 500;
 }
 
 .form-card {
+  position: relative;
+  z-index: 7;
+  width: 360px;
+  height: 211px;
   background: var(--bg-gray);
   padding: 15px 20px;
+  border-radius: 3px;
+}
+
+.form-card p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 3.5px;
+}
+
+.form-card input,
+.form-card select {
+  margin-bottom: 11px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
 }
 
 .form-card__body {
@@ -1437,24 +1493,89 @@ a:active {
 }
 
 .form-card__imgs {
+  width: 100%;
+  height: 100%;
+  padding-top: 19px;
+}
+
+.form-card__imgs img {
+  float: right;
+  margin-bottom: 15px;
+}
+
+.form-card__card-number input {
+  width: 215px;
+  height: 35px;
+}
+
+.form-card__data-time select {
+  width: 100px;
+  height: 35px;
+}
+
+.form-card__selects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+}
+
+.form-card__cardholder-name input {
+  width: 320px;
+  height: 35px;
 }
 
 .form-card2 {
+  position: absolute;
+  z-index: 6;
   background: var(--bg-dark-gray);
   padding: 15px 0;
+  top: 30px;
+  right: 0;
+  border-radius: 3px;
+  width: 360px;
+  height: 211px;
 }
 
 .form-card2__black-line {
+  margin-top: 10px;
   width: 100%;
   height: 45px;
   background: var(--bg-dark);
+}
+
+.form-card2__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  padding: 15px 20px;
+}
+
+.form-card2__cvc-cvv {
+  width: 75px;
+  font-weight: 400;
+  line-height: 12px;
+}
+
+.form-card2__cvc-cvv h6 {
+  font-size: 12px;
+  padding: 0 0 8px 9px;
+}
+
+.form-card2__cvc-cvv input {
+  width: 75px;
+  height: 35px;
+  padding: 0 0 8px 9px;
+}
+
+.form-card2__cvc-cvv p {
+  display: block;
+  font-size: 10px;
+  padding: 6px 0 0 9px;
 }
 
 .shadow-bg {
