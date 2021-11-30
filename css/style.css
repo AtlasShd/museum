@@ -1271,6 +1271,7 @@ a:active {
   border: 1px solid black;
   height: 45px;
   text-align: center;
+  position: relative;
 }
 
 .input-container__date {
@@ -1279,10 +1280,30 @@ a:active {
           flex: 1 1 50%;
 }
 
+.input-container__date input {
+  max-width: 136px;
+}
+
+.input-container__date input::-webkit-calendar-picker-indicator {
+  margin: 0;
+  padding: 0;
+  background: url("../assets/svg/tickets-form/arrow.svg") no-repeat left;
+}
+
 .input-container__time {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
+}
+
+.input-container__time input {
+  max-width: 136px;
+}
+
+.input-container__time input::-webkit-calendar-picker-indicator {
+  margin: 0;
+  padding: 0;
+  background: url("../assets/svg/tickets-form/arrow.svg") no-repeat left;
 }
 
 .input-container__icon {
@@ -1298,6 +1319,40 @@ a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.date-input {
+  padding-top: 6px;
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 8px;
+  left: 43px;
+  width: 112px;
+  height: 27px;
+  background: white;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.time-input {
+  padding-top: 6px;
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 8px;
+  left: 43px;
+  width: 112px;
+  height: 27px;
+  background: white;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .entry-ticket {

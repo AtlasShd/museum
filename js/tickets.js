@@ -52,7 +52,7 @@ function rippler (e) {
 
  ticketsBtn.addEventListener('click', rippler);
 
- //form of tickets
+ //tickets form
  const shadowBg = document.querySelector('.shadow-bg'),
  ticketsForm = document.querySelector('.tickets-form');
 
@@ -72,3 +72,11 @@ function rippler (e) {
 		shadowBg.style.left = '100%';
 	}, 500);
  }
+
+
+ const leftDate = document.querySelector('.left-form__date'),
+ dateInput = document.querySelector('.date-input');
+
+ leftDate.addEventListener('change', () => {
+	dateInput.style.display = 'none';
+ });
