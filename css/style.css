@@ -1168,6 +1168,7 @@ a:active {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 43%;
           flex: 1 1 43%;
+  max-width: 400px;
 }
 
 .tickets-form__right {
@@ -1187,6 +1188,13 @@ a:active {
   row-gap: 20px;
 }
 
+.left-form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../assets/svg/tickets-form/arrow.svg") no-repeat calc(100% - 14px);
+}
+
 .left-form input,
 .left-form select {
   font-family: Roboto;
@@ -1201,10 +1209,8 @@ a:active {
 .left-form input[type="date"],
 .left-form input[type="time"],
 .left-form select {
-  display: block;
-  border: 1px solid #000;
-  padding: 13px 0px 12p 45px;
-  height: 45px;
+  height: 100%;
+  width: 100%;
 }
 
 .left-form__logo svg {
@@ -1243,7 +1249,7 @@ a:active {
   background: var(--dark-red);
 }
 
-.left-form__data-time {
+.left-form__date-time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1254,36 +1260,44 @@ a:active {
           column-gap: 20px;
 }
 
-.left-form__data {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
-}
-
-.left-form__time {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
-}
-
-.left-form__name {
-  width: 100%;
-}
-
-.left-form__mail {
-  width: 100%;
-}
-
-.left-form__phone {
-  width: 100%;
-}
-
-.left-form__tickets-type {
-  width: 100%;
-}
-
 .left-form__entry-ticket {
   border: 1px solid #000;
+}
+
+.input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  height: 45px;
+  text-align: center;
+}
+
+.input-container__date {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+.input-container__time {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+.input-container__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 43px;
+  width: 43px;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .entry-ticket {
@@ -1372,6 +1386,7 @@ a:active {
 }
 
 .right-form {
+  position: relative;
   border: 1px solid var(--bg-dark);
   padding: 25px 30px 26px;
 }
@@ -1401,17 +1416,43 @@ a:active {
 
 .right-form__timetable {
   margin-bottom: 15px;
-}
-
-.right-form__timetable p {
   font-size: 18px;
   font-weight: 300;
   line-height: 27px;
-  padding-left: 30px;
+}
+
+.right-form__timetable svg {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 15px;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
 }
 
 .right-form__card-container {
   position: relative;
+}
+
+.right-form__button {
+  width: 220px;
+  height: 45px;
+  background: var(--dark-red);
+  position: absolute;
+  right: 30px;
+  bottom: 26px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  color: white;
+  padding-top: 5px;
 }
 
 .full-price {
@@ -1438,7 +1479,31 @@ a:active {
 }
 
 .full-price__price {
-  padding-left: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.full-price__black-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 32px;
+  height: 20px;
+  background: black;
+  color: #A4A4A3;
+  font-size: 18px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-right: 10px;
+  padding-top: 4px;
 }
 
 .full-price__total {
@@ -1484,6 +1549,7 @@ a:active {
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
+  padding-left: 6px;
 }
 
 .form-card__body {
@@ -1508,9 +1574,13 @@ a:active {
   height: 35px;
 }
 
-.form-card__data-time select {
+.form-card__date-time select {
   width: 100px;
   height: 35px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: white url("../assets/svg/tickets-form/Arrows.svg") right no-repeat;
 }
 
 .form-card__selects {
