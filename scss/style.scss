@@ -167,7 +167,7 @@ a:active {
 		display: block;
 		margin-top: 75px;
 
-		button {
+		span {
 			display: flex;
 			flex-direction: column;
 			background: var(--dark-red);
@@ -779,8 +779,21 @@ a:active {
 		height: 50px;
 		background: black;
 		overflow: hidden;
-		transition: background 0.75s ease 0s;
+		transition: background 0.75s ease 0s, color 0.75s ease 0s;
 		cursor: pointer;
+		z-index: 3;
+		font-family: Roboto;
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 53px;
+		letter-spacing: 2px;
+		text-align: center;
+		color: white;
+
+		&:hover {
+			background: var(--font-gold);
+			color: black;
+		}
 
 		& span {
 			position: absolute;
@@ -789,6 +802,7 @@ a:active {
 			pointer-events: none;
 			border-radius: 50%;
 			animation: animate 0.75s linear 1;
+
 
 			@keyframes animate {
 
@@ -801,27 +815,6 @@ a:active {
 					width: 350px;
 					height: 350px;
 				}
-			}
-		}
-
-		p {
-			position: relative;
-			z-index: 3;
-			font-family: Roboto;
-			font-size: 22px;
-			font-weight: 300;
-			line-height: 53px;
-			letter-spacing: 2px;
-			text-align: center;
-			color: white;
-			transition: color 0.75s ease 0s;
-		}
-
-		&:hover {
-			background: var(--font-gold);
-
-			p {
-				color: black;
 			}
 		}
 	}
@@ -860,6 +853,7 @@ a:active {
 	}
 
 	&__circle {
+		display: block;
 		width: 17px;
 		height: 17px;
 		border: 2px solid black;
@@ -1319,7 +1313,6 @@ a:active {
 		line-height: 26px;
 		color: white;
 		padding-top: 5px;
-
 	}
 }
 

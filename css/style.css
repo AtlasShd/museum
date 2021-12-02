@@ -265,7 +265,7 @@ a:active {
   margin-top: 75px;
 }
 
-.Welcome__button button {
+.Welcome__button span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,7 +293,7 @@ a:active {
   transition: background 0.75s ease 0s;
 }
 
-.Welcome__button button:hover {
+.Welcome__button span:hover {
   background: var(--font-gold);
   color: white;
 }
@@ -929,9 +929,22 @@ a:active {
   height: 50px;
   background: black;
   overflow: hidden;
-  -webkit-transition: background 0.75s ease 0s;
-  transition: background 0.75s ease 0s;
+  -webkit-transition: background 0.75s ease 0s, color 0.75s ease 0s;
+  transition: background 0.75s ease 0s, color 0.75s ease 0s;
   cursor: pointer;
+  z-index: 3;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 53px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+}
+
+.Tickets__buy-btn:hover {
+  background: var(--font-gold);
+  color: black;
 }
 
 .Tickets__buy-btn span {
@@ -965,28 +978,6 @@ a:active {
     width: 350px;
     height: 350px;
   }
-}
-
-.Tickets__buy-btn p {
-  position: relative;
-  z-index: 3;
-  font-family: Roboto;
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 53px;
-  letter-spacing: 2px;
-  text-align: center;
-  color: white;
-  -webkit-transition: color 0.75s ease 0s;
-  transition: color 0.75s ease 0s;
-}
-
-.Tickets__buy-btn:hover {
-  background: var(--font-gold);
-}
-
-.Tickets__buy-btn:hover p {
-  color: black;
 }
 
 .Tickets__total {
@@ -1028,6 +1019,7 @@ a:active {
 }
 
 .radio__circle {
+  display: block;
   width: 17px;
   height: 17px;
   border: 2px solid black;
