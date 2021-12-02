@@ -550,6 +550,10 @@ a:active {
   padding-bottom: 24px;
 }
 
+.Explore__text span {
+  color: var(--font-gold);
+}
+
 /*Explore section*/
 /*Video section*/
 .Video__container {
@@ -1128,7 +1132,7 @@ a:active {
           flex-direction: column;
   z-index: 4;
   top: 0;
-  left: 100%;
+  left: -100%;
   width: 100%;
   height: 100vh;
   pointer-events: none;
@@ -1142,6 +1146,15 @@ a:active {
           align-items: center;
 }
 
+.tickets-form__cross {
+  top: 30px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  cursor: pointer;
+}
+
 .tickets-form__container {
   max-width: 1440px;
   width: 100%;
@@ -1150,6 +1163,7 @@ a:active {
   background: white;
   padding: 91px 235px 91px 235px;
   pointer-events: auto;
+  position: relative;
 }
 
 .tickets-form__content {
@@ -1168,13 +1182,14 @@ a:active {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 43%;
           flex: 1 1 43%;
-  max-width: 400px;
+  min-width: 400px;
 }
 
 .tickets-form__right {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 57%;
           flex: 1 1 57%;
+  min-width: 530px;
 }
 
 .left-form {
@@ -1208,9 +1223,20 @@ a:active {
 .left-form input[type="text"],
 .left-form input[type="date"],
 .left-form input[type="time"],
+.left-form input[type="email"],
+.left-form input[type="tel"],
 .left-form select {
   height: 100%;
   width: 100%;
+}
+
+.left-form input[type="text"]::-webkit-input-placeholder,
+.left-form input[type="date"]::-webkit-input-placeholder,
+.left-form input[type="time"]::-webkit-input-placeholder,
+.left-form input[type="email"]::-webkit-input-placeholder,
+.left-form input[type="tel"]::-webkit-input-placeholder,
+.left-form select::-webkit-input-placeholder {
+  color: black;
 }
 
 .left-form__logo svg {
@@ -1323,7 +1349,7 @@ a:active {
 
 .date-input {
   padding-top: 6px;
-  color: rgba(0, 0, 0, 0.6);
+  color: black;
   position: absolute;
   top: 8px;
   left: 43px;
@@ -1340,7 +1366,7 @@ a:active {
 
 .time-input {
   padding-top: 6px;
-  color: rgba(0, 0, 0, 0.6);
+  color: black;
   position: absolute;
   top: 8px;
   left: 43px;
@@ -1707,7 +1733,7 @@ a:active {
   position: fixed;
   z-index: 3;
   top: 0;
-  left: 100%;
+  left: -100%;
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0);

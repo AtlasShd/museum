@@ -428,6 +428,10 @@ a:active {
 		letter-spacing: 0em;
 		text-align: left;
 		padding-bottom: 24px;
+
+		span {
+			color: var(--font-gold);
+		}
 	}
 }
 
@@ -953,13 +957,22 @@ a:active {
 	flex-direction: column;
 	z-index: 4;
 	top: 0;
-	left: 100%;
+	left: -100%;
 	width: 100%;
 	height: 100vh;
 	pointer-events: none;
 	transition: left ease 0.5s 0s;
 	justify-content: center;
 	align-items: center;
+
+	&__cross {
+		top: 30px;
+		right: 30px;
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		cursor: pointer;
+	}
 
 	&__container {
 		max-width: 1440px;
@@ -969,6 +982,7 @@ a:active {
 		background: white;
 		padding: 91px 235px 91px 235px;
 		pointer-events: auto;
+		position: relative;
 	}
 
 	&__content {
@@ -982,11 +996,12 @@ a:active {
 
 	&__left {
 		flex: 1 1 43%;
-		max-width: 400px;
+		min-width: 400px;
 	}
 
 	&__right {
 		flex: 1 1 57%;
+		min-width: 530px;
 	}
 }
 
@@ -1013,9 +1028,15 @@ a:active {
 	input[type="text"],
 	input[type="date"],
 	input[type="time"],
+	input[type="email"],
+	input[type="tel"],
 	select {
 		height: 100%;
 		width: 100%;
+
+		&::-webkit-input-placeholder {
+			color: black;
+		}
 	}
 
 	&__logo {
@@ -1112,11 +1133,9 @@ a:active {
 	}
 }
 
-
-
 .date-input {
 	padding-top: 6px;
-	color: rgba(0, 0, 0, 0.6);
+	color: rgb(0, 0, 0);
 	position: absolute;
 	top: 8px;
 	left: 43px;
@@ -1133,7 +1152,7 @@ a:active {
 
 .time-input {
 	padding-top: 6px;
-	color: rgba(0, 0, 0, 0.6);
+	color: rgb(0, 0, 0);
 	position: absolute;
 	top: 8px;
 	left: 43px;
@@ -1505,7 +1524,7 @@ a:active {
 	position: fixed;
 	z-index: 3;
 	top: 0;
-	left: 100%;
+	left: -100%;
 	width: 100%;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0);
