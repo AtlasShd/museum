@@ -350,7 +350,7 @@ a:active {
 			width: 68.2%;
 			background: var(--dark-red);
 			height: 2px;
-			transition: width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s;
+			transition: width 1s ease 0.1s;
 		}
 	}
 
