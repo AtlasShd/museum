@@ -25,6 +25,10 @@ html {
 .container {
 	max-width: 1440px;
 	margin: 0 auto;
+
+	@media (max-width: 1480px) {
+		max-width: 984px;
+	}
 }
 
 
@@ -38,6 +42,11 @@ html {
 	text-align: left;
 	color: white;
 	text-transform: uppercase;
+
+	@media (max-width: 1480px) {
+		font-size: 50px;
+
+	}
 }
 
 a {
@@ -76,6 +85,10 @@ a:active {
 			padding-left: 75px;
 		}
 	}
+
+	@media (max-width: 1480px) {
+		height: 130px;
+	}
 }
 
 .nav {
@@ -100,9 +113,10 @@ a:active {
 
 /*Welcome section*/
 .Welcome {
+	overflow: hidden;
 
 	&__container {
-		height: 812px;
+		height: 810px;
 	}
 
 	&__body {
@@ -123,7 +137,6 @@ a:active {
 		float: right;
 		position: relative;
 		z-index: -3;
-		flex: 1 1 100%;
 		max-width: 1000px;
 		max-height: 750px;
 
@@ -133,7 +146,7 @@ a:active {
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 100%;
+			height: 101%;
 			box-shadow: inset 100px 0px 100px #000;
 			z-index: 1;
 		}
@@ -201,6 +214,43 @@ a:active {
 		height: 120px;
 		background: black;
 	}
+
+	@media (max-width: 1480px) {
+
+		&__container {
+			height: 585px;
+		}
+
+		&__wallpaper {
+			max-width: 700px;
+			max-height: 525px;
+		}
+
+		&__title {
+			padding-top: 50px;
+		}
+
+		&__text {
+			font-size: 24px;
+			line-height: 28px;
+		}
+
+		&__button {
+			margin-top: 50px;
+
+			span {
+				width: 300px;
+				height: 60px;
+				padding: 19px 0;
+				font-size: 20px;
+				line-height: 23px;
+			}
+		}
+
+		&__swiper {
+			width: 700px;
+		}
+	}
 }
 
 .swiper {
@@ -208,7 +258,9 @@ a:active {
 	justify-content: center;
 
 	&__container {
-		width: 451px;
+		max-width: 470px;
+		padding-left: 15px;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -216,25 +268,28 @@ a:active {
 
 	&__count {
 		color: white;
+		margin-left: -5px;
+		padding-right: 5px;
 		font-family: Roboto;
 		font-size: 22px;
 		font-weight: 400;
 		line-height: 40px;
 		letter-spacing: 1.6px;
 		text-align: left;
-
 	}
 
 	&__dots {
 		display: flex;
 		justify-content: space-between;
-		width: 180px;
-		height: 16px;
+		max-width: 180px;
+		width: 100%;
+		max-height: 16px;
+		height: 100%;
 	}
 
 	&__dot {
-		width: 16px;
-		height: 16px;
+		width: 8.89%;
+		height: 100%;
 		background: white;
 		transition: background ease 0.333s 0s;
 		cursor: pointer;
@@ -249,12 +304,12 @@ a:active {
 	}
 
 	&__arrows {
-		width: 80px;
+		width: 100px;
 		display: flex;
 		justify-content: space-between;
 
 
-		& button {
+		button {
 			background: none;
 			width: 300px;
 		}
@@ -277,6 +332,36 @@ a:active {
 			fill: var(--font-gold);
 		}
 	}
+
+	@media (max-width: 1480px) {
+
+		&__container {
+			margin-left: 150px;
+		}
+
+		&__container {
+			max-width: 420px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__count {
+			font-size: 20px;
+			letter-spacing: 1.6px;
+			padding-right: 7px;
+		}
+
+		&__dots {
+			max-width: 160px;
+			max-height: 12px;
+		}
+
+		&__dot {
+			width: 12px;
+		}
+	}
 }
 
 /*Welcome section*/
@@ -285,7 +370,7 @@ a:active {
 .Visiting {
 
 	&__container {
-		padding: 72px 0 72px 0;
+		padding: 73px 0 72px 0;
 	}
 
 	&__title {
@@ -303,14 +388,32 @@ a:active {
 			background: var(--dark-red);
 		}
 	}
+
+	@media (max-width: 1480px) {
+
+		&__container {
+			padding: 60px 0 60px 0;
+		}
+
+		&__title {
+			padding-bottom: 83px;
+			line-height: 75px;
+
+			&::before {
+				top: 95px;
+			}
+		}
+	}
 }
 
 .cards {
-	display: grid;
-	column-gap: 60px;
-	row-gap: 73px;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 440px));
 
+	&__container {
+		display: grid;
+		column-gap: 60px;
+		row-gap: 73px;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 440px));
+	}
 
 	&__card {
 		display: block;
@@ -363,7 +466,7 @@ a:active {
 		line-height: 26px;
 		letter-spacing: 0em;
 		text-align: left;
-		padding-bottom: 11px;
+		padding-bottom: 10px;
 	}
 
 	&__subtext {
@@ -376,6 +479,50 @@ a:active {
 		letter-spacing: 0em;
 		text-align: left;
 	}
+
+	@media (max-width: 1480px) {
+
+		&__container {
+			display: grid;
+			column-gap: 108px;
+			row-gap: 58px;
+			grid-template-columns: repeat(auto-fit, minmax(120px, 330px));
+			width: 768px;
+			margin: 0 auto;
+		}
+
+		&__card {
+			display: block;
+		}
+
+		&__img {
+			padding-bottom: 26px;
+		}
+
+		&__title {
+			font-size: 28px;
+			line-height: 31px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			padding-bottom: 23px;
+
+			&::before {
+				top: 41.5px;
+				width: 45.5%;
+			}
+		}
+
+		&__text {
+			font-size: 20px;
+			line-height: 23px;
+			padding-bottom: 11px;
+		}
+
+		&__subtext {
+			font-size: 16px;
+			line-height: 19px;
+		}
+	}
 }
 
 .google-louvre {
@@ -386,7 +533,6 @@ a:active {
 	height: 100%;
 	border: none;
 }
-
 
 /*Visiting section*/
 
@@ -403,7 +549,7 @@ a:active {
 	}
 
 	&__title {
-		line-height: 57px;
+		line-height: 60px;
 		padding-bottom: 120px;
 		position: relative;
 
@@ -433,6 +579,62 @@ a:active {
 			color: var(--font-gold);
 		}
 	}
+
+	&__img {
+		width: 100%;
+		max-width: 720px;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	@media (max-width: 1480px) {
+
+		&_container {
+			flex-wrap: wrap;
+			padding: 75px 0 60px 0;
+		}
+
+		&__content {
+			padding-right: 0px;
+			margin-bottom: 60px;
+		}
+
+		&__title {
+			line-height: 45px;
+			padding-bottom: 99px;
+
+			&::before {
+				top: 79px;
+				width: 100%;
+			}
+		}
+
+		&__text {
+			font-size: 20px;
+			padding-bottom: 2px;
+			line-height: 35px;
+
+			&:last-child {
+				display: none;
+			}
+		}
+
+		&__img {
+			width: 100%;
+			max-width: 720px;
+			height: 100%;
+			margin: 0 auto;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
 }
 
 /*Explore section*/
@@ -446,7 +648,7 @@ a:active {
 
 	&__header {
 		display: flex;
-		padding-bottom: 79px;
+		padding-bottom: 75px;
 	}
 
 	&__title-container {
@@ -455,10 +657,11 @@ a:active {
 
 	&__title {
 		color: var(--font-gold);
-		line-height: 79px;
+		line-height: 85px;
 	}
 
 	&__content {
+		margin-top: 2px;
 		font-family: Roboto;
 		font-size: 22px;
 		font-style: normal;
@@ -470,7 +673,7 @@ a:active {
 	}
 
 	&__core {
-		aspect-ratio: 1440 / 735;
+		aspect-ratio: 1440 / 734;
 		margin-bottom: 38px;
 		position: relative;
 
@@ -481,7 +684,24 @@ a:active {
 		}
 	}
 
-	&__controls {}
+	@media (max-width: 1480px) {
+
+		&__container {
+			padding: 60px 0 56px 0;
+		}
+
+		&__header {
+			padding-bottom: 40px;
+		}
+
+		&__title {
+			line-height: 75px;
+		}
+
+		&__content {
+			display: none;
+		}
+	}
 }
 
 .controls {
@@ -516,6 +736,13 @@ a:active {
 
 		& svg {
 			transform: translate(0, -20%);
+			width: 220px;
+			height: 220px;
+
+			rect {
+				width: 220px;
+				height: 220px;
+			}
 		}
 	}
 
@@ -548,7 +775,12 @@ a:active {
 		}
 	}
 
-	&__volume {}
+	&__volume {
+		svg {
+			width: 36px;
+			height: 30px;
+		}
+	}
 
 	&__volume-progress {
 		display: flex;
@@ -571,7 +803,75 @@ a:active {
 		}
 	}
 
-	&__fullscreen {}
+	&__fullscreen {
+		svg {
+			width: 36px;
+			height: 36px;
+		}
+	}
+
+	@media (max-width: 1480px) {
+		height: 60px;
+		padding: 0 25px;
+
+		& div,
+		& button {
+			margin: 0 15px;
+		}
+
+		&__big-play {
+			& svg {
+				width: 152px;
+				height: 152px;
+			}
+		}
+
+		&__play {
+			svg {
+				width: 23px;
+				height: 31px;
+			}
+		}
+
+		&__progress {
+			input {
+				height: 5px;
+
+				&::-webkit-slider-thumb {
+					width: 13px;
+					height: 13px;
+				}
+			}
+		}
+
+		&__volume {
+			svg {
+				width: 26px;
+				height: 20px;
+			}
+		}
+
+		&__volume-progress {
+			width: 143px;
+
+			input {
+				width: 143px;
+				height: 5px;
+
+				&::-webkit-slider-thumb {
+					width: 13px;
+					height: 13px;
+				}
+			}
+		}
+
+		&__fullscreen {
+			svg {
+				width: 26px;
+				height: 26px;
+			}
+		}
+	}
 }
 
 
@@ -581,8 +881,7 @@ a:active {
 		display: grid;
 		column-gap: 42px;
 		grid-template-columns: repeat(3, minmax(100px, 452px));
-		margin-bottom: 20px;
-		height: 260px;
+		margin-bottom: 25px;
 	}
 
 	&__video {
@@ -736,7 +1035,15 @@ a:active {
 		display: flex;
 	}
 
-	&__wallpaper {}
+	&__wallpaper {
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 
 	&__ticket {
 		display: flex;
@@ -1608,6 +1915,7 @@ a:active {
 
 /*Footer*/
 .footer {
+	overflow: hidden;
 
 	&__container {
 		display: flex;
