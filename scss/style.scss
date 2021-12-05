@@ -36,6 +36,10 @@ html {
 	@media (max-width: 1480px) {
 		max-width: 984px;
 	}
+
+	@media (max-width: 1023px) {
+		max-width: 728px;
+	}
 }
 
 
@@ -52,7 +56,11 @@ html {
 
 	@media (max-width: 1480px) {
 		font-size: 50px;
+	}
 
+	@media (max-width: 1023px) {
+		font-size: 40px;
+		line-height: 60px;
 	}
 }
 
@@ -96,6 +104,17 @@ a:active {
 	@media (max-width: 1480px) {
 		height: 130px;
 	}
+
+	@media (max-width: 1023px) {
+		height: 110px;
+
+		&__logo {
+
+			h1 {
+				margin-top: 10px;
+			}
+		}
+	}
 }
 
 .nav {
@@ -107,6 +126,7 @@ a:active {
 		width: 100%;
 
 		li {
+			margin-top: -10px;
 			font-family: Roboto;
 			font-size: 22px;
 			line-height: 26px;
@@ -167,6 +187,7 @@ a:active {
 			opacity: 0;
 
 			& li {
+				margin-top: 0px;
 				display: block;
 				padding: 12.5px 0;
 				font-size: 20px;
@@ -329,6 +350,63 @@ a:active {
 			width: 700px;
 		}
 	}
+
+	@media (max-width: 1023px) {
+
+		&__container {
+			height: 861px;
+		}
+
+		&__column {
+			position: static;
+			top: 0;
+			left: 0;
+			transition: opacity 0.4s ease 0s;
+			opacity: 1;
+		}
+
+		&__wallpaper {
+			float: right;
+			position: relative;
+			z-index: -3;
+			max-width: 1000px;
+			max-height: 750px;
+
+			&::before {
+				display: none;
+			}
+
+			img {
+				max-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				object-fit: contain;
+			}
+		}
+
+		&__title {
+			padding-top: 0px;
+			text-align: center;
+		}
+
+		&__text {
+			font-size: 20px;
+			line-height: 21px;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		&__button {
+			display: none;
+		}
+
+		&__swiper {
+			width: 100%;
+			height: 100px;
+			background: black;
+		}
+	}
 }
 
 .swiper {
@@ -440,6 +518,12 @@ a:active {
 			width: 12px;
 		}
 	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			margin-left: 0px;
+		}
+	}
 }
 
 /*Welcome section*/
@@ -479,6 +563,21 @@ a:active {
 
 			&::before {
 				top: 95px;
+			}
+		}
+	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			padding: 35px 0 80px 0;
+		}
+
+		&__title {
+			padding-bottom: 57px;
+			line-height: 70px;
+
+			&::before {
+				top: 85px;
 			}
 		}
 	}
@@ -601,6 +700,39 @@ a:active {
 			line-height: 19px;
 		}
 	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			display: grid;
+			column-gap: 56px;
+			row-gap: 37px;
+			grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
+			width: 616px;
+			margin: 0 auto;
+		}
+
+		&__title {
+			font-size: 22px;
+			line-height: 24px;
+
+			&::before {
+				top: 33px;
+				width: 53.5%;
+			}
+		}
+
+		&__text {
+			padding-bottom: 9px;
+			font-size: 18px;
+			line-height: 21px;
+
+		}
+
+		&__subtext {
+			font-size: 16px;
+			line-height: 19px;
+		}
+	}
 }
 
 .google-louvre {
@@ -617,7 +749,7 @@ a:active {
 /*Explore section*/
 .Explore {
 
-	&_container {
+	&__container {
 		display: flex;
 		padding: 90px 0 75px 0;
 	}
@@ -671,7 +803,7 @@ a:active {
 
 	@media (max-width: 1480px) {
 
-		&_container {
+		&__container {
 			flex-wrap: wrap;
 			padding: 75px 0 60px 0;
 		}
@@ -711,6 +843,35 @@ a:active {
 				width: 100%;
 				height: 100%;
 			}
+		}
+	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			padding: 48px 0 40px 0;
+		}
+
+		&__content {
+			width: 100%;
+			margin-bottom: 0px;
+		}
+
+		&__title {
+			line-height: 45px;
+			padding-bottom: 70px;
+
+			&::before {
+				top: 72px;
+			}
+		}
+
+		&__text {
+			display: none;
+		}
+
+		&__img {
+			max-width: 728px;
+			height: 705px;
 		}
 	}
 }
@@ -778,6 +939,28 @@ a:active {
 
 		&__content {
 			display: none;
+		}
+	}
+
+	@media (max-width: 1023px) {
+
+		&__core {
+			aspect-ratio: 1440 / 754;
+			margin-bottom: 20px;
+
+			video {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__container {
+			padding: 33px 0 63px 0;
+		}
+
+		&__header {
+			padding-bottom: 12px;
 		}
 	}
 }
@@ -950,6 +1133,58 @@ a:active {
 			}
 		}
 	}
+
+	@media (max-width: 1023px) {
+		height: 50px;
+		padding: 0 12.5px;
+
+		& div,
+		& button {
+			margin: 0 17.5px;
+		}
+
+		&__big-play {
+			& svg {
+				transform: translate(0, -33.333%);
+				width: 80px;
+				height: 80px;
+			}
+		}
+
+		&__progress {
+			position: absolute;
+			top: -5px;
+		}
+
+		&__volume-progress {
+			width: 100%;
+
+			input {
+				width: 100%;
+			}
+		}
+
+		&__volume {
+			svg {
+				width: 27px;
+				height: 21px;
+			}
+		}
+
+		&__play {
+			svg {
+				width: 23px;
+				height: 29px;
+			}
+		}
+
+		&__fullscreen {
+			svg {
+				width: 27px;
+				height: 27px;
+			}
+		}
+	}
 }
 
 
@@ -1022,6 +1257,37 @@ a:active {
 
 		&_active {
 			background: #333333;
+		}
+	}
+
+	@media (max-width: 1023px) {
+
+		&__videos {
+			column-gap: 20px;
+			grid-template-columns: repeat(2, minmax(100px, 354px));
+			margin-bottom: 6px;
+		}
+
+		&__video {
+			aspect-ratio: 354 / 199;
+
+			&:last-child {
+				display: none;
+			}
+		}
+
+		&__arrows {
+			width: 190px;
+		}
+
+		&__dots {
+			width: 130px;
+			top: -18px;
+		}
+
+		&__dot {
+			width: 10px;
+			height: 10px;
 		}
 	}
 }
@@ -1097,6 +1363,38 @@ a:active {
 
 		&__art {
 			max-width: 304px;
+		}
+	}
+
+	@media (max-width: 1023px) {
+
+		&__container {
+			height: 1220px;
+			padding-top: 40px;
+		}
+
+		&__title {
+			padding-bottom: 40px;
+		}
+
+		&__content {
+			column-gap: 24px;
+		}
+
+		&__column {
+			row-gap: 24px;
+
+			&_right {
+				display: none;
+			}
+
+			&_left {
+				margin-top: 50px;
+			}
+		}
+
+		&__art {
+			max-width: 352px;
 		}
 	}
 }
@@ -1284,6 +1582,40 @@ a:active {
 			padding: 0px 0 70px;
 		}
 	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			padding: 40px 0 40px 0;
+		}
+
+		&__title {
+			padding-bottom: 64px;
+
+			&::before {
+				top: 80px;
+			}
+		}
+
+		&__wallpaper {
+			min-width: 444px;
+			height: 340px;
+		}
+
+		&__ticket {
+			padding-left: 60px;
+		}
+
+		&__amount {
+
+			h5 {
+				padding-bottom: 37px;
+			}
+		}
+
+		&__total {
+			padding: 20px 0 40px 0;
+		}
+	}
 }
 
 .radio {
@@ -1411,6 +1743,12 @@ a:active {
 			}
 		}
 	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			margin-bottom: 25px;
+		}
+	}
 }
 
 /*Tickets section*/
@@ -1479,6 +1817,30 @@ a:active {
 			max-width: 1024px;
 			max-height: 768px;
 			padding: 75px 27px 20px 27px;
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__cross {
+			top: 30px;
+			right: 30px;
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			cursor: pointer;
+		}
+	}
+
+	@media (max-width: 1023px) {
+
+		&__container {
+			max-width: 590px;
+			max-height: 1479px;
+			padding: 80px 30px 40px 30px;
+			overflow-y: auto;
 		}
 
 		&__cross {
@@ -1572,6 +1934,18 @@ a:active {
 
 	&__entry-ticket {
 		border: 1px solid #000;
+	}
+
+	@media (max-width: 1023px) {
+		margin-bottom: 51px;
+
+		&__subtitle {
+			padding-bottom: 35px;
+		}
+
+		&__date-time {
+			column-gap: 28px;
+		}
 	}
 }
 
@@ -1807,6 +2181,10 @@ a:active {
 		color: white;
 		padding-top: 5px;
 	}
+
+	@media (max-width: 1023px) {
+		padding: 25px 15px 25px;
+	}
 }
 
 .full-price {
@@ -2026,6 +2404,10 @@ a:active {
 	background-attachment: fixed;
 	height: 400px;
 	width: 100%;
+
+	@media (max-width: 1023px) {
+		height: 300px;
+	}
 }
 
 /*Parallax section*/
@@ -2128,6 +2510,54 @@ a:active {
 		&__location {
 			width: 694px;
 			height: 454px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			padding: 40px 0 67px 0;
+		}
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__title {
+			padding-bottom: 62px;
+
+			&::before {
+				top: 80px;
+			}
+		}
+
+		&__contact {
+			flex: 1 1 29.5%;
+			padding-right: 0px;
+			margin-bottom: 25px;
+
+			h5 {
+				font-size: 20px;
+				line-height: 23px;
+				padding-bottom: 40px;
+			}
+
+			p {
+				font-size: 18px;
+				line-height: 21px;
+				padding-bottom: 15px;
+			}
+		}
+
+		&__location {
+			width: 728px;
+			height: 476px;
 
 			img {
 				width: 100%;
@@ -2250,6 +2680,36 @@ a:active {
 			height: 131px;
 		}
 	}
+
+	@media (max-width: 1023px) {
+		&__container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__menu {
+			height: 308px;
+			padding-top: 48px;
+		}
+
+		&__logo {
+			flex: 0 0 20%;
+			padding-right: 0px;
+		}
+
+		&__nav {
+			flex: 0 0 72%;
+		}
+
+		&__links {
+			flex: 0 0 87.6%;
+			height: 60px;
+		}
+
+		&__body {
+			height: 103px;
+		}
+	}
 }
 
 .footer-nav {
@@ -2259,28 +2719,42 @@ a:active {
 		height: 170px;
 		flex-direction: column;
 		flex-wrap: wrap;
-	}
 
-	&__item {
-		display: inline-block;
-		font-family: Roboto;
-		font-size: 22px;
-		font-style: normal;
-		font-weight: 200;
-		line-height: 26px;
-		letter-spacing: 2px;
-		text-align: left;
-		margin-bottom: 26px;
+		li {
+			display: inline-block;
+			font-family: Roboto;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 200;
+			line-height: 26px;
+			letter-spacing: 2px;
+			text-align: left;
+			margin-bottom: 26px;
+		}
 	}
 
 	@media (max-width: 1480px) {
 		&__list {
 			padding-top: 5px;
 			height: 160px;
-		}
 
-		&__item {
-			margin-bottom: 25px;
+			li {
+				margin-bottom: 25px;
+			}
+		}
+	}
+
+	@media (max-width: 1023px) {
+
+		&__list {
+			padding-top: 5px;
+			height: 160px;
+
+			li {
+				margin-bottom: 20px;
+				font-size: 18px;
+				padding-left: 99px;
+			}
 		}
 	}
 }
