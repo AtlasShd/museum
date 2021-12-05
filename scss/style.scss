@@ -105,14 +105,84 @@ a:active {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
+
+		li {
+			font-family: Roboto;
+			font-size: 22px;
+			line-height: 26px;
+			letter-spacing: 2px;
+			font-weight: 200;
+		}
 	}
 
-	&__item {
-		font-family: Roboto;
-		font-size: 22px;
-		line-height: 26px;
-		letter-spacing: 2px;
-		font-weight: 200;
+	@media (max-width: 1480px) {
+		position: relative;
+		width: 0;
+
+		&__cross {
+			position: absolute;
+			width: 32px;
+			height: 2px;
+			background: #ffffff;
+			right: 0;
+
+			& button {
+				position: absolute;
+				top: -8px;
+				width: 32px;
+				height: 18px;
+				background: none;
+				cursor: pointer;
+				z-index: 1;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				width: 32px;
+				height: 2px;
+				background: white;
+				top: 8px;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 32px;
+				height: 2px;
+				background: white;
+				top: -8px;
+			}
+		}
+
+		&__list {
+			position: absolute;
+			top: 89px;
+			left: calc(-958px - 27.2vw);
+			flex-direction: column;
+			justify-content: start;
+			width: 200px;
+			z-index: 10;
+			transition: left 0.5s ease-out 0s, opacity 0.5s ease 0s;
+			opacity: 0;
+
+			& li {
+				display: block;
+				padding: 12.5px 0;
+				font-size: 20px;
+				font-weight: 300;
+				line-height: 23px;
+				width: 100%;
+
+				::before {
+					content: '›';
+					position: relative;
+					left: 121px;
+					font-size: 30px;
+					line-height: 0;
+				}
+			}
+		}
 	}
 }
 
@@ -137,7 +207,8 @@ a:active {
 		position: absolute;
 		top: 0;
 		left: 0;
-
+		transition: opacity 0.4s ease 0s;
+		opacity: 1;
 	}
 
 	&__wallpaper {
@@ -1373,6 +1444,7 @@ a:active {
 	}
 
 	&__container {
+		display: none;
 		max-width: 1440px;
 		width: 100%;
 		max-height: 845px;
@@ -2214,3 +2286,14 @@ a:active {
 }
 
 /*Footer*/
+
+
+.show-burger {
+	left: -958px;
+	display: flex;
+	opacity: 1;
+}
+
+.hide-column {
+	opacity: 0;
+}

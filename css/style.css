@@ -203,12 +203,83 @@ a:active {
   width: 100%;
 }
 
-.nav__item {
+.nav__list li {
   font-family: Roboto;
   font-size: 22px;
   line-height: 26px;
   letter-spacing: 2px;
   font-weight: 200;
+}
+
+@media (max-width: 1480px) {
+  .nav {
+    position: relative;
+    width: 0;
+  }
+  .nav__cross {
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #ffffff;
+    right: 0;
+  }
+  .nav__cross button {
+    position: absolute;
+    top: -8px;
+    width: 32px;
+    height: 18px;
+    background: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .nav__cross::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: white;
+    top: 8px;
+  }
+  .nav__cross::after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: white;
+    top: -8px;
+  }
+  .nav__list {
+    position: absolute;
+    top: 89px;
+    left: calc(-958px - 27.2vw);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    width: 200px;
+    z-index: 10;
+    -webkit-transition: left 0.5s ease-out 0s, opacity 0.5s ease 0s;
+    transition: left 0.5s ease-out 0s, opacity 0.5s ease 0s;
+    opacity: 0;
+  }
+  .nav__list li {
+    display: block;
+    padding: 12.5px 0;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 23px;
+    width: 100%;
+  }
+  .nav__list li ::before {
+    content: '›';
+    position: relative;
+    left: 121px;
+    font-size: 30px;
+    line-height: 0;
+  }
 }
 
 /*Header*/
@@ -232,6 +303,9 @@ a:active {
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-transition: opacity 0.4s ease 0s;
+  transition: opacity 0.4s ease 0s;
+  opacity: 1;
 }
 
 .Welcome__wallpaper {
@@ -1491,6 +1565,7 @@ a:active {
 }
 
 .tickets-form__container {
+  display: none;
   max-width: 1440px;
   width: 100%;
   max-height: 845px;
@@ -2385,3 +2460,14 @@ a:active {
 }
 
 /*Footer*/
+.show-burger {
+  left: -958px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.hide-column {
+  opacity: 0;
+}
