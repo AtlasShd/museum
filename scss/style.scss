@@ -2,6 +2,13 @@
 @import url(https://fonts.googleapis.com/css?family=Forum:regular);
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 
+//@import url(https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@300;400;500;700&display=swap);
+// REMOVE LATER!!!
+
+//* {transition: all 1s ease 0s;}
+
+// REMOVE LATER!!!
+
 :root {
 	--bg-dark: #030303;
 	--bg-gray: #bcbcbc;
@@ -687,7 +694,7 @@ a:active {
 	@media (max-width: 1480px) {
 
 		&__container {
-			padding: 60px 0 56px 0;
+			padding: 60px 0 40px 0;
 		}
 
 		&__header {
@@ -881,7 +888,7 @@ a:active {
 		display: grid;
 		column-gap: 42px;
 		grid-template-columns: repeat(3, minmax(100px, 452px));
-		margin-bottom: 25px;
+		margin-bottom: 28px;
 	}
 
 	&__video {
@@ -1002,6 +1009,25 @@ a:active {
 			width: 100%;
 		}
 	}
+
+	@media (max-width: 1480px) {
+		&__container {
+			height: 1460px;
+			padding-top: 53px;
+		}
+
+		&__title {
+			padding-bottom: 52px;
+		}
+
+		&__content {
+			height: 1800px;
+		}
+
+		&__art {
+			max-width: 304px;
+		}
+	}
 }
 
 /*Gallery section*/
@@ -1018,12 +1044,12 @@ a:active {
 	&__title {
 		color: var(--font-gold);
 		position: relative;
-		padding-bottom: 105px;
+		padding-bottom: 102px;
 
 		&::before {
 			position: absolute;
 			content: '';
-			top: 115px;
+			top: 114px;
 			left: 0;
 			width: 100%;
 			height: 3px;
@@ -1036,12 +1062,13 @@ a:active {
 	}
 
 	&__wallpaper {
-		width: 100%;
-		height: 100%;
+		min-width: 720px;
+		height: 550px;
 
 		img {
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
 		}
 	}
 
@@ -1049,10 +1076,10 @@ a:active {
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
+		padding-left: 60px;
 	}
 
 	&__type {
-		padding-left: 60px;
 
 		h5 {
 			font-family: Roboto;
@@ -1138,6 +1165,53 @@ a:active {
 		width: 150px;
 		margin-left: auto;
 		padding: 40px 0 60px 0;
+	}
+
+	@media (max-width: 1480px) {
+
+		&__container {
+			padding: 53px 0 60px 0;
+		}
+
+		&__title {
+			padding-bottom: 75px;
+
+			&::before {
+				top: 101px;
+			}
+		}
+
+		&__wallpaper {
+			min-width: 700px;
+			height: 440px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__ticket {
+			padding-left: 80px;
+		}
+
+		&__type {
+			display: none;
+		}
+
+		&__amount {
+
+			h5 {
+				text-align: left;
+				padding-bottom: 29px;
+			}
+		}
+
+		&__total {
+			margin: -5px 0 0;
+			padding: 0px 0 70px;
+		}
 	}
 }
 
@@ -1243,6 +1317,29 @@ a:active {
 
 		&_increment {}
 	}
+
+	@media (max-width: 1480px) {
+
+		h6 {
+			width: 175px;
+			padding-bottom: 10px;
+		}
+
+		&__container {
+			width: 175px;
+			margin-bottom: 29px;
+		}
+
+		&__input {
+			width: 102px;
+		}
+
+		&__button {
+			&_decrement {
+				bottom: 21px;
+			}
+		}
+	}
 }
 
 /*Tickets section*/
@@ -1288,7 +1385,6 @@ a:active {
 
 	&__content {
 		display: flex;
-		flex-wrap: wrap;
 		max-width: 100%;
 		width: 100%;
 		max-height: 100%;
@@ -1304,6 +1400,23 @@ a:active {
 	&__right {
 		flex: 1 1 57%;
 		min-width: 530px;
+	}
+
+	@media (max-width: 1480px) {
+		&__container {
+			max-width: 1024px;
+			max-height: 768px;
+			padding: 75px 27px 20px 27px;
+		}
+
+		&__cross {
+			top: 30px;
+			right: 30px;
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -1837,7 +1950,7 @@ a:active {
 
 /*Parallax section*/
 .parallax {
-	background: url('../assets/img/parallax.jpg') 0 0/100% no-repeat;
+	background: url('../assets/img/parallax.jpg') center/cover no-repeat;
 	background-attachment: fixed;
 	height: 400px;
 	width: 100%;
@@ -1907,6 +2020,48 @@ a:active {
 
 		img {
 			width: 100%;
+		}
+	}
+
+	@media (max-width: 1480px) {
+		&__container {
+			padding: 53px 0 62px 0;
+		}
+
+		&__title {
+			padding-bottom: 75px;
+
+			&::before {
+				top: 102px;
+			}
+		}
+
+		&__contact {
+			flex: 1 1 29.5%;
+			padding-right: 0px;
+
+			h5 {
+				font-size: 24px;
+				line-height: 28px;
+				padding-bottom: 35px;
+			}
+
+			p {
+				font-size: 20px;
+				line-height: 23px;
+				padding-bottom: 15px;
+			}
+		}
+
+		&__location {
+			width: 694px;
+			height: 454px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 }
@@ -2001,10 +2156,31 @@ a:active {
 			display: inline-block;
 		}
 	}
+
+	@media (max-width: 1480px) {
+
+		&__menu {
+			height: 246px;
+			padding-top: 61px;
+		}
+
+		&__logo {
+			flex: 0 0 23.6%;
+			padding-right: 39px;
+		}
+
+		&__nav {
+			flex: 0 0 44%;
+		}
+
+		&__links {
+			flex: 0 0 31.7%;
+			height: 131px;
+		}
+	}
 }
 
 .footer-nav {
-
 
 	&__list {
 		display: flex;
@@ -2023,6 +2199,17 @@ a:active {
 		letter-spacing: 2px;
 		text-align: left;
 		margin-bottom: 26px;
+	}
+
+	@media (max-width: 1480px) {
+		&__list {
+			padding-top: 5px;
+			height: 160px;
+		}
+
+		&__item {
+			margin-bottom: 25px;
+		}
 	}
 }
 

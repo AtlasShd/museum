@@ -791,7 +791,7 @@ a:active {
 
 @media (max-width: 1480px) {
   .Video__container {
-    padding: 60px 0 56px 0;
+    padding: 60px 0 40px 0;
   }
   .Video__header {
     padding-bottom: 40px;
@@ -973,7 +973,7 @@ a:active {
           column-gap: 42px;
   -ms-grid-columns: (minmax(100px, 452px))[3];
       grid-template-columns: repeat(3, minmax(100px, 452px));
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .switch__video {
@@ -1120,6 +1120,22 @@ a:active {
   width: 100%;
 }
 
+@media (max-width: 1480px) {
+  .Gallery__container {
+    height: 1460px;
+    padding-top: 53px;
+  }
+  .Gallery__title {
+    padding-bottom: 52px;
+  }
+  .Gallery__content {
+    height: 1800px;
+  }
+  .Gallery__art {
+    max-width: 304px;
+  }
+}
+
 /*Gallery section*/
 /*Tickets section*/
 .Tickets {
@@ -1133,13 +1149,13 @@ a:active {
 .Tickets__title {
   color: var(--font-gold);
   position: relative;
-  padding-bottom: 105px;
+  padding-bottom: 102px;
 }
 
 .Tickets__title::before {
   position: absolute;
   content: '';
-  top: 115px;
+  top: 114px;
   left: 0;
   width: 100%;
   height: 3px;
@@ -1153,13 +1169,15 @@ a:active {
 }
 
 .Tickets__wallpaper {
-  width: 100%;
-  height: 100%;
+  min-width: 720px;
+  height: 550px;
 }
 
 .Tickets__wallpaper img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .Tickets__ticket {
@@ -1170,9 +1188,6 @@ a:active {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.Tickets__type {
   padding-left: 60px;
 }
 
@@ -1267,6 +1282,42 @@ a:active {
   width: 150px;
   margin-left: auto;
   padding: 40px 0 60px 0;
+}
+
+@media (max-width: 1480px) {
+  .Tickets__container {
+    padding: 53px 0 60px 0;
+  }
+  .Tickets__title {
+    padding-bottom: 75px;
+  }
+  .Tickets__title::before {
+    top: 101px;
+  }
+  .Tickets__wallpaper {
+    min-width: 700px;
+    height: 440px;
+  }
+  .Tickets__wallpaper img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .Tickets__ticket {
+    padding-left: 80px;
+  }
+  .Tickets__type {
+    display: none;
+  }
+  .Tickets__amount h5 {
+    text-align: left;
+    padding-bottom: 29px;
+  }
+  .Tickets__total {
+    margin: -5px 0 0;
+    padding: 0px 0 70px;
+  }
 }
 
 .radio {
@@ -1384,6 +1435,23 @@ a:active {
   bottom: 19px;
 }
 
+@media (max-width: 1480px) {
+  .form h6 {
+    width: 175px;
+    padding-bottom: 10px;
+  }
+  .form__container {
+    width: 175px;
+    margin-bottom: 29px;
+  }
+  .form__input {
+    width: 102px;
+  }
+  .form__button_decrement {
+    bottom: 21px;
+  }
+}
+
 /*Tickets section*/
 /*Tickets form*/
 .tickets-form {
@@ -1437,8 +1505,6 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   max-width: 100%;
   width: 100%;
   max-height: 100%;
@@ -1459,6 +1525,22 @@ a:active {
       -ms-flex: 1 1 57%;
           flex: 1 1 57%;
   min-width: 530px;
+}
+
+@media (max-width: 1480px) {
+  .tickets-form__container {
+    max-width: 1024px;
+    max-height: 768px;
+    padding: 75px 27px 20px 27px;
+  }
+  .tickets-form__cross {
+    top: 30px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+  }
 }
 
 .left-form {
@@ -2013,7 +2095,7 @@ a:active {
 /*Tickets form*/
 /*Parallax section*/
 .parallax {
-  background: url("../assets/img/parallax.jpg") 0 0/100% no-repeat;
+  background: url("../assets/img/parallax.jpg") center/cover no-repeat;
   background-attachment: fixed;
   height: 400px;
   width: 100%;
@@ -2085,6 +2167,44 @@ a:active {
 
 .Contacts__location img {
   width: 100%;
+}
+
+@media (max-width: 1480px) {
+  .Contacts__container {
+    padding: 53px 0 62px 0;
+  }
+  .Contacts__title {
+    padding-bottom: 75px;
+  }
+  .Contacts__title::before {
+    top: 102px;
+  }
+  .Contacts__contact {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 29.5%;
+            flex: 1 1 29.5%;
+    padding-right: 0px;
+  }
+  .Contacts__contact h5 {
+    font-size: 24px;
+    line-height: 28px;
+    padding-bottom: 35px;
+  }
+  .Contacts__contact p {
+    font-size: 20px;
+    line-height: 23px;
+    padding-bottom: 15px;
+  }
+  .Contacts__location {
+    width: 694px;
+    height: 454px;
+  }
+  .Contacts__location img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 /*Contacts section*/
@@ -2205,6 +2325,30 @@ a:active {
   display: inline-block;
 }
 
+@media (max-width: 1480px) {
+  .footer__menu {
+    height: 246px;
+    padding-top: 61px;
+  }
+  .footer__logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 23.6%;
+            flex: 0 0 23.6%;
+    padding-right: 39px;
+  }
+  .footer__nav {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 44%;
+            flex: 0 0 44%;
+  }
+  .footer__links {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 31.7%;
+            flex: 0 0 31.7%;
+    height: 131px;
+  }
+}
+
 .footer-nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2228,6 +2372,16 @@ a:active {
   letter-spacing: 2px;
   text-align: left;
   margin-bottom: 26px;
+}
+
+@media (max-width: 1480px) {
+  .footer-nav__list {
+    padding-top: 5px;
+    height: 160px;
+  }
+  .footer-nav__item {
+    margin-bottom: 25px;
+  }
 }
 
 /*Footer*/
