@@ -135,6 +135,10 @@ a:active {
 		}
 	}
 
+	.nav__img-container {
+		display: none;
+	}
+
 	@media (max-width: 1480px) {
 		position: relative;
 		width: 0;
@@ -145,6 +149,7 @@ a:active {
 			height: 2px;
 			background: #ffffff;
 			right: 0;
+			transition: transform 0.25s ease 0s;
 
 			& button {
 				position: absolute;
@@ -154,6 +159,7 @@ a:active {
 				background: none;
 				cursor: pointer;
 				z-index: 1;
+				transition: transform 0.25s ease 0s;
 			}
 
 			&::before {
@@ -163,6 +169,7 @@ a:active {
 				height: 2px;
 				background: white;
 				top: 8px;
+				transition: transform 0.25s ease 0s;
 			}
 
 			&::after {
@@ -172,28 +179,59 @@ a:active {
 				height: 2px;
 				background: white;
 				top: -8px;
+				transition: transform 0.25s ease 0s;
+			}
+		}
+
+		&__cross-checked {
+			width: 33px;
+			transform: rotate(45deg);
+
+			& button {
+				position: absolute;
+				top: -10px;
+				width: 25px;
+				height: 25px;
+				background: none;
+				cursor: pointer;
+				z-index: 1;
+				right: 3px;
+				transform: rotate(45deg);
+			}
+
+			&::before {
+				width: 33px;
+				top: 0;
+				transform: rotate(90deg);
+			}
+
+			&::after {
+				width: 33px;
+				top: 0;
+				transform: rotate(0deg);
 			}
 		}
 
 		&__list {
 			position: absolute;
 			top: 89px;
-			left: calc(-958px - 27.2vw);
+			left: calc(-958px - calc(100vw - 670px) / 2);
 			flex-direction: column;
 			justify-content: start;
 			width: 200px;
 			z-index: 10;
 			transition: left 0.5s ease-out 0s, opacity 0.5s ease 0s;
 			opacity: 0;
+			overflow: hidden;
 
 			& li {
 				margin-top: 0px;
-				display: block;
+				display: inline-block;
 				padding: 12.5px 0;
 				font-size: 20px;
 				font-weight: 300;
 				line-height: 23px;
-				width: 100%;
+				width: 100px;
 
 				::before {
 					content: '›';
@@ -203,6 +241,46 @@ a:active {
 					line-height: 0;
 				}
 			}
+		}
+
+		.show-burger {
+			left: -958px;
+			display: flex;
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 1023px) {
+
+		&__list {
+			margin-top: -33px;
+			padding-top: 21px;
+			display: flex;
+			justify-content: start;
+			width: 100vw;
+			height: 861px;
+			background: black;
+			padding-left: 45px;
+
+			li {
+				padding: 12.5px 0;
+				font-size: 20px;
+				font-weight: 300;
+				line-height: 23px;
+			}
+		}
+
+		.show-burger {
+			left: calc(-748px - calc(100vw - 768px) / 2);
+			display: flex;
+			opacity: 1;
+		}
+
+		.nav__img-container {
+			padding: 24px 0 0 10px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
 		}
 	}
 }
@@ -348,6 +426,10 @@ a:active {
 
 		&__swiper {
 			width: 700px;
+		}
+
+		.hide-column {
+			opacity: 0;
 		}
 	}
 
@@ -1819,11 +1901,6 @@ a:active {
 			padding: 75px 27px 20px 27px;
 		}
 
-		&__content {
-			display: flex;
-			flex-direction: column;
-		}
-
 		&__cross {
 			top: 30px;
 			right: 30px;
@@ -1841,6 +1918,10 @@ a:active {
 			max-height: 1479px;
 			padding: 80px 30px 40px 30px;
 			overflow-y: auto;
+		}
+
+		&__content {
+			flex-direction: column;
 		}
 
 		&__cross {
@@ -1956,7 +2037,8 @@ a:active {
 	text-align: center;
 	position: relative;
 
-	&__date {
+	&__date,
+	&__time {
 		flex: 1 1 50%;
 
 		input {
@@ -1991,6 +2073,18 @@ a:active {
 		height: 100%;
 		justify-content: center;
 		align-items: center;
+	}
+
+	@media (max-width: 1023px) {
+
+		&__date,
+		&__time {
+
+			input {
+				max-width: 195px;
+			}
+		}
+
 	}
 }
 
@@ -2183,7 +2277,19 @@ a:active {
 	}
 
 	@media (max-width: 1023px) {
-		padding: 25px 15px 25px;
+		padding: 25px 14px 25px;
+
+		&__card-container {
+			padding-bottom: 100px;
+		}
+
+		&__button {
+			font-size: 20px;
+			line-height: 23px;
+			right: 14px;
+			bottom: 25px;
+			padding-top: 0px;
+		}
 	}
 }
 
@@ -2197,7 +2303,6 @@ a:active {
 		font-size: 22px;
 		font-weight: 400;
 		line-height: 31px;
-
 	}
 
 	&__buy {
@@ -2250,7 +2355,6 @@ a:active {
 		justify-content: space-between;
 		font-size: 32px;
 		line-height: 38px;
-
 	}
 
 	&__text {
@@ -2259,6 +2363,10 @@ a:active {
 
 	&__big-price {
 		font-weight: 500;
+	}
+
+	@media (max-width: 1023px) {
+		padding-bottom: 4px;
 	}
 }
 
@@ -2760,14 +2868,3 @@ a:active {
 }
 
 /*Footer*/
-
-
-.show-burger {
-	left: -958px;
-	display: flex;
-	opacity: 1;
-}
-
-.hide-column {
-	opacity: 0;
-}
