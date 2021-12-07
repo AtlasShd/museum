@@ -4,7 +4,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		welcomeColumn = document.querySelector('.Welcome__column'),
 		navList = document.querySelector('.nav__list'),
 		nav = document.querySelector('.nav'),
-		crossChecked = document.querySelector('.nav__cross');
+		crossChecked = document.querySelector('.nav__cross'),
+		navImgContainer = document.querySelector('.nav__img-container');
 
 	function toggleBurger() {
 		navList.classList.toggle('show-burger');
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	document.body.addEventListener('click', function (e) {
-		if (e.target != navCrossBtn && e.target != navList) {
+		if (e.target != navCrossBtn && e.target != navList && e.target != navImgContainer) {
 			navList.classList.remove('show-burger');
 			welcomeColumn.classList.remove('hide-column');
 			crossChecked.classList.remove('nav__cross-checked');

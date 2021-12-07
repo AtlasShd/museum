@@ -121,21 +121,25 @@ a:active {
 	width: 775px;
 
 	&__list {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
 
-		li {
-			margin-top: -10px;
-			font-family: Roboto;
-			font-size: 22px;
-			line-height: 26px;
-			letter-spacing: 2px;
-			font-weight: 200;
+		ul {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+
+			li {
+				margin-top: -10px;
+				font-family: Roboto;
+				font-size: 22px;
+				line-height: 26px;
+				letter-spacing: 2px;
+				font-weight: 200;
+			}
 		}
 	}
 
-	.nav__img-container {
+	&__img-container,
+	&__footer {
 		display: none;
 	}
 
@@ -143,13 +147,47 @@ a:active {
 		position: relative;
 		width: 0;
 
+		&__list {
+			position: absolute;
+			top: 88px;
+			left: calc(-970px - calc(100vw - 670px) / 2);
+			z-index: 10;
+			width: 200px;
+			opacity: 0;
+			overflow: hidden;
+			transition: left 0.5s ease-out 0s, opacity 0.5s ease 0s;
+
+			ul {
+				flex-direction: column;
+				justify-content: start;
+
+				li {
+					margin-top: 0px;
+					display: inline-block;
+					padding: 12.5px 0;
+					font-size: 20px;
+					font-weight: 300;
+					line-height: 23px;
+					width: 100px;
+
+					::before {
+						content: '›';
+						position: relative;
+						left: 121px;
+						font-size: 30px;
+						line-height: 0;
+					}
+				}
+			}
+		}
+
 		&__cross {
 			position: absolute;
 			width: 32px;
 			height: 2px;
 			background: #ffffff;
-			right: 0;
-			transition: transform 0.25s ease 0s;
+			right: 0px;
+			transition: transform 0.25s ease 0s, right 0.25s ease 0s;
 
 			& button {
 				position: absolute;
@@ -186,6 +224,7 @@ a:active {
 		&__cross-checked {
 			width: 33px;
 			transform: rotate(45deg);
+			right: -3px;
 
 			& button {
 				position: absolute;
@@ -212,39 +251,8 @@ a:active {
 			}
 		}
 
-		&__list {
-			position: absolute;
-			top: 89px;
-			left: calc(-958px - calc(100vw - 670px) / 2);
-			flex-direction: column;
-			justify-content: start;
-			width: 200px;
-			z-index: 10;
-			transition: left 0.5s ease-out 0s, opacity 0.5s ease 0s;
-			opacity: 0;
-			overflow: hidden;
-
-			& li {
-				margin-top: 0px;
-				display: inline-block;
-				padding: 12.5px 0;
-				font-size: 20px;
-				font-weight: 300;
-				line-height: 23px;
-				width: 100px;
-
-				::before {
-					content: '›';
-					position: relative;
-					left: 121px;
-					font-size: 30px;
-					line-height: 0;
-				}
-			}
-		}
-
 		.show-burger {
-			left: -958px;
+			left: -959px;
 			display: flex;
 			opacity: 1;
 		}
@@ -253,14 +261,18 @@ a:active {
 	@media (max-width: 1023px) {
 
 		&__list {
+			left: calc(-1500px - calc(100vw - 670px) / 2);
 			margin-top: -33px;
-			padding-top: 21px;
-			display: flex;
-			justify-content: start;
-			width: 100vw;
+			width: 768px;
 			height: 861px;
 			background: black;
 			padding-left: 45px;
+
+			ul {
+				padding-top: 21px;
+				display: flex;
+				justify-content: start;
+			}
 
 			li {
 				padding: 12.5px 0;
@@ -271,16 +283,34 @@ a:active {
 		}
 
 		.show-burger {
-			left: calc(-748px - calc(100vw - 768px) / 2);
-			display: flex;
+			left: -748px;
+			display: block;
 			opacity: 1;
 		}
 
-		.nav__img-container {
-			padding: 24px 0 0 10px;
+		&__img-container {
+			pointer-events: none;
+			width: 658px;
+			padding: 24px 0 35px;
+			margin-left: 10px;
 			display: flex;
 			flex-wrap: wrap;
 			gap: 20px;
+			border-bottom: 1px solid white;
+		}
+
+		&__footer {
+			width: 658px;
+			display: block;
+			margin-left: 10px;
+			padding-top: 35px;
+		}
+
+		&__footer-container {
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			width: 340px;
 		}
 	}
 }
@@ -316,24 +346,23 @@ a:active {
 		z-index: -3;
 		max-width: 1000px;
 		max-height: 750px;
+		overflow: hidden;
 
 		&::before {
 			position: absolute;
 			content: '';
-			top: 0;
+			top: -100px;
 			left: 0;
 			width: 100%;
-			height: 101%;
+			height: calc(101% + 100px);
 			box-shadow: inset 100px 0px 100px #000;
 			z-index: 1;
 		}
 
 		img {
-			max-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			object-fit: contain;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 
