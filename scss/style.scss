@@ -66,6 +66,11 @@ html {
 		font-size: 40px;
 		line-height: 60px;
 	}
+
+	@media (max-width: 767px) {
+		font-size: 28px;
+		line-height: 40px;
+	}
 }
 
 a {
@@ -118,6 +123,19 @@ a:active {
 				margin-top: 10px;
 			}
 		}
+	}
+
+	@media (max-width: 767px) {
+		height: 90px;
+
+		h1 {
+			font-size: 16px;
+			line-height: 18px;
+			margin-top: 0px;
+			background: url("../assets/svg/logo.svg") 0 -1px/29px 16px no-repeat;
+			padding-left: 54px;
+		}
+
 	}
 }
 
@@ -522,6 +540,38 @@ a:active {
 			background: black;
 		}
 	}
+
+	@media (max-width: 767px) {
+
+		&__container {
+			height: 539px;
+		}
+
+		&__title {
+			margin-top: 5px;
+
+			& span {
+
+				&:first-child {
+					padding-right: 6px;
+				}
+
+				&:last-child {
+					padding-left: 6px;
+				}
+			}
+		}
+
+		&__text {
+			margin-bottom: 50px;
+			font-size: 16px;
+			line-height: 19px;
+		}
+
+		&__swiper {
+			height: 80px;
+		}
+	}
 }
 
 .swiper {
@@ -590,6 +640,11 @@ a:active {
 		transition: fill 0.5s ease 0s;
 		cursor: pointer;
 
+		& svg {
+			width: 30px;
+			height: 8px;
+		}
+
 		&:hover svg path {
 			fill: var(--font-gold);
 		}
@@ -598,6 +653,11 @@ a:active {
 	&__btn-right {
 		transition: fill 0.5s ease 0s;
 		cursor: pointer;
+
+		& svg {
+			width: 30px;
+			height: 8px;
+		}
 
 		&:hover svg path {
 			fill: var(--font-gold);
@@ -608,9 +668,6 @@ a:active {
 
 		&__container {
 			margin-left: 150px;
-		}
-
-		&__container {
 			max-width: 420px;
 			width: 100%;
 			display: flex;
@@ -637,6 +694,49 @@ a:active {
 	@media (max-width: 1023px) {
 		&__container {
 			margin-left: 0px;
+		}
+	}
+
+	@media (max-width: 767px) {
+
+		&__container {
+			max-width: 245px;
+			margin: 0 auto;
+		}
+
+		&__count {
+			font-size: 16px;
+			letter-spacing: 0px;
+		}
+
+		&__dots {
+			max-width: 75px;
+			max-height: 7px;
+		}
+
+		&__dot {
+			width: 7px;
+			height: 100%;
+		}
+
+		&__arrows {
+			width: 70px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__btn-left {
+			& svg {
+				width: 20px;
+				height: 8px;
+			}
+		}
+
+		&__btn-right {
+			& svg {
+				width: 20px;
+				height: 8px;
+			}
 		}
 	}
 }
@@ -693,6 +793,20 @@ a:active {
 
 			&::before {
 				top: 85px;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__container {
+			padding: 25px 0 40px 0;
+		}
+
+		&__title {
+			padding-bottom: 48px;
+
+			&::before {
+				top: 75px;
 			}
 		}
 	}
@@ -852,12 +966,37 @@ a:active {
 	@media (max-width: 767px) {
 
 		&__container {
-			display: grid;
-			column-gap: 108px;
-			row-gap: 58px;
+			column-gap: 0;
+			row-gap: 39.5px;
 			grid-template-columns: repeat(auto-fit, minmax(120px, 330px));
 			width: 280px;
 			margin: 0 auto;
+		}
+
+		&__title {
+			font-size: 18px;
+			line-height: 20px;
+			letter-spacing: 5px;
+
+			&::before {
+				top: 29px;
+				width: 54%;
+			}
+		}
+
+		&__text {
+			font-size: 16px;
+			line-height: 19px;
+
+		}
+
+		&__subtext {
+			font-size: 16px;
+			line-height: 19px;
+		}
+
+		&__img {
+			padding-bottom: 24px;
 		}
 	}
 }
@@ -985,7 +1124,7 @@ a:active {
 
 		&__title {
 			line-height: 45px;
-			padding-bottom: 70px;
+			padding-bottom: 69px;
 
 			&::before {
 				top: 72px;
@@ -998,7 +1137,22 @@ a:active {
 
 		&__img {
 			max-width: 728px;
-			height: 705px;
+			max-height: 705px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__container {
+			padding: 38px 0 40px 0;
+		}
+
+		&__title {
+			line-height: 45px;
+			padding-bottom: 59px;
+
+			&::before {
+				top: 62px;
+			}
 		}
 	}
 }
@@ -1067,6 +1221,10 @@ a:active {
 		&__content {
 			display: none;
 		}
+
+		&__title-container {
+			min-width: auto;
+		}
 	}
 
 	@media (max-width: 1023px) {
@@ -1091,9 +1249,18 @@ a:active {
 		}
 	}
 
-	@media (max-width: 1480px) {
-		&__title-container {
-			min-width: auto;
+	@media (max-width: 767px) {
+		&__container {
+			padding: 19px 0 22px 0;
+		}
+
+		&__header {
+			padding-bottom: 2px;
+		}
+
+		&__core {
+			aspect-ratio: 1440 / 845;
+			margin-bottom: 40px;
 		}
 	}
 }
@@ -1318,6 +1485,76 @@ a:active {
 			}
 		}
 	}
+
+	@media (max-width: 767px) {
+		height: 50px;
+		padding: 0 5px;
+
+		& div,
+		& button {
+			margin: 0 15px;
+			padding-top: 2.5px;
+		}
+
+		& div {
+			padding-top: 0;
+		}
+
+		&__big-play {
+			& svg {
+				transform: translate(0, -53.333%);
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		&__progress {
+			position: absolute;
+			top: -4px;
+
+			input {
+				height: 4px;
+
+				&::-webkit-slider-thumb {
+					width: 10px;
+					height: 10px;
+				}
+			}
+		}
+
+		&__volume-progress {
+
+			input {
+				height: 4px;
+
+				&::-webkit-slider-thumb {
+					width: 10px;
+					height: 10px;
+				}
+			}
+		}
+
+		&__volume {
+			svg {
+				width: 18px;
+				height: 14px;
+			}
+		}
+
+		&__play {
+			svg {
+				width: 13px;
+				height: 17px;
+			}
+		}
+
+		&__fullscreen {
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
 }
 
 
@@ -1423,6 +1660,31 @@ a:active {
 			height: 10px;
 		}
 	}
+
+	@media (max-width: 767px) {
+		&__videos {
+			margin-bottom: 23px;
+		}
+
+		&__dots {
+			width: 120px;
+			top: -18px;
+		}
+
+		&__dot {
+			width: 8px;
+			height: 8px;
+		}
+
+		&__arrows {
+			width: 180px;
+
+			& button {
+				font-size: 20px;
+				line-height: 32px;
+			}
+		}
+	}
 }
 
 /*Video section*/
@@ -1484,6 +1746,10 @@ a:active {
 		&__container {
 			height: 1460px;
 			padding-top: 53px;
+
+			&::before {
+				box-shadow: inset 0 -125px 125px #000;
+			}
 		}
 
 		&__title {
@@ -1504,6 +1770,10 @@ a:active {
 		&__container {
 			height: 1220px;
 			padding-top: 40px;
+
+			&::before {
+				box-shadow: inset 0 -100px 100px #000;
+			}
 		}
 
 		&__title {
@@ -1528,6 +1798,21 @@ a:active {
 
 		&__art {
 			max-width: 352px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__container {
+			height: 757px;
+			padding-top: 40px;
+
+			&::before {
+				box-shadow: inset 0 -75px 75px #000;
+			}
+		}
+
+		&__art {
+			max-width: 178px;
 		}
 	}
 }
@@ -1745,6 +2030,24 @@ a:active {
 	}
 
 	@media (max-width: 767px) {
+
+		&__ticket {
+			width: 100%;
+			padding-left: 0;
+		}
+
+		&__container {
+			padding: 41px 0 40px 0;
+		}
+
+		&__title {
+			padding-bottom: 62px;
+
+			&::before {
+				top: 60px;
+			}
+		}
+
 		&__body {
 			flex-direction: column;
 		}
@@ -1752,6 +2055,32 @@ a:active {
 		&__wallpaper {
 			min-width: 380px;
 			height: 160px;
+		}
+
+		&__amount {
+			margin-top: 40px;
+			margin: 40px auto 0 auto;
+
+			h5 {
+				text-align: center;
+				padding-bottom: 20px;
+				font-size: 16px;
+				line-height: 19px;
+			}
+		}
+
+		&__total {
+			font-size: 16px;
+			line-height: 19px;
+			text-align: center;
+			margin: 0;
+			width: auto;
+			letter-spacing: 0.5px;
+		}
+
+		&__buy-btn {
+			line-height: 50px;
+			font-size: 16px;
 		}
 	}
 }
@@ -1885,6 +2214,19 @@ a:active {
 	@media (max-width: 1023px) {
 		&__container {
 			margin-bottom: 25px;
+		}
+	}
+
+	@media (max-width: 767px) {
+
+		h6 {
+			font-size: 16px;
+			line-height: 19px;
+			padding-bottom: 16px;
+		}
+
+		&__container {
+			margin-bottom: 19px;
 		}
 	}
 }
@@ -2733,6 +3075,30 @@ a:active {
 
 	@media (max-width: 767px) {
 
+		&__container {
+			padding: 41px 0 40px 0;
+		}
+
+		&__title {
+
+			&::before {
+				top: 59px;
+			}
+		}
+
+		&__contact {
+
+			h5 {
+				font-size: 16px;
+				line-height: 19px;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 19px;
+			}
+		}
+
 		&__location {
 			width: 380px;
 			height: 248px;
@@ -2882,6 +3248,59 @@ a:active {
 			height: 103px;
 		}
 	}
+
+	@media (max-width: 767px) {
+
+		&__menu {
+			height: 297px;
+			padding-top: 41px;
+			border-bottom: 2px solid white;
+		}
+
+		&__logo {
+
+			h6 {
+				font-size: 16px;
+				line-height: 18px;
+				background: url("../assets/svg/logo.svg") 0 -1px/29px 16px no-repeat;
+				padding-left: 49px;
+			}
+		}
+
+		&__nav {
+			flex: 0 0 123.5%;
+		}
+
+		&__links {
+			flex: 0 0 87.6%;
+			height: 60px;
+		}
+
+		&__body {
+			height: 103px;
+			font-size: 16px;
+
+			& p {
+				&:nth-child(2) {
+					display: none;
+				}
+			}
+		}
+
+		&__links {
+			flex: 0 0 84.3%;
+			width: 100%;
+			height: 57px;
+		}
+
+		&__links-container {
+			display: flex;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 260px;
+		}
+	}
 }
 
 .footer-nav {
@@ -2926,6 +3345,22 @@ a:active {
 				margin-bottom: 20px;
 				font-size: 18px;
 				padding-left: 99px;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__list {
+			margin-top: 40px;
+			padding-top: 0px;
+			height: 100px;
+
+			li {
+				width: auto;
+				padding-left: 0px;
+				font-size: 16px;
+				line-height: 19px;
+				margin-bottom: 30px;
 			}
 		}
 	}
