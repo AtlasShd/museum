@@ -1,13 +1,6 @@
 @import "_cleaning";
 @import url(https://fonts.googleapis.com/css?family=Forum:regular);
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
-
-//@import url(https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@300;400;500;700&display=swap);
-// REMOVE LATER!!!
-
-//* {transition: all 1s ease 0s;}
-
-// REMOVE LATER!!!
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,regular,500,700,900);
 
 :root {
 	--bg-dark: #030303;
@@ -333,6 +326,48 @@ a:active {
 			display: flex;
 			justify-content: space-between;
 			width: 340px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__list {
+			left: calc(-400px - 100vw - ((100vw - 380px) / 2)); //*ширина контейнера + *ширина экрана* + *ширина от края экрана до контейнера*
+			width: 382px;
+			margin-top: -42px;
+			height: 543px;
+			padding-left: 25px;
+		}
+
+		.show-burger {
+			left: -381px;
+		}
+
+		&__img-container {
+			max-width: 311px;
+			width: 100%;
+			padding: 24px 0 19px;
+			gap: 13px
+		}
+
+		&__img-item {
+			width: 95px;
+			height: 95px;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__footer {
+			width: 100%;
+			max-width: 310px;
+			padding-top: 23px;
+		}
+
+		&__footer-container {
+			width: 260px;
 		}
 	}
 }
@@ -1716,10 +1751,7 @@ a:active {
 
 	&__content {
 		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
 		column-gap: 36px;
-		height: 2600px;
 	}
 
 	&__column {
@@ -1755,14 +1787,6 @@ a:active {
 		&__title {
 			padding-bottom: 52px;
 		}
-
-		&__content {
-			height: 1800px;
-		}
-
-		&__art {
-			max-width: 304px;
-		}
 	}
 
 	@media (max-width: 1023px) {
@@ -1795,10 +1819,6 @@ a:active {
 				margin-top: 50px;
 			}
 		}
-
-		&__art {
-			max-width: 352px;
-		}
 	}
 
 	@media (max-width: 767px) {
@@ -1809,10 +1829,6 @@ a:active {
 			&::before {
 				box-shadow: inset 0 -75px 75px #000;
 			}
-		}
-
-		&__art {
-			max-width: 178px;
 		}
 	}
 }
@@ -2053,7 +2069,8 @@ a:active {
 		}
 
 		&__wallpaper {
-			min-width: 380px;
+			min-width: auto;
+			max-width: 380px;
 			height: 160px;
 		}
 
@@ -2331,6 +2348,22 @@ a:active {
 			cursor: pointer;
 		}
 	}
+
+	@media (max-width: 767px) {
+		&__container {
+			max-width: 420px;
+			max-height: 1754px;
+			padding: 80px 30px 50px 30px;
+		}
+
+		&__left {
+			min-width: 280px;
+		}
+
+		&__right {
+			min-width: 280px;
+		}
+	}
 }
 
 .left-form {
@@ -2426,6 +2459,19 @@ a:active {
 			column-gap: 28px;
 		}
 	}
+
+	@media (max-width: 767px) {
+		&__title {
+			font-size: 32px;
+			line-height: 30px;
+		}
+
+		&__date-time {
+			display: block;
+			justify-content: space-between;
+			column-gap: 20px;
+		}
+	}
 }
 
 .input-container {
@@ -2436,20 +2482,6 @@ a:active {
 	position: relative;
 
 	&__date,
-	&__time {
-		flex: 1 1 50%;
-
-		input {
-			max-width: 136px;
-
-			&::-webkit-calendar-picker-indicator {
-				margin: 0;
-				padding: 0;
-				background: url('../assets/svg/tickets-form/arrow.svg') no-repeat left;
-			}
-		}
-	}
-
 	&__time {
 		flex: 1 1 50%;
 
@@ -2482,6 +2514,24 @@ a:active {
 				max-width: 195px;
 			}
 		}
+	}
+
+	@media (max-width: 767px) {
+
+		&__time {
+
+			input {
+				max-width: 304px;
+			}
+		}
+
+		&__date {
+			margin-bottom: 20px;
+
+			input {
+				max-width: 307px;
+			}
+		}
 
 	}
 }
@@ -2501,6 +2551,10 @@ a:active {
 	line-height: 15px;
 	letter-spacing: 0em;
 	text-align: left;
+
+	@media (max-width: 767px) {
+		top: 10px;
+	}
 }
 
 .time-input {
@@ -2518,6 +2572,10 @@ a:active {
 	line-height: 15px;
 	letter-spacing: 0em;
 	text-align: left;
+
+	@media (max-width: 767px) {
+		top: 10px;
+	}
 }
 
 .entry-ticket {
@@ -2689,6 +2747,20 @@ a:active {
 			padding-top: 0px;
 		}
 	}
+
+	@media (max-width: 767px) {
+
+		&__card-container {
+			padding-bottom: 85px;
+		}
+
+		&__img {
+			display: block;
+			float: right;
+			width: 120px;
+			height: 96px;
+		}
+	}
 }
 
 .full-price {
@@ -2839,6 +2911,31 @@ a:active {
 			height: 35px;
 		}
 	}
+
+	@media (max-width: 767px) {
+		width: 330px;
+		height: 209px;
+		padding: 15px 20px;
+		margin-bottom: 25px;
+
+		p {
+			font-size: 11px;
+			line-height: 13px;
+			margin-bottom: 5px;
+		}
+
+		input,
+		select {
+			padding-left: 11px;
+		}
+
+		&__cardholder-name {
+			input {
+				width: 290px;
+				height: 35px;
+			}
+		}
+	}
 }
 
 .form-card2 {
@@ -2885,6 +2982,36 @@ a:active {
 			display: block;
 			font-size: 10px;
 			padding: 6px 0 0 9px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 330px;
+		height: 209px;
+
+		&__cvc-cvv {
+			line-height: 13px;
+
+			h6 {
+				font-size: 13px;
+				padding: 0 0 8px 9px;
+			}
+
+			input {
+				width: 75px;
+				height: 35px;
+				padding: 0 0 8px 9px;
+			}
+
+			p {
+				display: block;
+				font-size: 9px;
+				padding: 5px 0 0 15px;
+				line-height: 11px;
+			}
 		}
 	}
 }
@@ -3100,7 +3227,8 @@ a:active {
 		}
 
 		&__location {
-			width: 380px;
+			width: auto;
+			max-width: 380px;
 			height: 248px;
 		}
 	}
