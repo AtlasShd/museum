@@ -3099,7 +3099,7 @@ a:active {
 /*Tickets form*/
 /*Parallax section*/
 .parallax {
-  background: url("../assets/img/parallax.jpg") center/cover no-repeat;
+  background: url("../assets/img/parallax.webp") center/cover no-repeat;
   background-attachment: fixed;
   height: 400px;
   width: 100%;

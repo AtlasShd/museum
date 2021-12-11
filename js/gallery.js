@@ -9,6 +9,6 @@ window.addEventListener('DOMContentLoaded', function () {
 			randomNumber = Math.floor(Math.random() * 15) + 1;
 		} while (uniqueNumbers.indexOf(randomNumber) != -1);
 		uniqueNumbers.push(randomNumber);
-		item.src = `assets/img/galery/galery${randomNumber}.jpg`;
+		item.src = `assets/img/galery/galery${randomNumber}.webp`;
 	});
 });
