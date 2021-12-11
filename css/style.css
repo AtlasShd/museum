@@ -1,7 +1,5 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url(https://fonts.googleapis.com/css?family=Forum:regular);
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,regular,500,700,900);
 * {
   padding: 0;
   margin: 0;
