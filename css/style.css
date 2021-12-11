@@ -1120,10 +1120,10 @@ a:active {
 @media (max-width: 767px) {
   .cards__container {
     row-gap: 39.5px;
-    -ms-grid-columns: (minmax(120px, 420px))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(120px, 420px));
-    max-width: 450px;
-    width: calc(100vw - 40px);
+    -ms-grid-columns: (minmax(120px, 280px))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(120px, 280px));
+    max-width: 280px;
+    width: auto;
     margin: 0 auto;
     padding-bottom: 0;
   }
@@ -2305,6 +2305,7 @@ a:active {
   padding: 91px 235px 91px 235px;
   pointer-events: auto;
   position: relative;
+  overflow-y: auto;
 }
 
 .tickets-form__content {
@@ -2354,7 +2355,6 @@ a:active {
     max-width: 590px;
     max-height: 1479px;
     padding: 80px 30px 40px 30px;
-    overflow-y: auto;
   }
   .tickets-form__content {
     -webkit-box-orient: vertical;
