@@ -23,19 +23,18 @@ html {
 }
 
 .container {
-	max-width: 1440px;
+	max-width: 1480px;
 	margin: 0 auto;
+	padding: 75px 20px;
 
 	@media (max-width: 1480px) {
-		max-width: 984px;
+		max-width: 1024px;
+		padding: 60px 20px;
 	}
 
 	@media (max-width: 1023px) {
-		max-width: 728px;
-	}
-
-	@media (max-width: 767px) {
-		max-width: 380px;
+		max-width: 768px;
+		padding: 40px 20px;
 	}
 }
 
@@ -53,6 +52,8 @@ html {
 
 	@media (max-width: 1480px) {
 		font-size: 50px;
+		line-height: 75px;
+
 	}
 
 	@media (max-width: 1023px) {
@@ -87,6 +88,7 @@ a:active {
 		justify-content: space-between;
 		height: 100%;
 		align-items: center;
+		padding: 0 20px;
 	}
 
 	&__logo {
@@ -149,6 +151,10 @@ a:active {
 				line-height: 26px;
 				letter-spacing: 2px;
 				font-weight: 200;
+
+				&:last-child {
+					width: 102px;
+				}
 			}
 		}
 	}
@@ -330,45 +336,63 @@ a:active {
 	}
 
 	@media (max-width: 767px) {
+
 		&__list {
-			left: calc(-400px - 100vw - ((100vw - 380px) / 2)); //*ширина контейнера + *ширина экрана* + *ширина от края экрана до контейнера*
-			width: 382px;
+			left: calc(-440px - 100vw - ((100vw - 380px) / 2)); //*ширина контейнера + *ширина экрана* + *ширина от края экрана до контейнера*
+			width: calc(100vw - 36px);
 			margin-top: -42px;
-			height: 543px;
+			height: calc(861px - (742px - 100vw));
 			padding-left: 25px;
 		}
 
 		.show-burger {
-			left: -381px;
+			left: calc(-729px + (767px - 100vw));
 		}
 
 		&__img-container {
-			max-width: 311px;
-			width: 100%;
+			flex-wrap: nowrap;
+			max-width: 700px;
+			width: calc(100% - 48px);
 			padding: 24px 0 19px;
-			gap: 13px
+			gap: 13px;
 		}
 
 		&__img-item {
-			width: 95px;
-			height: 95px;
+			flex: 1 1 33.33%;
 
 			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
+				aspect-ratio: 1;
 			}
 		}
 
 		&__footer {
-			width: 100%;
-			max-width: 310px;
+			width: calc(100% - 48px);
 			padding-top: 23px;
+			height: 17.5vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
 		}
 
 		&__footer-container {
-			width: 260px;
+			width: 83%;
+			height: 100px;
 		}
+	}
+
+	@media (max-width: 419px) {
+
+		&__img-container {
+			border-bottom: none;
+		}
+
+		&__footer {
+			display: none;
+		}
+
 	}
 }
 
@@ -380,6 +404,7 @@ a:active {
 
 	&__container {
 		height: 810px;
+		padding: 0 20px;
 	}
 
 	&__body {
@@ -491,6 +516,7 @@ a:active {
 
 		&__title {
 			padding-top: 50px;
+			line-height: 90px;
 		}
 
 		&__text {
@@ -556,6 +582,7 @@ a:active {
 		&__title {
 			padding-top: 0px;
 			text-align: center;
+			line-height: 60px;
 		}
 
 		&__text {
@@ -579,11 +606,12 @@ a:active {
 	@media (max-width: 767px) {
 
 		&__container {
-			height: 539px;
+			height: calc(861px - (742px - 100vw));
 		}
 
 		&__title {
 			margin-top: 5px;
+			line-height: 40px;
 
 			& span {
 
@@ -781,10 +809,6 @@ a:active {
 /*Visiting section*/
 .Visiting {
 
-	&__container {
-		padding: 73px 0 72px 0;
-	}
-
 	&__title {
 		color: var(--font-gold);
 		position: relative;
@@ -803,13 +827,8 @@ a:active {
 
 	@media (max-width: 1480px) {
 
-		&__container {
-			padding: 60px 0 60px 0;
-		}
-
 		&__title {
 			padding-bottom: 83px;
-			line-height: 75px;
 
 			&::before {
 				top: 95px;
@@ -818,30 +837,23 @@ a:active {
 	}
 
 	@media (max-width: 1023px) {
-		&__container {
-			padding: 35px 0 80px 0;
-		}
 
 		&__title {
-			padding-bottom: 57px;
-			line-height: 70px;
+			padding-bottom: 62px;
 
 			&::before {
-				top: 85px;
+				top: 80px;
 			}
 		}
 	}
 
 	@media (max-width: 767px) {
-		&__container {
-			padding: 25px 0 40px 0;
-		}
 
 		&__title {
-			padding-bottom: 48px;
+			padding-bottom: 63px;
 
 			&::before {
-				top: 75px;
+				top: 60px;
 			}
 		}
 	}
@@ -852,7 +864,7 @@ a:active {
 	&__container {
 		display: grid;
 		column-gap: 60px;
-		row-gap: 73px;
+		row-gap: 75px;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 440px));
 	}
 
@@ -865,7 +877,7 @@ a:active {
 	}
 
 	&__img {
-		padding-bottom: 26px;
+		padding-bottom: 24px;
 
 		img {
 			width: 100%;
@@ -973,6 +985,7 @@ a:active {
 			grid-template-columns: repeat(auto-fit, minmax(100px, 280px));
 			width: 616px;
 			margin: 0 auto;
+			padding-bottom: 40px;
 		}
 
 		&__title {
@@ -1001,11 +1014,12 @@ a:active {
 	@media (max-width: 767px) {
 
 		&__container {
-			column-gap: 0;
 			row-gap: 39.5px;
-			grid-template-columns: repeat(auto-fit, minmax(120px, 330px));
-			width: 280px;
+			grid-template-columns: repeat(auto-fit, minmax(120px, 420px));
+			max-width: 450px;
+			width: calc(100vw - 40px);
 			margin: 0 auto;
+			padding-bottom: 0;
 		}
 
 		&__title {
@@ -1052,7 +1066,6 @@ a:active {
 
 	&__container {
 		display: flex;
-		padding: 90px 0 75px 0;
 	}
 
 	&__content {
@@ -1060,14 +1073,13 @@ a:active {
 	}
 
 	&__title {
-		line-height: 60px;
-		padding-bottom: 120px;
+		padding-bottom: 102px;
 		position: relative;
 
 		&::before {
 			position: absolute;
 			content: '';
-			top: 99px;
+			top: 115px;
 			left: 0;
 			width: 100.4%;
 			height: 3px;
@@ -1092,6 +1104,7 @@ a:active {
 	}
 
 	&__img {
+		margin-top: 15px;
 		width: 100%;
 		max-width: 720px;
 		height: 100%;
@@ -1106,7 +1119,6 @@ a:active {
 
 		&__container {
 			flex-wrap: wrap;
-			padding: 75px 0 60px 0;
 		}
 
 		&__content {
@@ -1115,11 +1127,10 @@ a:active {
 		}
 
 		&__title {
-			line-height: 45px;
-			padding-bottom: 99px;
+			padding-bottom: 85px;
 
 			&::before {
-				top: 79px;
+				top: 95px;
 				width: 100%;
 			}
 		}
@@ -1148,9 +1159,6 @@ a:active {
 	}
 
 	@media (max-width: 1023px) {
-		&__container {
-			padding: 48px 0 40px 0;
-		}
 
 		&__content {
 			width: 100%;
@@ -1158,11 +1166,10 @@ a:active {
 		}
 
 		&__title {
-			line-height: 45px;
-			padding-bottom: 69px;
+			padding-bottom: 63px;
 
 			&::before {
-				top: 72px;
+				top: 80px;
 			}
 		}
 
@@ -1177,16 +1184,12 @@ a:active {
 	}
 
 	@media (max-width: 767px) {
-		&__container {
-			padding: 38px 0 40px 0;
-		}
 
 		&__title {
-			line-height: 45px;
-			padding-bottom: 59px;
+			padding-bottom: 62px;
 
 			&::before {
-				top: 62px;
+				top: 60px;
 			}
 		}
 	}
@@ -1198,12 +1201,12 @@ a:active {
 .Video {
 
 	&__container {
-		padding: 80px 0 56px 0;
+		padding-bottom: 55px;
 	}
 
 	&__header {
 		display: flex;
-		padding-bottom: 75px;
+		padding-bottom: 74px;
 	}
 
 	&__title-container {
@@ -1212,11 +1215,10 @@ a:active {
 
 	&__title {
 		color: var(--font-gold);
-		line-height: 85px;
 	}
 
 	&__content {
-		margin-top: 2px;
+		margin-top: 5px;
 		font-family: Roboto;
 		font-size: 22px;
 		font-style: normal;
@@ -1228,7 +1230,7 @@ a:active {
 	}
 
 	&__core {
-		aspect-ratio: 1440 / 734;
+		aspect-ratio: 1440 / 735;
 		margin-bottom: 38px;
 		position: relative;
 
@@ -1242,15 +1244,15 @@ a:active {
 	@media (max-width: 1480px) {
 
 		&__container {
-			padding: 60px 0 40px 0;
+			padding-bottom: 40px;
+		}
+
+		&__core {
+			aspect-ratio: 984 / 504;
 		}
 
 		&__header {
 			padding-bottom: 40px;
-		}
-
-		&__title {
-			line-height: 75px;
 		}
 
 		&__content {
@@ -1264,37 +1266,32 @@ a:active {
 
 	@media (max-width: 1023px) {
 
+		&__container {
+			padding-bottom: 62px;
+		}
+
 		&__core {
 			aspect-ratio: 1440 / 754;
 			margin-bottom: 20px;
-
-			video {
-				object-fit: cover;
-				width: 100%;
-				height: 100%;
-			}
-		}
-
-		&__container {
-			padding: 33px 0 63px 0;
 		}
 
 		&__header {
-			padding-bottom: 12px;
+			padding-bottom: 20px;
 		}
 	}
 
 	@media (max-width: 767px) {
+
 		&__container {
-			padding: 19px 0 22px 0;
+			padding-bottom: 20px;
 		}
 
-		&__header {
-			padding-bottom: 2px;
+		&__title {
+			line-height: 35px;
 		}
 
 		&__core {
-			aspect-ratio: 1440 / 845;
+			aspect-ratio: 380 / 226;
 			margin-bottom: 40px;
 		}
 	}
@@ -1599,7 +1596,7 @@ a:active {
 		display: grid;
 		column-gap: 42px;
 		grid-template-columns: repeat(3, minmax(100px, 452px));
-		margin-bottom: 28px;
+		margin-bottom: 25px;
 	}
 
 	&__video {
@@ -1731,7 +1728,6 @@ a:active {
 		position: relative;
 		overflow: hidden;
 		height: 2200px;
-		padding-top: 75px;
 
 		&::before {
 			position: absolute;
@@ -1777,7 +1773,6 @@ a:active {
 	@media (max-width: 1480px) {
 		&__container {
 			height: 1460px;
-			padding-top: 53px;
 
 			&::before {
 				box-shadow: inset 0 -125px 125px #000;
@@ -1785,7 +1780,7 @@ a:active {
 		}
 
 		&__title {
-			padding-bottom: 52px;
+			padding-bottom: 59px;
 		}
 	}
 
@@ -1793,7 +1788,6 @@ a:active {
 
 		&__container {
 			height: 1220px;
-			padding-top: 40px;
 
 			&::before {
 				box-shadow: inset 0 -100px 100px #000;
@@ -1824,7 +1818,6 @@ a:active {
 	@media (max-width: 767px) {
 		&__container {
 			height: 757px;
-			padding-top: 40px;
 
 			&::before {
 				box-shadow: inset 0 -75px 75px #000;
@@ -1839,10 +1832,6 @@ a:active {
 
 .Tickets {
 	position: relative;
-
-	&__container {
-		padding: 75px 0 75px 0;
-	}
 
 	&__title {
 		color: var(--font-gold);
@@ -1972,15 +1961,11 @@ a:active {
 
 	@media (max-width: 1480px) {
 
-		&__container {
-			padding: 53px 0 60px 0;
-		}
-
 		&__title {
-			padding-bottom: 75px;
+			padding-bottom: 82px;
 
 			&::before {
-				top: 101px;
+				top: 94px;
 			}
 		}
 
@@ -2012,9 +1997,6 @@ a:active {
 	}
 
 	@media (max-width: 1023px) {
-		&__container {
-			padding: 40px 0 40px 0;
-		}
 
 		&__title {
 			padding-bottom: 64px;
@@ -2052,10 +2034,6 @@ a:active {
 			padding-left: 0;
 		}
 
-		&__container {
-			padding: 41px 0 40px 0;
-		}
-
 		&__title {
 			padding-bottom: 62px;
 
@@ -2070,8 +2048,14 @@ a:active {
 
 		&__wallpaper {
 			min-width: auto;
-			max-width: 380px;
-			height: 160px;
+			height: auto;
+
+			img {
+				aspect-ratio: 380 / 160;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 
 		&__amount {
@@ -2357,11 +2341,11 @@ a:active {
 		}
 
 		&__left {
-			min-width: 280px;
+			min-width: 260px;
 		}
 
 		&__right {
-			min-width: 280px;
+			min-width: 260px;
 		}
 	}
 }
@@ -2872,13 +2856,26 @@ a:active {
 	&__content {}
 
 	&__imgs {
-		width: 100%;
+		padding-left: 10px;
+		width: auto;
 		height: 100%;
 		padding-top: 19px;
+		display: flex;
+		flex-direction: column;
+		justify-content: right;
 
 		img {
-			float: right;
 			margin-bottom: 15px;
+
+			&:first-child {
+				width: 56px;
+				height: 18px;
+			}
+
+			&:last-child {
+				width: 56px;
+				height: 32px;
+			}
 		}
 	}
 
@@ -2913,7 +2910,8 @@ a:active {
 	}
 
 	@media (max-width: 767px) {
-		width: 330px;
+		width: 100%;
+		max-width: 330px;
 		height: 209px;
 		padding: 15px 20px;
 		margin-bottom: 25px;
@@ -2931,9 +2929,32 @@ a:active {
 
 		&__cardholder-name {
 			input {
-				width: 290px;
+				max-width: 290px;
+				width: 100%;
 				height: 35px;
 			}
+		}
+
+		&__card-number {
+
+			input {
+				width: 100%;
+				max-width: 215px;
+			}
+		}
+
+		&__date-time {
+
+			select {
+				width: 100%;
+				max-width: 100px;
+			}
+		}
+
+
+
+		&__content {
+			width: 100%;
 		}
 	}
 }
@@ -2989,7 +3010,8 @@ a:active {
 		position: relative;
 		top: 0;
 		left: 0;
-		width: 330px;
+		width: 100%;
+		max-width: 330px;
 		height: 209px;
 
 		&__cvc-cvv {
@@ -3048,10 +3070,6 @@ a:active {
 /*Contacts section*/
 .Contacts {
 
-	&__container {
-		padding: 75px 0 71px 0;
-	}
-
 	&__body {
 		display: flex;
 	}
@@ -3103,23 +3121,22 @@ a:active {
 	}
 
 	&__location {
-		flex: 1 1 auto;
+		max-width: 960px;
+		max-height: 620px;
 
 		img {
 			width: 100%;
+			height: 100%;
 		}
 	}
 
 	@media (max-width: 1480px) {
-		&__container {
-			padding: 53px 0 62px 0;
-		}
 
 		&__title {
-			padding-bottom: 75px;
+			padding-bottom: 83px;
 
 			&::before {
-				top: 102px;
+				top: 95px;
 			}
 		}
 
@@ -3153,8 +3170,9 @@ a:active {
 	}
 
 	@media (max-width: 1023px) {
+
 		&__container {
-			padding: 40px 0 67px 0;
+			padding-bottom: 69px;
 		}
 
 		&__body {
@@ -3203,7 +3221,7 @@ a:active {
 	@media (max-width: 767px) {
 
 		&__container {
-			padding: 41px 0 40px 0;
+			padding-bottom: 42px;
 		}
 
 		&__title {
@@ -3228,7 +3246,6 @@ a:active {
 
 		&__location {
 			width: auto;
-			max-width: 380px;
 			height: 248px;
 		}
 	}
@@ -3242,6 +3259,7 @@ a:active {
 
 	&__container {
 		display: flex;
+		padding: 0 20px;
 	}
 
 	&__menu {
@@ -3319,6 +3337,7 @@ a:active {
 		line-height: 22px;
 		letter-spacing: 2px;
 		align-items: center;
+		padding: 0 20px;
 
 		p {
 			display: inline-block;
@@ -3399,11 +3418,6 @@ a:active {
 			flex: 0 0 123.5%;
 		}
 
-		&__links {
-			flex: 0 0 87.6%;
-			height: 60px;
-		}
-
 		&__body {
 			height: 103px;
 			font-size: 16px;
@@ -3426,7 +3440,7 @@ a:active {
 			position: absolute;
 			bottom: 0;
 			right: 0;
-			width: 260px;
+			width: 62vw;
 		}
 	}
 }

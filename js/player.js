@@ -1,5 +1,3 @@
-window.addEventListener('DOMContentLoaded', function () {
-
 	const video = document.querySelector('.Video__video'),
 		play = document.querySelector('.controls__play'),
 		bigPlay = document.querySelector('.controls__big-play'),
@@ -84,4 +82,3 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	video.addEventListener('timeupdate', leftColor);
-});
