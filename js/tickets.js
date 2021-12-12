@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		formBasicInput = document.querySelector('#form-basic-input'),
 		formSeniorInput = document.querySelector('#form-senior-input');
 
-	const radios = document.querySelectorAll('.radio'),
+	const options = document.querySelector('#ticket-type'),
+		radios = document.querySelectorAll('.radio'),
 		ticketsTotal = document.querySelector('.Tickets__total'),
 		fullPriceBigPrice = document.querySelector('.full-price__big-price'),
 		fullPriceCountBasic = document.querySelector('.full-price__count_basic'),
@@ -59,6 +60,10 @@ window.addEventListener('DOMContentLoaded', function () {
 		setTotal();
 	}
 
+	options.onchange = function () {
+		document.querySelector(`input[value="${this.value}"]`).click();
+	};
+
 	radios.forEach(radio => {
 		radio.addEventListener('change', setTotal);
 	});
@@ -66,7 +71,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	function setTotal() {
 		const basicValue = basicInput.getAttribute('value'),
 			seniorValue = seniorInput.getAttribute('value'),
-			price = document.querySelector('input[name="ticket-type"]:checked').getAttribute('value');
+			price = getPrice(document.querySelector('input[name="ticket-type"]:checked'));
 
 		ticketsTotal.textContent = `Total €${basicValue * price + seniorValue * (price / 2)}`;
 		fullPriceBigPrice.textContent = `${basicValue * price + seniorValue * (price / 2)} €`;
@@ -84,7 +89,13 @@ window.addEventListener('DOMContentLoaded', function () {
 		fullPriceBlackBoxSenior.textContent = `${seniorValue}`;
 	}
 
-	setTotal()
+	function getPrice(element) {
+		const price = element.getAttribute('value');
+		options.value = `${price}`;
+		return price;
+	}
+
+	setTotal();
 
 	// riple effect
 	const ticketsBtn = document.querySelector('.Tickets__buy-btn');
