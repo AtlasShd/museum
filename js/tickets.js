@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
 		formBasicInput = document.querySelector('#form-basic-input'),
 		formSeniorInput = document.querySelector('#form-senior-input');
 
-	const options = document.querySelector('#ticket-type'),
-		radios = document.querySelectorAll('.radio'),
+	const radios = document.querySelectorAll('.radio'),
+		options = document.querySelector('#ticket-type'),
 		ticketsTotal = document.querySelector('.Tickets__total'),
 		fullPriceBigPrice = document.querySelector('.full-price__big-price'),
 		fullPriceCountBasic = document.querySelector('.full-price__count_basic'),
@@ -20,6 +20,12 @@ window.addEventListener('DOMContentLoaded', function () {
 		fullPriceTicketSenior = document.querySelector('.full-price__ticket_senior'),
 		fullPriceBlackBoxBasic = document.querySelector('.full-price__black-box_basic'),
 		fullPriceBlackBoxSenior = document.querySelector('.full-price__black-box_senior');
+
+	const timetableSelectedDate = document.querySelector('.timetable__selected-date'),
+		timetableSelectedTime = document.querySelector('.timetable__selected-time'),
+		timetableTicketType = document.querySelector('.timetable__ticket-type'),
+		leftFormDate = document.querySelector('.left-form__date'),
+		leftFormTime = document.querySelector('.left-form__time');
 
 	counterTickets.forEach((counter) => {
 		counter.firstElementChild.addEventListener('click', function (event) {
@@ -36,6 +42,21 @@ window.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
+	options.onchange = function () {
+		document.querySelector(`input[value="${this.value}"]`).click();
+	};
+
+	radios.forEach((radio) => {
+		radio.addEventListener('change', function () {
+			setTotal();
+			setTicketTypeInTimetable(this.lastChild.textContent);
+		});
+	});
+
+	leftFormDate.addEventListener('change', setDateInTimetable);
+
+	leftFormTime.addEventListener('change', setTimeInTimetable);
+
 	function changeValue(input, reductOrDeduct) {
 		const min = input.getAttribute('min'),
 			max = input.getAttribute('max'),
@@ -46,6 +67,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		if (newValue >= min && newValue <= max) {
 			setAllAtributes(input, newValue);
+			setTotal();
 		}
 	}
 
@@ -57,16 +79,45 @@ window.addEventListener('DOMContentLoaded', function () {
 			seniorInput.setAttribute('value', newValue);
 			formSeniorInput.setAttribute('value', newValue);
 		}
-		setTotal();
 	}
 
-	options.onchange = function () {
-		document.querySelector(`input[value="${this.value}"]`).click();
-	};
+	setMinDate();
 
-	radios.forEach(radio => {
-		radio.addEventListener('change', setTotal);
-	});
+	function setMinDate() {
+		const today = new Date();
+		leftFormDate.setAttribute('min', `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`);
+		leftFormDate.setAttribute('value', `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`);
+		setDateInTimetable();
+	}
+
+	setValueTime();
+
+	function setValueTime() {
+		const today = new Date();
+		leftFormTime.setAttribute('value', `${today.getHours() + 1}:30`);
+		setTimeInTimetable();
+	}
+
+	function setDateInTimetable() {
+		const date = new Date(leftFormDate.valueAsNumber);
+		const month = date.toLocaleDateString('en', { month: 'long' });
+		const dayOfWeek = date.toLocaleDateString('en', { weekday: 'long' });
+
+		timetableSelectedDate.textContent = `${dayOfWeek}, ${month} ${date.getDate()}`;
+	}
+
+	function setTimeInTimetable() {
+		const time = new Date(leftFormTime.valueAsNumber);
+
+		const doubleMinutes = String(time.getUTCMinutes()).length > 1 ? 0 + time.getUTCMinutes() : 0 + String(time.getUTCMinutes()),
+			doubleHours = String(time.getUTCHours()).length > 1 ? time.getUTCHours() : 0 + String(time.getUTCHours());
+
+		timetableSelectedTime.textContent = `${doubleHours} : ${doubleMinutes}`;
+	}
+
+	function setTicketTypeInTimetable(value) {
+		timetableTicketType.textContent = value;
+	}
 
 	function setTotal() {
 		const basicValue = basicInput.getAttribute('value'),
