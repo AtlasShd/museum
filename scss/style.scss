@@ -1950,11 +1950,14 @@ a:active {
 		font-weight: 700;
 		line-height: 33px;
 		letter-spacing: 1.65px;
-		text-align: left;
+		text-align: right;
 		display: block-inline;
-		width: 150px;
+		max-width: 150px;
 		margin-left: auto;
 		padding: 40px 0 60px 0;
+		white-space: nowrap;
+		display: flex;
+		justify-content: end;
 	}
 
 	@media (max-width: 1480px) {
@@ -1991,6 +1994,7 @@ a:active {
 		&__total {
 			margin: -5px 0 0;
 			padding: 0px 0 70px;
+			justify-content: start;
 		}
 	}
 
@@ -2178,13 +2182,7 @@ a:active {
 	&__button {
 		font-size: 36px;
 		background: none;
-
-		&_decrement {
-			position: relative;
-			bottom: 19px;
-		}
-
-		&_increment {}
+		width: 14px;
 	}
 
 	@media (max-width: 1480px) {
@@ -2201,12 +2199,6 @@ a:active {
 
 		&__input {
 			width: 102px;
-		}
-
-		&__button {
-			&_decrement {
-				bottom: 21px;
-			}
 		}
 	}
 

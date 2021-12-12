@@ -1,138 +1,90 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', function () {
+	const counterTickets = document.querySelectorAll('.counter');
+
 	const basicInput = document.querySelector('#basic-input'),
 		seniorInput = document.querySelector('#senior-input'),
 		formBasicInput = document.querySelector('#form-basic-input'),
-		formSeniorInput = document.querySelector('#form-senior-input'),
-		basicDecrement = document.querySelector('#basic-decrement'),
-		basicIncrement = document.querySelector('#basic-increment'),
-		seniorDecrement = document.querySelector('#senior-decrement'),
-		seniorIncrement = document.querySelector('#senior-increment'),
-		formBasicDecrement = document.querySelector('#form-basic-decrement'),
-		formBasicIncrement = document.querySelector('#form-basic-increment'),
-		formSeniorDecrement = document.querySelector('#form-senior-decrement'),
-		formSeniorIncrement = document.querySelector('#form-senior-increment');
+		formSeniorInput = document.querySelector('#form-senior-input');
 
-	basicDecrement.addEventListener('click', (e) => {
-		e.preventDefault();
+	const radios = document.querySelectorAll('.radio'),
+		ticketsTotal = document.querySelector('.Tickets__total'),
+		fullPriceBigPrice = document.querySelector('.full-price__big-price'),
+		fullPriceCountBasic = document.querySelector('.full-price__count_basic'),
+		fullPriceCountSenior = document.querySelector('.full-price__count_senior'),
+		entryTicketPriceBasic = document.querySelector('.entry-ticket__price_basic'),
+		entryTicketPriceSenior = document.querySelector('.entry-ticket__price_senior'),
+		fullPriceTicketBasic = document.querySelector('.full-price__ticket_basic'),
+		fullPriceTicketSenior = document.querySelector('.full-price__ticket_senior'),
+		fullPriceBlackBoxBasic = document.querySelector('.full-price__black-box_basic'),
+		fullPriceBlackBoxSenior = document.querySelector('.full-price__black-box_senior');
 
-		const min = basicInput.getAttribute('min');
-		const max = basicInput.getAttribute('max');
-		const step = basicInput.getAttribute('step');
-		const value = basicInput.getAttribute('value');
+	counterTickets.forEach((counter) => {
+		counter.firstElementChild.addEventListener('click', function (event) {
+			event.preventDefault();
+			const input = event.target.parentElement.querySelector('input'),
+				deduct = false;
+			changeValue(input, deduct);
+		});
+		counter.lastElementChild.addEventListener('click', function (event) {
+			event.preventDefault();
+			const input = event.target.parentElement.querySelector('input'),
+				reduct = true;
+			changeValue(input, reduct);
+		});
+	});
 
-		const newValue = parseInt(value) - +step;
+	function changeValue(input, reductOrDeduct) {
+		const min = input.getAttribute('min'),
+			max = input.getAttribute('max'),
+			step = input.getAttribute('step'),
+			value = input.getAttribute('value');
+
+		const newValue = reductOrDeduct ? parseInt(value) + parseInt(step) : parseInt(value) - parseInt(step);
 
 		if (newValue >= min && newValue <= max) {
+			setAllAtributes(input, newValue);
+		}
+	}
+
+	function setAllAtributes(input, newValue) {
+		if (input === basicInput || input === formBasicInput) {
 			basicInput.setAttribute('value', newValue);
-		}
-	});
-
-	basicIncrement.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const min = basicInput.getAttribute('min');
-		const max = basicInput.getAttribute('max');
-		const step = basicInput.getAttribute('step');
-		const value = basicInput.getAttribute('value');
-
-		const newValue = parseInt(value) + (+step);
-
-		if (newValue >= min && newValue <= max) {
-			basicInput.setAttribute('value', newValue);
-		}
-	});
-
-	seniorDecrement.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const min = seniorInput.getAttribute('min');
-		const max = seniorInput.getAttribute('max');
-		const step = seniorInput.getAttribute('step');
-		const value = seniorInput.getAttribute('value');
-
-		const newValue = parseInt(value) - +step;
-
-		if (newValue >= min && newValue <= max) {
-			seniorInput.setAttribute('value', newValue);
-		}
-	});
-
-	seniorIncrement.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const min = seniorInput.getAttribute('min');
-		const max = seniorInput.getAttribute('max');
-		const step = seniorInput.getAttribute('step');
-		const value = seniorInput.getAttribute('value');
-
-		const newValue = parseInt(value) + (+step);
-
-		if (newValue >= min && newValue <= max) {
-			seniorInput.setAttribute('value', newValue);
-		}
-	});
-
-	formBasicDecrement.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const min = formBasicInput.getAttribute('min');
-		const max = formBasicInput.getAttribute('max');
-		const step = formBasicInput.getAttribute('step');
-		const value = formBasicInput.getAttribute('value');
-
-		const newValue = parseInt(value) - +step;
-
-		if (newValue >= min && newValue <= max) {
 			formBasicInput.setAttribute('value', newValue);
-		}
-	});
-
-	formBasicIncrement.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const min = formBasicInput.getAttribute('min');
-		const max = formBasicInput.getAttribute('max');
-		const step = formBasicInput.getAttribute('step');
-		const value = formBasicInput.getAttribute('value');
-
-		const newValue = parseInt(value) + (+step);
-
-		if (newValue >= min && newValue <= max) {
-			formBasicInput.setAttribute('value', newValue);
-		}
-	});
-
-	formSeniorDecrement.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const min = formSeniorInput.getAttribute('min');
-		const max = formSeniorInput.getAttribute('max');
-		const step = formSeniorInput.getAttribute('step');
-		const value = formSeniorInput.getAttribute('value');
-
-		const newValue = parseInt(value) - +step;
-
-		if (newValue >= min && newValue <= max) {
+		} else {
+			seniorInput.setAttribute('value', newValue);
 			formSeniorInput.setAttribute('value', newValue);
 		}
+		setTotal();
+	}
+
+	radios.forEach(radio => {
+		radio.addEventListener('change', setTotal);
 	});
 
-	formSeniorIncrement.addEventListener('click', (e) => {
-		e.preventDefault();
+	function setTotal() {
+		const basicValue = basicInput.getAttribute('value'),
+			seniorValue = seniorInput.getAttribute('value'),
+			price = document.querySelector('input[name="ticket-type"]:checked').getAttribute('value');
 
-		const min = formSeniorInput.getAttribute('min');
-		const max = formSeniorInput.getAttribute('max');
-		const step = formSeniorInput.getAttribute('step');
-		const value = formSeniorInput.getAttribute('value');
+		ticketsTotal.textContent = `Total €${basicValue * price + seniorValue * (price / 2)}`;
+		fullPriceBigPrice.textContent = `${basicValue * price + seniorValue * (price / 2)} €`;
 
-		const newValue = parseInt(value) + (+step);
+		fullPriceCountBasic.textContent = `${basicValue * price} €`;
+		fullPriceCountSenior.textContent = `${seniorValue * (price / 2)} €`;
 
-		if (newValue >= min && newValue <= max) {
-			formSeniorInput.setAttribute('value', newValue);
-		}
-	});
+		entryTicketPriceBasic.textContent = `Basic 18+ (${price} €)`;
+		entryTicketPriceSenior.textContent = `Senior 65+ (${price / 2} €)`;
+
+		fullPriceTicketBasic.textContent = `Basic (${price} €)`;
+		fullPriceTicketSenior.textContent = `Senior (${price / 2} €)`;
+
+		fullPriceBlackBoxBasic.textContent = `${basicValue}`;
+		fullPriceBlackBoxSenior.textContent = `${seniorValue}`;
+	}
+
+	setTotal()
 
 	// riple effect
 	const ticketsBtn = document.querySelector('.Tickets__buy-btn');

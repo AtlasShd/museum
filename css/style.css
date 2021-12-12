@@ -2000,11 +2000,18 @@ a:active {
   font-weight: 700;
   line-height: 33px;
   letter-spacing: 1.65px;
-  text-align: left;
+  text-align: right;
   display: block-inline;
-  width: 150px;
+  max-width: 150px;
   margin-left: auto;
   padding: 40px 0 60px 0;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 @media (max-width: 1480px) {
@@ -2031,6 +2038,9 @@ a:active {
   .Tickets__total {
     margin: -5px 0 0;
     padding: 0px 0 70px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
 }
 
@@ -2216,11 +2226,7 @@ a:active {
 .form__button {
   font-size: 36px;
   background: none;
-}
-
-.form__button_decrement {
-  position: relative;
-  bottom: 19px;
+  width: 14px;
 }
 
 @media (max-width: 1480px) {
@@ -2234,9 +2240,6 @@ a:active {
   }
   .form__input {
     width: 102px;
-  }
-  .form__button_decrement {
-    bottom: 21px;
   }
 }
 
