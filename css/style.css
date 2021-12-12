@@ -2401,7 +2401,7 @@ a:active {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url("../assets/svg/tickets-form/arrow.svg") no-repeat calc(100% - 14px);
+  background: url("../assets/svg/arrow.svg") no-repeat calc(100% - 14px);
 }
 
 .left-form input,
@@ -2535,7 +2535,7 @@ a:active {
 .input-container__date input::-webkit-calendar-picker-indicator, .input-container__time input::-webkit-calendar-picker-indicator {
   margin: 0;
   padding: 0;
-  background: url("../assets/svg/tickets-form/arrow.svg") no-repeat left;
+  background: url("../assets/svg/arrow.svg") no-repeat left;
 }
 
 .input-container__icon {
@@ -2951,7 +2951,7 @@ a:active {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: white url("../assets/svg/tickets-form/Arrows.svg") right no-repeat;
+  background: white url("../assets/svg/Arrows.svg") right no-repeat;
 }
 
 .form-card__selects {

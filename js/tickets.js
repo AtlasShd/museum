@@ -1,5 +1,6 @@
-window.addEventListener('DOMContentLoaded', function () {
+'use strict';
 
+window.addEventListener('DOMContentLoaded', function () {
 	const basicInput = document.querySelector('#basic-input'),
 		seniorInput = document.querySelector('#senior-input'),
 		formBasicInput = document.querySelector('#form-basic-input'),
@@ -13,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		formSeniorDecrement = document.querySelector('#form-senior-decrement'),
 		formSeniorIncrement = document.querySelector('#form-senior-increment');
 
-	basicDecrement.addEventListener('click', e => {
+	basicDecrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = basicInput.getAttribute('min');
@@ -23,10 +24,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		const newValue = parseInt(value) - +step;
 
-		if (newValue >= min && newValue <= max) basicInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			basicInput.setAttribute('value', newValue);
+		}
 	});
 
-	basicIncrement.addEventListener('click', e => {
+	basicIncrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = basicInput.getAttribute('min');
@@ -34,12 +37,14 @@ window.addEventListener('DOMContentLoaded', function () {
 		const step = basicInput.getAttribute('step');
 		const value = basicInput.getAttribute('value');
 
-		const newValue = parseInt(value) + +step;
+		const newValue = parseInt(value) + (+step);
 
-		if (newValue >= min && newValue <= max) basicInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			basicInput.setAttribute('value', newValue);
+		}
 	});
 
-	seniorDecrement.addEventListener('click', e => {
+	seniorDecrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = seniorInput.getAttribute('min');
@@ -49,10 +54,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		const newValue = parseInt(value) - +step;
 
-		if (newValue >= min && newValue <= max) seniorInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			seniorInput.setAttribute('value', newValue);
+		}
 	});
 
-	seniorIncrement.addEventListener('click', e => {
+	seniorIncrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = seniorInput.getAttribute('min');
@@ -60,12 +67,14 @@ window.addEventListener('DOMContentLoaded', function () {
 		const step = seniorInput.getAttribute('step');
 		const value = seniorInput.getAttribute('value');
 
-		const newValue = parseInt(value) + +step;
+		const newValue = parseInt(value) + (+step);
 
-		if (newValue >= min && newValue <= max) seniorInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			seniorInput.setAttribute('value', newValue);
+		}
 	});
 
-	formBasicDecrement.addEventListener('click', e => {
+	formBasicDecrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = formBasicInput.getAttribute('min');
@@ -75,10 +84,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		const newValue = parseInt(value) - +step;
 
-		if (newValue >= min && newValue <= max) formBasicInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			formBasicInput.setAttribute('value', newValue);
+		}
 	});
 
-	formBasicIncrement.addEventListener('click', e => {
+	formBasicIncrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = formBasicInput.getAttribute('min');
@@ -86,12 +97,14 @@ window.addEventListener('DOMContentLoaded', function () {
 		const step = formBasicInput.getAttribute('step');
 		const value = formBasicInput.getAttribute('value');
 
-		const newValue = parseInt(value) + +step;
+		const newValue = parseInt(value) + (+step);
 
-		if (newValue >= min && newValue <= max) formBasicInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			formBasicInput.setAttribute('value', newValue);
+		}
 	});
 
-	formSeniorDecrement.addEventListener('click', e => {
+	formSeniorDecrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = formSeniorInput.getAttribute('min');
@@ -101,10 +114,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		const newValue = parseInt(value) - +step;
 
-		if (newValue >= min && newValue <= max) formSeniorInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			formSeniorInput.setAttribute('value', newValue);
+		}
 	});
 
-	formSeniorIncrement.addEventListener('click', e => {
+	formSeniorIncrement.addEventListener('click', (e) => {
 		e.preventDefault();
 
 		const min = formSeniorInput.getAttribute('min');
@@ -112,11 +127,12 @@ window.addEventListener('DOMContentLoaded', function () {
 		const step = formSeniorInput.getAttribute('step');
 		const value = formSeniorInput.getAttribute('value');
 
-		const newValue = parseInt(value) + +step;
+		const newValue = parseInt(value) + (+step);
 
-		if (newValue >= min && newValue <= max) formSeniorInput.setAttribute('value', newValue);
+		if (newValue >= min && newValue <= max) {
+			formSeniorInput.setAttribute('value', newValue);
+		}
 	});
-
 
 	// riple effect
 	const ticketsBtn = document.querySelector('.Tickets__buy-btn');
@@ -128,10 +144,10 @@ window.addEventListener('DOMContentLoaded', function () {
 		let ripples = document.createElement('span');
 		ripples.style.left = `${x}px`;
 		ripples.style.top = `${y}px`;
-		this.appendChild(ripples);
+		ticketsBtn.appendChild(ripples);
 		setTimeout(() => {
 			ripples.remove();
-		}, 750)
+		}, 750);
 	}
 
 	ticketsBtn.addEventListener('click', rippler);

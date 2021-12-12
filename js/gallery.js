@@ -1,3 +1,5 @@
+'use strict';
+
 window.addEventListener('DOMContentLoaded', function () {
 	const galleryClass = document.querySelectorAll('.Gallery__img');
 

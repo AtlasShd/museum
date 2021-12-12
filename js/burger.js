@@ -1,3 +1,5 @@
+'use strict';
+
 window.addEventListener('DOMContentLoaded', function () {
 	const navCrossBtn = document.querySelector('.nav__cross-btn'),
 		welcomeColumn = document.querySelector('.Welcome__column'),
@@ -24,5 +26,4 @@ window.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 	navCrossBtn.addEventListener('click', toggleBurger);
-
 });
