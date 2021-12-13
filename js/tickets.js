@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		formSeniorInput = document.querySelector('#form-senior-input');
 
 	const radios = document.querySelectorAll('.radio'),
-		options = document.querySelector('#ticket-type'),
+		optionsTicketType = document.querySelector('#ticket-type'),
 		ticketsTotal = document.querySelector('.Tickets__total'),
 		fullPriceBigPrice = document.querySelector('.full-price__big-price'),
 		fullPriceCountBasic = document.querySelector('.full-price__count_basic'),
@@ -33,16 +33,40 @@ window.addEventListener('DOMContentLoaded', function () {
 			const input = event.target.parentElement.querySelector('input'),
 				deduct = false;
 			changeValue(input, deduct);
+			toLocalStorage();
 		});
 		counter.lastElementChild.addEventListener('click', function (event) {
 			event.preventDefault();
 			const input = event.target.parentElement.querySelector('input'),
 				reduct = true;
 			changeValue(input, reduct);
+			toLocalStorage();
 		});
 	});
 
-	options.onchange = function () {
+	basicInput.addEventListener('change', function () {
+		if (+this.value >= +this.getAttribute('min') && +this.value <= +this.getAttribute('max')) {
+			setTotal();
+			toLocalStorage();
+			setAllAtributes(this, this.value);
+		}
+	});
+
+	seniorInput.addEventListener('change', function () {
+		if (+this.value >= +this.getAttribute('min') && +this.value <= +this.getAttribute('max')) {
+			setTotal();
+			toLocalStorage();
+			setAllAtributes(this, this.value);
+		}
+	});
+
+	function toLocalStorage() {
+		localStorage.setItem('basicInput', basicInput.value);
+		localStorage.setItem('seniorInput', seniorInput.value);
+		localStorage.setItem('optionsTicketType', optionsTicketType.value);
+	}
+
+	optionsTicketType.onchange = function () {
 		document.querySelector(`input[value="${this.value}"]`).click();
 	};
 
@@ -50,6 +74,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		radio.addEventListener('change', function () {
 			setTotal();
 			setTicketTypeInTimetable(this.lastChild.textContent);
+			toLocalStorage();
 		});
 	});
 
@@ -61,7 +86,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		const min = input.getAttribute('min'),
 			max = input.getAttribute('max'),
 			step = input.getAttribute('step'),
-			value = input.getAttribute('value');
+			value = input.value;
 
 		const newValue = reductOrDeduct ? parseInt(value) + parseInt(step) : parseInt(value) - parseInt(step);
 
@@ -73,28 +98,31 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function setAllAtributes(input, newValue) {
 		if (input === basicInput || input === formBasicInput) {
-			basicInput.setAttribute('value', newValue);
-			formBasicInput.setAttribute('value', newValue);
+			basicInput.value = newValue;
+			formBasicInput.value = newValue;
 		} else {
-			seniorInput.setAttribute('value', newValue);
-			formSeniorInput.setAttribute('value', newValue);
+			seniorInput.value = newValue;
+			formSeniorInput.value = newValue;
 		}
 	}
 
-	setMinDate();
+	setMinDate(new Date());
 
-	function setMinDate() {
-		const today = new Date();
+	function setMinDate(today) {
 		leftFormDate.setAttribute('min', `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`);
 		leftFormDate.setAttribute('value', `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`);
 		setDateInTimetable();
 	}
 
-	setValueTime();
+	setValueTime(new Date());
 
-	function setValueTime() {
-		const today = new Date();
-		leftFormTime.setAttribute('value', `${today.getHours() + 1}:30`);
+	function setValueTime(today) {
+		if (today.getHours() > 8 && today.getHours() < 18) {
+			leftFormTime.setAttribute('value', `${today.getHours() + 1}:30`);
+		} else {
+			leftFormTime.setAttribute('value', `09:30`);
+			setMinDate(new Date(new Date().getTime() + 24 * 60 * 60 * 1000));
+		}
 		setTimeInTimetable();
 	}
 
@@ -109,8 +137,8 @@ window.addEventListener('DOMContentLoaded', function () {
 	function setTimeInTimetable() {
 		const time = new Date(leftFormTime.valueAsNumber);
 
-		const doubleMinutes = String(time.getUTCMinutes()).length > 1 ? 0 + time.getUTCMinutes() : 0 + String(time.getUTCMinutes()),
-			doubleHours = String(time.getUTCHours()).length > 1 ? time.getUTCHours() : 0 + String(time.getUTCHours());
+		const doubleMinutes = String(time.getUTCMinutes()).length > 1 ? time.getUTCMinutes() : '0' + time.getUTCMinutes(),
+			doubleHours = String(time.getUTCHours()).length > 1 ? time.getUTCHours() : '0' + time.getUTCHours();
 
 		timetableSelectedTime.textContent = `${doubleHours} : ${doubleMinutes}`;
 	}
@@ -120,8 +148,8 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	function setTotal() {
-		const basicValue = basicInput.getAttribute('value'),
-			seniorValue = seniorInput.getAttribute('value'),
+		const basicValue = basicInput.value,
+			seniorValue = seniorInput.value,
 			price = getPrice(document.querySelector('input[name="ticket-type"]:checked'));
 
 		ticketsTotal.textContent = `Total €${basicValue * price + seniorValue * (price / 2)}`;
@@ -142,11 +170,24 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function getPrice(element) {
 		const price = element.getAttribute('value');
-		options.value = `${price}`;
+		optionsTicketType.value = `${price}`;
 		return price;
 	}
 
-	setTotal();
+	fromLocalStorage();
+
+	function fromLocalStorage() {
+		if (localStorage.getItem('basicInput')) {
+			setAllAtributes(basicInput, localStorage.getItem('basicInput'));
+		}
+		if (localStorage.getItem('seniorInput')) {
+			setAllAtributes(seniorInput, localStorage.getItem('seniorInput'));
+		}
+		if (localStorage.getItem('optionsTicketType')) {
+			document.querySelector(`input[value="${localStorage.getItem('optionsTicketType')}"]`).click();
+		}
+		setTotal();
+	}
 
 	// riple effect
 	const ticketsBtn = document.querySelector('.Tickets__buy-btn');

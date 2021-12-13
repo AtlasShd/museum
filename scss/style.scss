@@ -2586,17 +2586,6 @@ a:active {
 		display: flex;
 		justify-content: space-between;
 		margin-top: 6px;
-
-		&_basic {}
-
-		&_senior {}
-	}
-
-	&__price {
-
-		&_basic {}
-
-		&_senior {}
 	}
 
 	&__count {
@@ -2607,10 +2596,6 @@ a:active {
 		justify-content: center;
 		margin-left: auto;
 		margin-bottom: 13.3px;
-
-		&_basic {}
-
-		&_senior {}
 	}
 
 	&__button {
@@ -2618,10 +2603,6 @@ a:active {
 		background: black;
 		width: 100%;
 		color: white;
-
-		&_decrement {}
-
-		&_increment {}
 	}
 
 	&__input {
@@ -2753,18 +2734,10 @@ a:active {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-
-		&_basic {}
-
-		&_senior {}
 	}
 
 	&__price {
 		display: flex;
-
-		&_basic {}
-
-		&_senior {}
 	}
 
 	&__black-box {
@@ -2780,17 +2753,6 @@ a:active {
 		align-self: center;
 		margin-right: 10px;
 		padding-top: 4px;
-
-		&_basic {}
-
-		&_senior {}
-	}
-
-	&__count {
-
-		&_basic {}
-
-		&_senior {}
 	}
 
 	&__total {
@@ -2841,9 +2803,7 @@ a:active {
 
 	&__body {
 		display: flex;
-	}
-
-	&__content {}
+	}s
 
 	&__imgs {
 		padding-left: 10px;

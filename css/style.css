@@ -2912,6 +2912,7 @@ a:active {
   display: flex;
 }
 
+s
 .form-card__imgs {
   padding-left: 10px;
   width: auto;
@@ -2929,15 +2930,18 @@ a:active {
           justify-content: right;
 }
 
+s
 .form-card__imgs img {
   margin-bottom: 15px;
 }
 
+s
 .form-card__imgs img:first-child {
   width: 56px;
   height: 18px;
 }
 
+s
 .form-card__imgs img:last-child {
   width: 56px;
   height: 32px;
