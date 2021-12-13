@@ -14,11 +14,12 @@ function playPauseVideo() {
 		video.play();
 		play.innerHTML =
 			'<svg width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 29.0471V0.944802C8 0.421605 7.55026 0 6.98347 0H1.01653C0.449742 0 0 0.421605 0 0.944802V29.0471C0 29.5703 0.449742 30 1.01653 30H6.98347C7.55026 30 8 29.5784 8 29.0471Z" fill="#B3B3B3"/><path d="M19.9835 0H14.0165C13.4584 0 13 0.421605 13 0.944802V29.0471C13 29.5703 13.4497 30 14.0165 30H19.9835C20.5416 30 21 29.5784 21 29.0471V0.944802C21 0.421605 20.5503 0 19.9835 0Z" fill="#B3B3B3"/>d</svg>';
-		bigPlay.innerHTML = '';
+		bigPlay.classList.add('big-play_hide');
 	} else {
 		video.pause();
 		play.innerHTML =
 			'<svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 15.5053L0 0C0 23.3683 0 11.8996 0 31L23 15.5053Z" fill="#B3B3B3"/></svg>';
+		bigPlay.classList.remove('big-play_hide');
 	}
 }
 
@@ -30,11 +31,23 @@ function videoProgress() {
 	progress.value = (video.currentTime / video.duration) * 100;
 }
 
-video.addEventListener('timeupdate', videoProgress);
+video.addEventListener('timeupdate', function () {
+	videoProgress();
+	if (video.ended) {
+		stopVideo();
+	}
+});
 
 // set video progress
 function setVideoProgress() {
 	video.currentTime = (progress.value * video.duration) / 100;
+}
+
+function stopVideo() {
+	video.load();
+	play.innerHTML =
+		'<svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 15.5053L0 0C0 23.3683 0 11.8996 0 31L23 15.5053Z" fill="#B3B3B3"/></svg>';
+	bigPlay.classList.remove('big-play_hide');
 }
 
 //fullscreen video
