@@ -1385,6 +1385,7 @@ a:active {
   height: 85px;
   background: black;
   padding: 0 5px;
+  z-index: 1000;
 }
 
 .controls div,
