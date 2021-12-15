@@ -423,11 +423,9 @@ a:active {
 
 	&__wallpaper {
 		float: right;
-		position: relative;
 		z-index: -3;
 		max-width: 1000px;
 		max-height: 750px;
-		overflow: hidden;
 
 		&::before {
 			position: absolute;
@@ -438,12 +436,6 @@ a:active {
 			height: calc(101% + 100px);
 			box-shadow: inset 100px 0px 100px #000;
 			z-index: 1;
-		}
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
 		}
 	}
 
@@ -633,6 +625,72 @@ a:active {
 		&__swiper {
 			height: 80px;
 		}
+	}
+}
+
+.carousel {
+	position: relative;
+	overflow: hidden;
+
+	&__item {
+		display: none;
+		position: relative;
+		animation: 0.5s ease-in-out 0s;
+
+		&_active {
+			display: block;
+		}
+
+		&_next {
+			position: absolute;
+			top: 0;
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.to-left {
+	animation-name: left;
+}
+
+.from-left {
+	animation-name: left;
+	animation-direction: reverse;
+}
+
+.to-right {
+	animation-name: right;
+	animation-direction: reverse;
+}
+
+.from-right {
+	animation-name: right;
+}
+
+@keyframes left {
+	0% {
+		left: 0;
+	}
+
+	100% {
+		left: -100%;
+	}
+}
+
+@keyframes right {
+	0% {
+		left: 100%;
+	}
+
+	100% {
+		left: 0;
 	}
 }
 
