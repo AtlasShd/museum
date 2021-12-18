@@ -1269,6 +1269,10 @@ a:active {
 			height: 100%;
 			cursor: pointer;
 		}
+
+		&::-ms-thumb {
+			appearance: none;
+		}
 	}
 
 	&__before {
@@ -1298,6 +1302,7 @@ a:active {
 			height: 336px;
 			width: 5px;
 			background: white;
+			cursor: pointer;
 		}
 
 		&::after {
@@ -1308,6 +1313,7 @@ a:active {
 			height: 336px;
 			width: 5px;
 			background: white;
+			cursor: pointer;
 		}
 	}
 }

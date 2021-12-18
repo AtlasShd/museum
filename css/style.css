@@ -1380,6 +1380,10 @@ a:active {
   cursor: pointer;
 }
 
+.slider input::-ms-thumb {
+  appearance: none;
+}
+
 .slider__before {
   position: absolute;
   left: 0;
@@ -1409,6 +1413,7 @@ a:active {
   height: 336px;
   width: 5px;
   background: white;
+  cursor: pointer;
 }
 
 .slider__slider::after {
@@ -1419,6 +1424,7 @@ a:active {
   height: 336px;
   width: 5px;
   background: white;
+  cursor: pointer;
 }
 
 /*Explore section*/
