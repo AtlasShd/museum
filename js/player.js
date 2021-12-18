@@ -7,7 +7,11 @@ const video = document.querySelector('.Video__video'),
 	volume = document.querySelector('.controls__volume'),
 	fullscreen = document.querySelector('.controls__fullscreen'),
 	progress = document.querySelector('#progress'),
-	volumeProgress = document.querySelector('#volume-progress');
+	volumeProgress = document.querySelector('#volume-progress'),
+	controlSpeed = document.querySelector('.controls__speed');
+
+
+let controlsHide; // Hide timeout of controls panel
 
 // play & pause video
 function playPauseVideo() {
@@ -43,20 +47,18 @@ function setVideoProgress() {
 
 video.addEventListener('ended', stopVideo);
 
-//full stop video
+// stop video
 function stopVideo() {
 	video.load();
 	play.innerHTML =
 		'<svg width="23" height="31" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 15.5053L0 0C0 23.3683 0 11.8996 0 31L23 15.5053Z" fill="#B3B3B3"/></svg>';
 	bigPlay.classList.remove('big-play_hide');
-
+	clearTimeout(controlsHide);
+	controlPanel.classList.remove('controls__hide');
 }
 
 //fullscreen video
 function changeFullscreen(e) {
-	if (e.keyCode != 70 && e.type != 'click') {
-		return;
-	}
 	if (!document.fullscreenElement) {
 		videoCore.requestFullscreen();
 		fullscreen.innerHTML =
@@ -121,26 +123,44 @@ function leftVolumeColor() {
 video.addEventListener('timeupdate', leftColor);
 
 let downKeys = {};
+let speedTimeout;
 
 function changeVideoRate(e) {
 	downKeys[e.keyCode] = true;
 	if (downKeys[16] && downKeys[190]) {
 		video.playbackRate += 0.25;
+		showSpeed();
 	}
 	if (downKeys[16] && downKeys[188]) {
 		video.playbackRate -= 0.25;
+		showSpeed();
 	}
 }
 
+//show playback rate video under big play
+function showSpeed() {
+	clearTimeout(speedTimeout);
+	controlSpeed.textContent = video.playbackRate;
+	controlSpeed.classList.add('controls__speed-animation');
+	speedTimeout = setTimeout(() => {
+		controlSpeed.classList.remove('controls__speed-animation');
+	}, 500)
+}
+
 document.addEventListener('keydown', changeSilence);
-document.addEventListener('keydown', changeFullscreen);
+document.addEventListener('keydown', function (e) {
+	if (e.keyCode != 70 && e.type != 'click') {
+		return;
+	}
+	changeFullscreen();
+
+});
 document.addEventListener('keydown', changeVideoRate);
 document.addEventListener('keyup', event => {
 	downKeys[event.keyCode] = false;
 }); // clear object of keys for remove bags with changeVideoRate();
 
 const controlPanel = document.querySelector('.controls');
-let controlsHide;
 
 videoCore.addEventListener('click', function () {
 	clearTimeout(controlsHide);

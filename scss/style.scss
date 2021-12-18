@@ -1485,6 +1485,28 @@ a:active {
 		}
 	}
 
+	&__speed {
+		position: absolute;
+		display: block;
+		background: rgba(0, 0, 0, 0.7);
+		left: 50%;
+		top: 70%;
+		width: 50px;
+		height: 32px;
+		transition: opacity 0.5s ease-in-out 0s;
+		font-size: 22px;
+		transform: translate(-50%);
+		color: white;
+		text-align: center;
+		padding-top: 5px;
+		border-radius: 10%;
+		opacity: 0;
+	}
+
+	&__speed-animation {
+		opacity: 1;
+	}
+
 	&__play {
 
 		svg {
@@ -1684,6 +1706,14 @@ a:active {
 				width: 50px;
 				height: 50px;
 			}
+		}
+
+		&__speed {
+			top: 60%;
+			width: 30px;
+			height: 20px;
+			font-size: 14px;
+			padding-top: 3px;
 		}
 
 		&__progress {

@@ -1599,6 +1599,30 @@ a:active {
   opacity: 0;
 }
 
+.controls__speed {
+  position: absolute;
+  display: block;
+  background: rgba(0, 0, 0, 0.7);
+  left: 50%;
+  top: 70%;
+  width: 50px;
+  height: 32px;
+  -webkit-transition: opacity 0.5s ease-in-out 0s;
+  transition: opacity 0.5s ease-in-out 0s;
+  font-size: 22px;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  border-radius: 10%;
+  opacity: 0;
+}
+
+.controls__speed-animation {
+  opacity: 1;
+}
+
 .controls__play svg {
   width: 23px;
   height: 31px;
@@ -1762,6 +1786,13 @@ a:active {
             transform: translate(0, -53.333%);
     width: 50px;
     height: 50px;
+  }
+  .controls__speed {
+    top: 60%;
+    width: 30px;
+    height: 20px;
+    font-size: 14px;
+    padding-top: 3px;
   }
   .controls__progress {
     position: absolute;
