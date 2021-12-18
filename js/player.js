@@ -138,5 +138,23 @@ document.addEventListener('keyup', event => {
 	downKeys[event.keyCode] = false;
 }); // clear object of keys for remove bags with changeVideoRate();
 
-// let isShow = true;
-// const controls = document.querySelector('.controls');
+const controlPanel = document.querySelector('.controls');
+let controlsHide;
+
+videoCore.addEventListener('click', function () {
+	clearTimeout(controlsHide);
+	controlPanel.classList.remove('controls__hide');
+
+	controlsHide = setTimeout(() => {
+		controlPanel.classList.add('controls__hide');
+	}, 4000);
+});
+
+videoCore.addEventListener('mousemove', function () {
+	clearTimeout(controlsHide);
+	controlPanel.classList.remove('controls__hide');
+
+	controlsHide = setTimeout(() => {
+		controlPanel.classList.add('controls__hide');
+	}, 4000);
+});

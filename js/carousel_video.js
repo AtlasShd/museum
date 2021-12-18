@@ -10,10 +10,10 @@ window.addEventListener('DOMContentLoaded', function () {
 	let isEnabled = true;
 
 	function changeCurrentItem(value) {
-		dots[currentItem].classList.remove('switch__dot_active');
 		currentItem = (value + videos.length) % videos.length;
-		dots[currentItem].classList.add('switch__dot_active');
 	}
+
+
 
 	function stepToRight(timing) {
 		const videosContainer = document.querySelector('.switch__videos');
@@ -21,12 +21,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		isEnabled = false;
 
+		dots[currentItem].classList.remove('switch__dot_active');
+		changeCurrentItem(currentItem + 1);
+		dots[currentItem].classList.add('switch__dot_active');
+
+		setCoreVideo(currentItem);
+		pauseAllVideos();
+
 		videosContainer.classList.add('switch__step_right');
 		setTimeout(() => {
 			videosContainer.removeChild(firstVideo);
 			videosContainer.append(firstVideo);
 			videosContainer.classList.remove('switch__step_right');
-			changeCurrentItem(currentItem + 1);
 			isEnabled = true;
 		}, timing);
 	}
@@ -37,12 +43,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
 		isEnabled = false;
 
+		dots[currentItem].classList.remove('switch__dot_active');
+		changeCurrentItem(currentItem - 1);
+		dots[currentItem].classList.add('switch__dot_active');
+
+		setCoreVideo(currentItem);
+		pauseAllVideos();
+
 		videosContainer.classList.add('switch__step_left');
 		setTimeout(() => {
 			videosContainer.removeChild(lastVideo);
 			videosContainer.prepend(lastVideo);
 			videosContainer.classList.remove('switch__step_left');
-			changeCurrentItem(currentItem - 1);
 			isEnabled = true;
 		}, timing);
 	}
@@ -58,9 +70,26 @@ window.addEventListener('DOMContentLoaded', function () {
 		if (!isEnabled) {
 			return;
 		}
-
 		stepToLeft(500);
 	}
+
+	function setCoreVideo(indexCurrentVideo) {
+		const coreVideo = document.querySelector('.Video__video');
+
+		coreVideo.setAttribute('src', `assets/video/video${indexCurrentVideo}.mp4`);
+		coreVideo.setAttribute('poster', `assets/video/poster${indexCurrentVideo}.webp`);
+	}
+
+	function pauseAllVideos() {
+		document.querySelectorAll('.switch__video').forEach((video) => {
+			video.firstElementChild.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+		});
+	}
+
+
+	document.querySelector('.Video__core').addEventListener('click', function () {
+		pauseAllVideos();
+	});
 
 	document.querySelector('.switch__arrows_right').addEventListener('click', function () {
 		nextItem();

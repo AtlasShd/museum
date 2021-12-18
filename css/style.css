@@ -1468,15 +1468,17 @@ a:active {
   z-index: 1000;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out 0s;
-  transition: -webkit-transform 0.5s ease-in-out 0s;
-  transition: transform 0.5s ease-in-out 0s;
-  transition: transform 0.5s ease-in-out 0s, -webkit-transform 0.5s ease-in-out 0s;
+  -webkit-transition: opacity 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s;
+  transition: opacity 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s;
+  transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s;
+  transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s;
+  opacity: 0.9;
 }
 
 .controls__hide {
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
+  opacity: 0;
 }
 
 .controls div,
@@ -1504,6 +1506,7 @@ a:active {
   height: 100%;
   -webkit-transition: opacity 0.2s ease 0s;
   transition: opacity 0.2s ease 0s;
+  opacity: 0.9;
 }
 
 .controls__big-play svg {
