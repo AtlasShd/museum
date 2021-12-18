@@ -1365,8 +1365,8 @@ a:active {
 
 .slider input {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background: none;
   width: 100%;
   z-index: 1000;
@@ -1374,14 +1374,18 @@ a:active {
 
 .slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 1px;
   height: 100%;
   cursor: pointer;
 }
 
 .slider input::-ms-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
 }
 
 .slider__before {

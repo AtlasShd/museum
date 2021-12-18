@@ -1257,6 +1257,8 @@ a:active {
 	overflow: hidden;
 
 	& input {
+		-webkit-appearance: none;
+		-moz-appearance: none;
 		appearance: none;
 		background: none;
 		width: 100%;
@@ -1264,6 +1266,8 @@ a:active {
 
 
 		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			-moz-appearance: none;
 			appearance: none;
 			width: 1px;
 			height: 100%;
@@ -1271,7 +1275,10 @@ a:active {
 		}
 
 		&::-ms-thumb {
+			-webkit-appearance: none;
+			-moz-appearance: none;
 			appearance: none;
+			cursor: pointer;
 		}
 	}
 
