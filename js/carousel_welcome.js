@@ -52,19 +52,35 @@ window.addEventListener('DOMContentLoaded', function () {
 	document.querySelector('.swiper__btn-right').addEventListener('click', function () {
 		if (isEnabled) {
 			nextItem(currentItem);
+			clearTimeout(autoSwipe);
+			autoSwipe = setInterval(() => {
+				nextItem(currentItem);
+			}, 10000);
 		}
 	});
 
 	document.querySelector('.swiper__btn-left').addEventListener('click', function () {
 		if (isEnabled) {
 			previousItem(currentItem);
+			clearTimeout(autoSwipe);
+			autoSwipe = setInterval(() => {
+				nextItem(currentItem);
+			}, 10000);
 		}
 	});
 
 	dots.forEach((dot, index) => {
 		dot.addEventListener('click', () => {
 			if (isEnabled) {
-				
+				if (index > currentItem) {
+					while (currentItem != index) {
+						nextItem(currentItem);
+					}
+				} else {
+					while (currentItem != index) {
+						previousItem(currentItem);
+					}
+				}
 			}
 		});
 	});
@@ -131,4 +147,8 @@ window.addEventListener('DOMContentLoaded', function () {
 	};
 
 	swiper(document.querySelector('.carousel'));
+
+	let autoSwipe = setInterval(() => {
+		nextItem(currentItem);
+	}, 10000);
 });

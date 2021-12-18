@@ -1286,6 +1286,7 @@ a:active {
 	}
 
 	&__core {
+		overflow: hidden;
 		aspect-ratio: 1440 / 735;
 		margin-bottom: 38px;
 		position: relative;
@@ -1365,6 +1366,12 @@ a:active {
 	background: black;
 	padding: 0 5px;
 	z-index: 1000;
+	transform: translateY(0);
+	transition: transform 0.5s ease-in-out 0s;
+
+	&__hide {
+		transform: translateY(100%);
+	}
 
 	& div,
 	& button {
@@ -1653,11 +1660,15 @@ a:active {
 
 
 .switch {
+	overflow: hidden;
 
 	&__videos {
+		position: relative;
+		width: 1976px;
+		left: -494px;
 		display: grid;
 		column-gap: 42px;
-		grid-template-columns: repeat(3, minmax(100px, 452px));
+		grid-template-columns: repeat(5, 452px);
 		margin-bottom: 25px;
 	}
 
@@ -1669,6 +1680,16 @@ a:active {
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&__step_right {
+		left: -988px;
+		transition: left 0.5s ease-in-out 0s;
+	}
+
+	&__step_left {
+		left: 0;
+		transition: left 0.5s ease-in-out 0s;
 	}
 
 	&__swiper {
@@ -1724,11 +1745,23 @@ a:active {
 		}
 	}
 
+	@media (max-width: 1480px) {
+		&__videos {
+			grid-template-columns: repeat(5, 300px);
+			left: -342px;
+		}
+
+		&__step_right {
+			left: -684px;
+		}
+	}
+
 	@media (max-width: 1023px) {
 
 		&__videos {
+			left: -374px;
+			grid-template-columns: repeat(5, 354px);
 			column-gap: 20px;
-			grid-template-columns: repeat(2, minmax(100px, 354px));
 			margin-bottom: 6px;
 		}
 
@@ -1738,6 +1771,10 @@ a:active {
 			&:last-child {
 				display: none;
 			}
+		}
+
+		&__step_right {
+			left: -748px;
 		}
 
 		&__arrows {
@@ -1758,6 +1795,12 @@ a:active {
 	@media (max-width: 767px) {
 		&__videos {
 			margin-bottom: 23px;
+			left: calc(-374px + (384px - 50vw));
+			grid-template-columns: repeat(5, calc(354px - (384px - 50vw))); //большее значение - (половина ширины экрана с большим значением - половина настоящей ширины экрана)
+		}
+
+		&__step_right {
+			left: calc(-748px + (768px - 100vw));
 		}
 
 		&__dots {

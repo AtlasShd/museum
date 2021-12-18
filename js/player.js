@@ -137,3 +137,6 @@ document.addEventListener('keydown', changeVideoRate);
 document.addEventListener('keyup', event => {
 	downKeys[event.keyCode] = false;
 }); // clear object of keys for remove bags with changeVideoRate();
+
+// let isShow = true;
+// const controls = document.querySelector('.controls');
