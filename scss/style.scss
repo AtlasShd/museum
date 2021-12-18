@@ -1163,12 +1163,7 @@ a:active {
 		margin-top: 15px;
 		width: 100%;
 		max-width: 720px;
-		height: 100%;
-
-		img {
-			width: 100%;
-			height: 100%;
-		}
+		aspect-ratio: 36 / 35;
 	}
 
 	@media (max-width: 1480px) {
@@ -1247,6 +1242,72 @@ a:active {
 			&::before {
 				top: 60px;
 			}
+		}
+	}
+}
+
+
+
+.slider {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background: url('../assets/img/explore-slider/after.webp') 0 center / 100% no-repeat;
+	overflow: hidden;
+
+	& input {
+		appearance: none;
+		background: none;
+		width: 100%;
+		z-index: 1000;
+
+
+		&::-webkit-slider-thumb {
+			appearance: none;
+			width: 1px;
+			height: 100%;
+			cursor: pointer;
+		}
+	}
+
+	&__before {
+		position: absolute;
+		left: 0;
+		width: 61.1%;
+		height: 100%;
+		background: url('../assets/img/explore-slider/before.webp') 0 center / auto 100% no-repeat;
+	}
+
+	&__slider {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translate(50%, -50%);
+		width: 39px;
+		height: 39px;
+		border-radius: 50%;
+		border: 5px solid white;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -336px;
+			right: 12.1px;
+			height: 336px;
+			width: 5px;
+			background: white;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 31px;
+			right: 12.1px;
+			height: 336px;
+			width: 5px;
+			background: white;
 		}
 	}
 }
