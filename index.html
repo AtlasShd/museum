@@ -515,7 +515,7 @@
 							<path d="M26 1L1 26" stroke="#030303" />
 						</svg>
 					</div>
-					<form action="#">
+					<form action="#" id="tickets-form__form">
 						<div class="tickets-form__content">
 							<div class="tickets-form__left left-form">
 								<div class="logo left-form__logo">
@@ -543,7 +543,7 @@
 													fill="#030303" />
 											</svg>
 										</div>
-										<input type="date" name="date" id="date" class="left-form__date">
+										<input type="date" name="date" id="date" class="left-form__date requary-form">
 										<div class="date-input">
 											Date
 										</div>
@@ -556,8 +556,8 @@
 													fill="#030303" />
 											</svg>
 										</div>
-										<input type="time" name="time" id="time" class="left-form__time" min="09:00" max="18:00"
-											step="1800">
+										<input type="time" name="time" id="time" class="left-form__time requary-form" min="09:00"
+											max="18:00" step="1800">
 										<div class="time-input">
 											Time
 										</div>
@@ -571,7 +571,7 @@
 												fill="#030303" />
 										</svg>
 									</div>
-									<input type="text" name="name" id="name" class="left-form__name" placeholder="Name">
+									<input type="text" name="name" id="name" class="left-form__name requary-form" placeholder="Name">
 								</div>
 								<div class="input-container">
 									<div class="input-container__icon">
@@ -581,7 +581,7 @@
 												fill="#030303" />
 										</svg>
 									</div>
-									<input type="email" name="mail" id="mail" class="left-form__mail" placeholder="E-mail">
+									<input type="email" name="email" id="email" class="left-form__mail requary-form" placeholder="E-mail">
 								</div>
 								<div class="input-container">
 									<div class="input-container__icon">
@@ -591,7 +591,7 @@
 												fill="#030303" />
 										</svg>
 									</div>
-									<input type="tel" name="phone" id="phone" class="left-form__phone" placeholder="Phone">
+									<input type="tel" name="phone" id="phone" class="left-form__phone requary-form" placeholder="Phone">
 								</div>
 								<div class="input-container">
 									<div class="input-container__icon">
@@ -777,7 +777,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="right-form__button">
+								<button type="submit" class="right-form__button">
 									Book
 								</button>
 							</div>

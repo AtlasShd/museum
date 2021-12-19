@@ -27,6 +27,93 @@ window.addEventListener('DOMContentLoaded', function () {
 		leftFormDate = document.querySelector('.left-form__date'),
 		leftFormTime = document.querySelector('.left-form__time');
 
+	const inputsForm = document.querySelector('#tickets-form__form');
+
+	inputsForm.addEventListener('submit', sendForm);
+
+	function sendForm(e) {
+		e.preventDefault();
+
+		let formErrors = formValidate(inputsForm);
+
+		if (!formErrors === 0) {
+		}
+
+		function formValidate(form) {
+			let error = 0,
+				formRequary = document.querySelectorAll('.requary-form');
+
+			formRequary.forEach((input) => {
+				formRemoveError(input);
+
+				if (input.classList.contains('left-form__date')) {
+					console.dir(input);
+					if (!validateDate(input)) {
+						formAddError(input);
+						error++;
+					}
+				} else if (input.classList.contains('left-form__time')) {
+					console.dir(input);
+					if (!validateTime(input)) {
+						formAddError(input);
+						error++;
+					}
+				} else if (input.classList.contains('left-form__name')) {
+					if (!validateName(input)) {
+						formAddError(input);
+						error++;
+					}
+				} else if (input.classList.contains('left-form__mail')) {
+					if (!validateEmail(input)) {
+						formAddError(input);
+						error++;
+					}
+				} else if (input.classList.contains('left-form__phone')) {
+					if (!validatePhone(input)) {
+						formAddError(input);
+						error++;
+					}
+				} else {
+					if (input.value === '') {
+						formAddError(input);
+						error++;
+					}
+				}
+			});
+			return error;
+		}
+
+		function formAddError(input) {
+			input.parentElement.classList.add('form-warning');
+		}
+
+		function formRemoveError(input) {
+			input.parentElement.classList.remove('form-warning');
+		}
+
+		function validateDate(input) {
+			return input.value;
+		}
+
+		function validateTime(input) {
+			return input.value;
+		}
+
+		function validateEmail(input) {
+			return /^[-\w]{3,15}@[a-zA-Z]{4,}\.[a-zA-Z]{2,}$/.test(input.value);
+		}
+
+		function validateName(input) {
+			return /(^[a-zA-Z ]{3,15}$)|(^[а-яёА-ЯЁ ]{3,15}$)/.test(input.value);
+		}
+
+		function validatePhone(input) {
+			return /(^\d{1,10}$)|(^(\d{2}-){1,4}\d{2}$)|(^(\d{2}\s){1,4}\d{2}$)|(^(\d{3}-){1,2}\d{3}$)|(^(\d{3}\s){1,2}\d{3}$)/.test(
+				input.value
+			);
+		}
+	}
+
 	counterTickets.forEach((counter) => {
 		counter.firstElementChild.addEventListener('click', function (event) {
 			event.preventDefault();
@@ -117,8 +204,9 @@ window.addEventListener('DOMContentLoaded', function () {
 	setValueTime(new Date());
 
 	function setValueTime(today) {
-		if (today.getHours() > 8 && today.getHours() < 18) {
-			leftFormTime.setAttribute('value', `${today.getHours() + 1}:30`);
+		if (today.getHours() >= 9 && today.getHours() <= 17) {
+			leftFormTime.setAttribute('value', `${today.getHours() + 1}:00`);
+			leftFormTime.setAttribute('min', `${today.getHours()}:00`);
 		} else {
 			leftFormTime.setAttribute('value', `09:30`);
 			setMinDate(new Date(new Date().getTime() + 24 * 60 * 60 * 1000));
@@ -136,11 +224,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	function setTimeInTimetable() {
 		const time = new Date(leftFormTime.valueAsNumber);
-
 		const doubleMinutes = String(time.getUTCMinutes()).length > 1 ? time.getUTCMinutes() : '0' + time.getUTCMinutes(),
 			doubleHours = String(time.getUTCHours()).length > 1 ? time.getUTCHours() : '0' + time.getUTCHours();
-
-		timetableSelectedTime.textContent = `${doubleHours} : ${doubleMinutes}`;
+		if (+doubleHours >= 9 && +doubleHours < 18) {
+			if (doubleMinutes == '00' || doubleMinutes == '30') {
+				timetableSelectedTime.textContent = `${doubleHours} : ${doubleMinutes}`;
+			}
+		} else if (+doubleHours == 18 && doubleMinutes == '00') {
+			timetableSelectedTime.textContent = `${doubleHours} : ${doubleMinutes}`;
+		}
 	}
 
 	function setTicketTypeInTimetable(value) {

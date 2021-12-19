@@ -2011,7 +2011,7 @@ a:active {
 
 		&_center {
 			& .animation-item {
-				transition: transform 0.5s ease-out 0.2s, opacity 0.5s ease-in 0.2s;
+				transition: transform 0.5s ease-out 0.16s, opacity 0.5s ease-in 0.16s;
 			}
 		}
 
@@ -2019,7 +2019,7 @@ a:active {
 			margin-top: 50px;
 
 			& .animation-item {
-				transition: transform 0.5s ease-out 0.4s, opacity 0.5s ease-in 0.4s;
+				transition: transform 0.5s ease-out 0.32s, opacity 0.5s ease-in 0.32s;
 			}
 		}
 	}
@@ -2609,6 +2609,10 @@ a:active {
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
+
+	& .form-warning {
+		box-shadow: 0 0 7px red;
+	}
 
 	select {
 		appearance: none;

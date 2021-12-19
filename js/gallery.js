@@ -28,7 +28,6 @@ window.addEventListener('DOMContentLoaded', function () {
 				if (itemHeight > window.innerHeight) {
 					animPoint = window.innerHeight - window.innerHeight / animFactor;
 				}
-				console.log((window.scrollY > (itemOffset - animPoint)), (window.scrollY < (itemOffset + itemHeight)));
 
 				if ((window.scrollY > (itemOffset - animPoint)) && (window.scrollY < (itemOffset + itemHeight))) {
 					item.classList.add('animation-item_active');

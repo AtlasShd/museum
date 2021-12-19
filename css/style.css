@@ -2095,10 +2095,10 @@ a:active {
 }
 
 .Gallery__column_center .animation-item {
-  -webkit-transition: opacity 0.5s ease-in 0.2s, -webkit-transform 0.5s ease-out 0.2s;
-  transition: opacity 0.5s ease-in 0.2s, -webkit-transform 0.5s ease-out 0.2s;
-  transition: transform 0.5s ease-out 0.2s, opacity 0.5s ease-in 0.2s;
-  transition: transform 0.5s ease-out 0.2s, opacity 0.5s ease-in 0.2s, -webkit-transform 0.5s ease-out 0.2s;
+  -webkit-transition: opacity 0.5s ease-in 0.16s, -webkit-transform 0.5s ease-out 0.16s;
+  transition: opacity 0.5s ease-in 0.16s, -webkit-transform 0.5s ease-out 0.16s;
+  transition: transform 0.5s ease-out 0.16s, opacity 0.5s ease-in 0.16s;
+  transition: transform 0.5s ease-out 0.16s, opacity 0.5s ease-in 0.16s, -webkit-transform 0.5s ease-out 0.16s;
 }
 
 .Gallery__column_right {
@@ -2106,10 +2106,10 @@ a:active {
 }
 
 .Gallery__column_right .animation-item {
-  -webkit-transition: opacity 0.5s ease-in 0.4s, -webkit-transform 0.5s ease-out 0.4s;
-  transition: opacity 0.5s ease-in 0.4s, -webkit-transform 0.5s ease-out 0.4s;
-  transition: transform 0.5s ease-out 0.4s, opacity 0.5s ease-in 0.4s;
-  transition: transform 0.5s ease-out 0.4s, opacity 0.5s ease-in 0.4s, -webkit-transform 0.5s ease-out 0.4s;
+  -webkit-transition: opacity 0.5s ease-in 0.32s, -webkit-transform 0.5s ease-out 0.32s;
+  transition: opacity 0.5s ease-in 0.32s, -webkit-transform 0.5s ease-out 0.32s;
+  transition: transform 0.5s ease-out 0.32s, opacity 0.5s ease-in 0.32s;
+  transition: transform 0.5s ease-out 0.32s, opacity 0.5s ease-in 0.32s, -webkit-transform 0.5s ease-out 0.32s;
 }
 
 .Gallery__art {
@@ -2705,6 +2705,11 @@ a:active {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 20px;
+}
+
+.left-form .form-warning {
+  -webkit-box-shadow: 0 0 7px red;
+          box-shadow: 0 0 7px red;
 }
 
 .left-form select {
