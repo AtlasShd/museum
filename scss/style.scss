@@ -1960,6 +1960,18 @@ a:active {
 /*Video section*/
 
 /*Gallery section*/
+
+.animation-item {
+	transform: translate(0, 12%);
+	opacity: 0;
+	transition: transform 0.5s ease-out 0s, opacity 0.5s ease-in 0s;
+
+	&_active {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
 .Gallery {
 
 	&__container {
@@ -1993,9 +2005,22 @@ a:active {
 		flex-direction: column;
 		row-gap: 24px;
 
-		&_left,
+		&_left {
+			margin-top: 50px;
+		}
+
+		&_center {
+			& .animation-item {
+				transition: transform 0.5s ease-out 0.2s, opacity 0.5s ease-in 0.2s;
+			}
+		}
+
 		&_right {
 			margin-top: 50px;
+
+			& .animation-item {
+				transition: transform 0.5s ease-out 0.4s, opacity 0.5s ease-in 0.4s;
+			}
 		}
 	}
 

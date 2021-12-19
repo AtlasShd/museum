@@ -2033,6 +2033,22 @@ a:active {
 
 /*Video section*/
 /*Gallery section*/
+.animation-item {
+  -webkit-transform: translate(0, 12%);
+          transform: translate(0, 12%);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in 0s, -webkit-transform 0.5s ease-out 0s;
+  transition: opacity 0.5s ease-in 0s, -webkit-transform 0.5s ease-out 0s;
+  transition: transform 0.5s ease-out 0s, opacity 0.5s ease-in 0s;
+  transition: transform 0.5s ease-out 0s, opacity 0.5s ease-in 0s, -webkit-transform 0.5s ease-out 0s;
+}
+
+.animation-item_active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
 .Gallery__container {
   position: relative;
   overflow: hidden;
@@ -2074,8 +2090,26 @@ a:active {
   row-gap: 24px;
 }
 
-.Gallery__column_left, .Gallery__column_right {
+.Gallery__column_left {
   margin-top: 50px;
+}
+
+.Gallery__column_center .animation-item {
+  -webkit-transition: opacity 0.5s ease-in 0.2s, -webkit-transform 0.5s ease-out 0.2s;
+  transition: opacity 0.5s ease-in 0.2s, -webkit-transform 0.5s ease-out 0.2s;
+  transition: transform 0.5s ease-out 0.2s, opacity 0.5s ease-in 0.2s;
+  transition: transform 0.5s ease-out 0.2s, opacity 0.5s ease-in 0.2s, -webkit-transform 0.5s ease-out 0.2s;
+}
+
+.Gallery__column_right {
+  margin-top: 50px;
+}
+
+.Gallery__column_right .animation-item {
+  -webkit-transition: opacity 0.5s ease-in 0.4s, -webkit-transform 0.5s ease-out 0.4s;
+  transition: opacity 0.5s ease-in 0.4s, -webkit-transform 0.5s ease-out 0.4s;
+  transition: transform 0.5s ease-out 0.4s, opacity 0.5s ease-in 0.4s;
+  transition: transform 0.5s ease-out 0.4s, opacity 0.5s ease-in 0.4s, -webkit-transform 0.5s ease-out 0.4s;
 }
 
 .Gallery__art {
