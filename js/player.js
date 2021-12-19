@@ -147,35 +147,27 @@ function showSpeed() {
 	}, 500)
 }
 
-document.addEventListener('keydown', changeSilence);
-document.addEventListener('keydown', function (e) {
-	if (e.keyCode != 70 && e.type != 'click') {
-		return;
-	}
-	changeFullscreen();
-
-});
-document.addEventListener('keydown', changeVideoRate);
-document.addEventListener('keyup', event => {
-	downKeys[event.keyCode] = false;
-}); // clear object of keys for remove bags with changeVideoRate();
-
 const controlPanel = document.querySelector('.controls');
 
 videoCore.addEventListener('click', function () {
-	clearTimeout(controlsHide);
-	controlPanel.classList.remove('controls__hide');
+	videoCore.addEventListener('mousemove', function () {
+		clearTimeout(controlsHide);
+		controlPanel.classList.remove('controls__hide');
 
-	controlsHide = setTimeout(() => {
-		controlPanel.classList.add('controls__hide');
-	}, 4000);
-});
+		controlsHide = setTimeout(() => {
+			controlPanel.classList.add('controls__hide');
+		}, 4000);
+	});
 
-videoCore.addEventListener('mousemove', function () {
-	clearTimeout(controlsHide);
-	controlPanel.classList.remove('controls__hide');
-
-	controlsHide = setTimeout(() => {
-		controlPanel.classList.add('controls__hide');
-	}, 4000);
+	document.addEventListener('keydown', changeSilence);
+	document.addEventListener('keydown', function (e) {
+		if (e.keyCode != 70 && e.type != 'click') {
+			return;
+		}
+		changeFullscreen();
+	});
+	document.addEventListener('keydown', changeVideoRate);
+	document.addEventListener('keyup', event => {
+		downKeys[event.keyCode] = false;
+	}); // clear object of keys for remove bags with changeVideoRate();
 });
