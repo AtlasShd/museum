@@ -1374,7 +1374,6 @@ a:active {
 
 .slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   width: 1px;
   height: 100%;
@@ -1386,6 +1385,16 @@ a:active {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.slider input::-moz-range-thumb {
+  appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .slider__before {
@@ -1651,6 +1660,15 @@ a:active {
   border-radius: 50%;
 }
 
+.controls__progress input::-moz-range-thumb {
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+}
+
 .controls__volume svg {
   width: 36px;
   height: 30px;
@@ -1673,6 +1691,15 @@ a:active {
 
 .controls__volume-progress input::-webkit-slider-thumb {
   -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+}
+
+.controls__volume-progress input::-moz-range-thumb {
+  -moz-appearance: none;
+  appearance: none;
   width: 15px;
   height: 15px;
   background: white;

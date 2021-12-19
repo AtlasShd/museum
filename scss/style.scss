@@ -1267,7 +1267,6 @@ a:active {
 
 		&::-webkit-slider-thumb {
 			-webkit-appearance: none;
-			-moz-appearance: none;
 			appearance: none;
 			width: 1px;
 			height: 100%;
@@ -1279,6 +1278,16 @@ a:active {
 			-moz-appearance: none;
 			appearance: none;
 			cursor: pointer;
+			background: none;
+			border: none;
+		}
+
+		&::-moz-range-thumb {
+			appearance: none;
+			-moz-appearance: none;
+			cursor: pointer;
+			background: none;
+			border: none;
 		}
 	}
 
@@ -1533,6 +1542,15 @@ a:active {
 				background: white;
 				border-radius: 50%;
 			}
+
+			&::-moz-range-thumb {
+				-moz-appearance: none;
+				appearance: none;
+				width: 15px;
+				height: 15px;
+				background: white;
+				border-radius: 50%;
+			}
 		}
 	}
 
@@ -1556,6 +1574,15 @@ a:active {
 
 			&::-webkit-slider-thumb {
 				-webkit-appearance: none;
+				width: 15px;
+				height: 15px;
+				background: white;
+				border-radius: 50%;
+			}
+
+			&::-moz-range-thumb {
+				-moz-appearance: none;
+				appearance: none;
 				width: 15px;
 				height: 15px;
 				background: white;
