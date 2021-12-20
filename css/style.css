@@ -3480,13 +3480,8 @@ s .form-card__imgs img:last-child {
 }
 
 .Contacts__location {
-  max-width: 960px;
-  max-height: 620px;
-}
-
-.Contacts__location img {
-  width: 100%;
-  height: 100%;
+  width: 960px;
+  height: 620px;
 }
 
 @media (max-width: 1480px) {
