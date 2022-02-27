@@ -266,7 +266,13 @@ a:active {
   display: none;
 }
 
-@media (max-width: 1480px) {
+@media (max-width: 1440px) {
+  .nav {
+    width: 640px;
+  }
+}
+
+@media (max-width: 1280px) {
   .nav {
     position: relative;
     width: 0;

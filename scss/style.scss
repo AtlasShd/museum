@@ -163,7 +163,11 @@ a:active {
 		display: none;
 	}
 
-	@media (max-width: 1480px) {
+	@media (max-width: 1440px) {
+		width: 640px;
+	}
+
+	@media (max-width: 1280px) {
 		position: relative;
 		width: 0;
 
